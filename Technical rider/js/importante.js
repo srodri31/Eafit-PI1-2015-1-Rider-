@@ -1,5 +1,6 @@
 $(document).ready(function(){
 	var isIn;
+	var ninst=0;
 	var numPiano =1;
 	var numPianoMesa =1;
 	var numGuitar =1;
@@ -38,10 +39,47 @@ $(document).ready(function(){
 		accept: '*',
 		drop: function( event, ui ) {
 			$(this).html("Lo soltaste!!!");
-
-	     var idElementoMarco = ui.draggable.attr("id");			
-			
-        if(idElementoMarco=="piano"+numPiano){
+        ninst++;
+	    var idElementoMarco = ui.draggable.attr("id");	
+		var div;
+		var input;
+		
+		div = document.createElement("div");
+		div.setAttribute("id","divName"+ninst);
+		div.setAttribute("class","form-group");
+		input = document.createElement("input");
+		input.setAttribute("type","text");
+		input.setAttribute("requiered","requiered");
+		input.setAttribute("class","form-control");
+		input.setAttribute("id","name"+ninst);
+		input.setAttribute("placeholder","Instrument");
+		document.getElementById("instruments").appendChild(div);
+		document.getElementById("divName"+ninst).appendChild(input);
+		
+		div = document.createElement("div");
+		div.setAttribute("id","divMic"+ninst);
+		div.setAttribute("class","form-group");
+		input = document.createElement("input");
+		input.setAttribute("type","text");
+		input.setAttribute("requiered","requiered");
+		input.setAttribute("class","form-control");
+		input.setAttribute("id","mic"+ninst);
+		input.setAttribute("placeholder","Microphine type");
+		document.getElementById("instruments").appendChild(div);
+		document.getElementById("divMic"+ninst).appendChild(input);
+		
+		div = document.createElement("div");
+		div.setAttribute("id","divSubmit"+ninst);
+		div.setAttribute("class","form-group");		
+        input = document.createElement("input");
+		input.setAttribute("type","submit");
+		input.setAttribute("class","btn btn-primary");
+		input.setAttribute("id","submit"+ninst);
+		input.setAttribute("value","Add instrument");
+		document.getElementById("instruments").appendChild(div);
+		document.getElementById("divSubmit"+ninst).appendChild(input);
+		
+		if(idElementoMarco=="piano"+numPiano){
         	        	
                ++numPiano;			      
 			      var imagen = document.createElement("img"); 
@@ -179,6 +217,13 @@ $(document).ready(function(){
 			var currentDraggable = $(ui.draggable).attr('id');
 			var elem = document.getElementById(currentDraggable);
 			elem.parentNode.removeChild(elem);
+			var name = document.getElementById("divName"+ninst);
+			var mic = document.getElementById("divMic"+ninst);
+			var submit = document.getElementById("divSubmit"+ninst);
+			name.parentNode.removeChild(name);
+			mic.parentNode.removeChild(mic);
+			submit.parentNode.removeChild(submit);
+			ninst--;
 		}
 	});
 	
