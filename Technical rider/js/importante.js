@@ -64,7 +64,7 @@ $(document).ready(function(){
 		input.setAttribute("requiered","requiered");
 		input.setAttribute("class","form-control");
 		input.setAttribute("id","mic"+ninst);
-		input.setAttribute("placeholder","Microphine type");
+		input.setAttribute("placeholder","Microphone type");
 		document.getElementById("instruments").appendChild(div);
 		document.getElementById("divMic"+ninst).appendChild(input);
 		
