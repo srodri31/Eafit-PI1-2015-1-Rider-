@@ -81,7 +81,8 @@
                     array('label'=>'About', 'url'=>array('/site/page', 'view'=>'about')),
                     array('label'=>'Contact', 'url'=>array('/site/contact')),
                     array('label'=>'Login', 'url'=>array('/site/login'), 'visible'=>Yii::app()->user->isGuest),
-                    array('label'=>'Logout ('.Yii::app()->user->name.')', 'url'=>array('/site/logout'), 'visible'=>!Yii::app()->user->isGuest)
+                    array('label'=>'Logout ('.Yii::app()->user->name.')', 'url'=>array('/site/logout'), 'visible'=>!Yii::app()->user->isGuest),
+                    array('label'=>'Sign up', 'url'=>array('/site/signup'), 'visible'=>Yii::app()->user->isGuest)
                 ),
              )); ?>
             </div>
@@ -104,30 +105,5 @@
     
       <?php echo $content; ?>
     
-
-<!-- Footer -->
-        <footer class="container">
-            <div class="row">
-                <div id="rider" align="center" class="col-lg-12">                                            
-                            <legend>Technical Rider</legend>                           
-                            <form method="post" action="signin.jsp">                                
-                                <div class="form-group">                                    
-                                    <input type="text"  required="required"  class="form-control" name="txt_name" id="txt_name" placeholder="Rider's Name">
-                                </div> 
-
-                                <legend>Specifications</legend>  
-
-                                <div id="instruments" class="form-group"></div>            
-                            
-                                <div  align="left" class="form-group">
-                                     <input type="submit" class="btn btn-primary" name="Next_Step" id="ingreso" value="Establishing Information">                                          
-                                </div>
-                            </form>                 
-                        </div>
-                 <div class="col-lg-12">
-                    <p>Copyright &copy; <?php echo CHtml::encode($this->pageTitle); ?> 2015</p>
-                 </div>
-            </div>           
-        </footer>  
     </body>
 </html>

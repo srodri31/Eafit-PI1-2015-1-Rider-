@@ -123,7 +123,7 @@
 
             <div class="col-md-4">
                 <div class="col-lg-12">
-                    <h3 class="page-header">Instruments and Tools</h3>
+                    <h3 class="page-header">Instruments & Tools</h3>
                 </div>
 
                 <div id="divPiano" class="col-sm-3 col-xs-6">
@@ -191,3 +191,28 @@
                 </div> 
             </div>
         </div>
+
+        <!-- Footer -->
+        <footer class="container">
+            <div class="row">
+                <div id="rider" align="center" class="col-lg-12">                                            
+                            <legend>Technical Rider</legend>                           
+                            <form method="post" action="signin.jsp">                                
+                                <div class="form-group">                                    
+                                    <input type="text"  required="required"  class="form-control" name="txt_name" id="txt_name" placeholder="Rider's Name">
+                                </div> 
+
+                                <legend>Specifications</legend>  
+
+                                <div id="instruments" class="form-group"></div>            
+                            
+                                <div  align="left" class="form-group">
+                                     <input type="submit" class="btn btn-primary" name="Next_Step" id="ingreso" value="Establishing Information">                                          
+                                </div>
+                            </form>                 
+                        </div>
+                 <div class="col-lg-12">
+                    <p>Copyright &copy; <?php echo CHtml::encode($this->pageTitle); ?> 2015</p>
+                 </div>
+            </div>           
+        </footer>  

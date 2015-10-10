@@ -27,4 +27,14 @@ class UserIdentity extends CUserIdentity
 		}
 		return !$this->errorCode;
 	}
+
+	public function signup()
+	{
+		$user = new Band;
+		$user->name_band = $this->username;
+		$user->code_band = $this->password; 
+		$user->save();
+		///return !$this->errorCode;
+	}
+
 }
