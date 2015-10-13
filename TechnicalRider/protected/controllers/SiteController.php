@@ -106,27 +106,4 @@ class SiteController extends Controller
 		Yii::app()->user->logout();
 		$this->redirect(Yii::app()->homeUrl);
 	}
-
-	public function actionSignup()
-	{
-		$model=new SignupForm;
-
-		// if it is ajax validation request
-		if(isset($_POST['ajax']) && $_POST['ajax']==='signup-form')
-		{
-			echo CActiveForm::validate($model);
-			Yii::app()->end();
-		}
-
-		// collect user input data
-		if(isset($_POST['SignupForm']))
-		{
-			$model->attributes=$_POST['SignupForm'];
-			// validate user input and redirect to the previous page if valid
-			if($model->validate() && $model->signup())
-				$this->redirect(Yii::app()->homeUrl);
-		}
-		// display the login form
-		$this->render('signup',array('model'=>$model));
-	}
 }

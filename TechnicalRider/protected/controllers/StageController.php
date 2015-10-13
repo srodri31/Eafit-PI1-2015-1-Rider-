@@ -8,9 +8,8 @@ class StageController extends Controller
 	
 	public function actionIndex()
 	{
-		$model = CActiveRecord::model("Band")->findAll();
-		$twiter = "@Rider";
-		$this -> render("index", array("model"=>$model, "twiter"=>$twiter));
+		$model = CActiveRecord::model("Instrument")->findAll();
+		$this -> render("index", array("model"=>$model));
 	}
 }
 

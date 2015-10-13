@@ -17,7 +17,7 @@
 
             <div class="col-md-4">
                 <div class="col-lg-12">
-                    <h3 class="page-header">Instruments & Tols</h3>
+                    <h3 class="page-header">Instruments and Tools</h3>
                 </div>
 
                 <div id="divPiano" class="col-sm-3 col-xs-6">

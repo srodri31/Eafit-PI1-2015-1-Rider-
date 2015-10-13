@@ -16,7 +16,7 @@
     <link href="<?php echo Yii::app()->theme->baseUrl; ?>/css/bootstrap.css" rel="stylesheet">
 
     <!-- Custom CSS -->
-    <link href="<?php echo Yii::app()->theme->baseUrl; ?>/css/portfolio-item.css" rel="stylesheet">
+    <link href="<?php echo Yii::app()->theme->baseUrl; ?>/css/grayscale.css" rel="stylesheet">
 
     <!-- jquereiu-->
     <link type="text/css" href="<?php echo Yii::app()->theme->baseUrl; ?>/js/jquery-ui-1.8.16.custom.css" rel="Stylesheet" id="linkestilo">   
@@ -24,13 +24,9 @@
     <script type="text/javascript" src="<?php echo Yii::app()->theme->baseUrl; ?>/js/jquery-ui-1.8.16.custom.min.js"></script>
     <script  src="<?php echo Yii::app()->theme->baseUrl; ?>/js/importante.js" type="text/javascript"></script>
     
-    <!--accordion sources-->
-    <link href="<?php echo Yii::app()->theme->baseUrl; ?>/css/accordion/accordion.css" rel="stylesheet">
-
-    <!--tabs Sources-->
-    <link href="<?php echo Yii::app()->theme->baseUrl; ?>/css/tabs/tabs.css" rel="stylesheet">
-    <script  src="<?php echo Yii::app()->theme->baseUrl; ?>/js/tabs/tabs.js" type="text/javascript"></script>
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+    <!-- modal -->
+    <link rel="stylesheet" href="<?php echo Yii::app()->theme->baseUrl; ?>/assets/css/form-elements.css">
+     
 
 
     <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" />
@@ -42,55 +38,79 @@
     <script type="text/javascript" src="<?php echo Yii::app()->theme->baseUrl; ?>/js/jquery-ui-1.8.16.custom.min.js"></script>
 
     <style type="text/css">
-    #soltable{
-        padding: 10px;
-        background-color: whitesmoke;
-        border: 1px solid #ccc;
-        width: 500px;
-        height: 400px;
-        text-align: center;
-    }
-    .sueltaaqui{
-        text-shadow: #0f0 1px 1px 5px;
-        background-color: #fc9;
-        font-weight: bold;
-    }
+        #soltable{
+            padding: 10px;
+            background-color: whitesmoke;
+            border: 1px solid #ccc;
+            width: 500px;
+            height: 400px;
+            text-align: center;
+        }
+        .sueltaaqui{
+            text-shadow: #0f0 1px 1px 5px;
+            background-color: #fc9;
+            font-weight: bold;
+        }
     </style>    
 
     <script type="text/javascript">
         $(document).ready(function() {
-  $(".tabs a").html5jTabs();
-});
+          $(".tabs a").html5jTabs();
+        });
     </script>
 </head>
 <body style="cursor: auto;">
 
     <!-- Navigation -->
-    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <nav class="navbar navbar-custom navbar-fixed-top" role="navigation" style="background:#000;">
         <div class="container">
-            <!-- Brand and toggle get grouped for better mobile display -->
-            <div class="navbar-header">                
-                <div class="navbar-brand" style="text-transform: uppercase; " href="#">Technical Rider </div>
-            </div>
-            <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">                
-                <?php $this->widget('zii.widgets.CMenu',array(
-                'htmlOptions' => array("class" => "nav navbar-nav"),
-                'items'=>array(
-                    array('label'=>'Home', 'url'=>array('/site/index')),
-                    array('label'=>'About', 'url'=>array('/site/page', 'view'=>'about')),
-                    array('label'=>'Contact', 'url'=>array('/site/contact')),
-                    array('label'=>'Login', 'url'=>array('/site/login'), 'visible'=>Yii::app()->user->isGuest),
-                    array('label'=>'Logout ('.Yii::app()->user->name.')', 'url'=>array('/site/logout'), 'visible'=>!Yii::app()->user->isGuest),
-                    array('label'=>'Sign up', 'url'=>array('/site/signup'), 'visible'=>Yii::app()->user->isGuest)
-                ),
-             )); ?>
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
+                    <i class="fa fa-bars"></i>
+                </button>
+                <a class="navbar-brand page-scroll" href="#page-top">
+                    <i class="fa fa-play-circle"></i>  <span class="light">Start</span> Technical Rider
+                </a>
             </div>
 
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse navbar-right navbar-main-collapse">
+                <ul class="nav navbar-nav">
+                    <!-- Hidden li included to remove active class from about link when scrolled up past about section -->
+                    <li class="hidden">
+                        <a href="#page-top"></a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="">About</a>
+                    </li>
+                     <li>
+                        <a class="page-scroll" href="">Contact</a>
+                    </li>
+                    <li>
+                        <a  class="page-scroll  launch-modal" href="#" data-modal-id="modal-register">Sign Up</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll  launch-modal" href="#" data-modal-id="modal-login">Log In</a>
+                    </li>        
+               </ul>
+            </div>
             <!-- /.navbar-collapse -->
         </div>
         <!-- /.container -->
     </nav>
+
+    <header class="intro" background="<?php echo Yii::app()->theme->baseUrl; ?>/img/intro-bg.jpg">
+        <div class="intro-body">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-8 col-md-offset-2">
+                        <h1 class="brand-heading">Technical Rider</h1>                       
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
     <div class="container">
         <div class="row-fluid">
             <div class="span12">                
@@ -102,8 +122,8 @@
             </div>
         </div>
     </div>
-    
-      <?php echo $content; ?>
-    
+    <div class="container" style="width:98%; background: #fff">
+        <?php echo $content; ?>
+    </div>
     </body>
 </html>
