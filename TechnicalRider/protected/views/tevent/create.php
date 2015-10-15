@@ -33,7 +33,7 @@ th, td {
 	   <tr>
 	     <th>Time Endevent</th>
 	     <th>Desc Event</th>
-	     <th>Gender Event</th>
+	     <th>Genre Event</th>
 	     <th>Image Event</th>
 	   </tr>
 	   <tr>
