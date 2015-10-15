@@ -38,7 +38,7 @@ table#bordeSuperior th	{
 	<th>Time Start Event</th>
 	<th>Time Endevent</th>
 	<th>Desc Event</th>
-	<th>Gender Event</th>
+	<th>Genre Event</th>
 	<th>Image Event</th>
 	<th>Id Company</th>
   </tr>
