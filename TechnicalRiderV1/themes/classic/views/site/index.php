@@ -1,0 +1,1 @@
+Hola Aqui no hay nada vaya  a localhost/technicalRider/stage/index
