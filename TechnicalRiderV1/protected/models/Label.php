@@ -14,11 +14,5 @@
 			return "tlabel";
 		}
 
-		public function rules()
-	{
-		return array(
-			array('name_label, desc_label', 'required'),
-		);
-	}
 	}
 ?>

@@ -7,11 +7,15 @@ class LabelController extends Controller
 {
 	
 	public function actionIndex(){
-		$model=new Label;
-		if(isset($_POST['Label']))
+		$model=new LabelForm;
+
+		if(isset($_POST['LabelForm']))
 		{
-			$model->attributes=$_POST['Label'];
-			if($model->save()){
+			$model->attributes=$_POST['LabelForm'];
+
+			//$model->register();
+			if($model->register()){
+			
 			  $this->redirect(array('index'));	
 			}
 				
