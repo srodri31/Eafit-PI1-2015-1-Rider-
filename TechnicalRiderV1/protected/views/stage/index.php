@@ -1,3 +1,29 @@
+<script>
+
+function save(){
+	var instrumentStageSelect= document.getElementById('instrumentStage');
+	if(instrumentStageSelect.selectedIndex<1)
+		window.alert('No hay opción seleccionada');
+	else{
+        var selectOp=instrumentStageSelect.options[instrumentStageSelect.selectedIndex].value;		
+		var textMicro = document.getElementById("txtMicrophone").value;
+		var table = document.getElementById('tableChannel');
+		for (i=0; trT=table.getElementsByTagName('tr')[i]; i++) {
+		   if (trT.getAttribute('id')==selectOp){
+			   editarTd(trT,i,textMicro);
+		   }
+	    }
+	}
+}
+
+function editarTd(trT,i,text){
+	var field = trT.getElementsByTagName('td')[2];
+	field.innerHTML=text;
+}
+
+</script>
+
+
  <!-- Portfolio Item Heading -->
         <div class="row">
             <div class="col-lg-12">
@@ -13,13 +39,23 @@
         	 <div id="description" class="col-md-3">        	 		                         
 			    <form method="post" action="">                                
 			        <div class="form-group">                                    
-			            <input type="text"  required="required"  class="form-control" name="txt_name" id="txt_name" placeholder="Rider's Name">
+			            <input value="" type="text"   class="form-control" name="txt_name" id="txt_name" placeholder="Rider's Name">
 			        </div>  
-
-			        <div id="instruments" class="form-group"></div>            
-			    
-			    </form>  
-        	 </div>
+					<br>				
+					<h5>Select Instrument</h5>
+					<select class="form-control" id="instrumentStage" >
+						<option value=""></option>
+					</select>
+					<br>
+					<div>                                    
+			            <input value="" type="text" class="form-control" name="txtMicrophone" id="txtMicrophone" placeholder="Microphone">
+			        </div>
+					<br>
+					<div>                                    
+			           <button type="button" class="btn btn-primary" onclick="save()">Save</button> 
+			        </div>  
+				</form>  
+			 </div>
 
             <div class="col-md-6">
                 <div id="soltable" class="ui-droppable">
@@ -30,7 +66,7 @@
                 
             <legend> Categorias desde bd</legend>
                 <?php foreach ($categories as $data):?>
-	                <div id="<?php echo $data->name_classification; ?>" class="col-sm-3 col-xs-6">
+	                <div id="<?php echo $data->name_classification; ?>" class="col-sm-4 col-xs-6">
 	                    <a href="#">
 	                        <?php echo $data->name_classification; ?>
 	                    </a>
@@ -39,14 +75,17 @@
 
 
             <legend> Instrumentos </legend>
-            <div align="center">traido desde bd:: son  de la categoria 2 (Ver StageController)</div><br>
+            
                 <?php foreach ($model as $data):?>
 	                <div id="<?php echo $data->name_instrument; ?>" class="col-sm-3 col-xs-6">
-	                    <a href="#">
-	                        <div id="<?php echo $data->id_instrument; ?>" class="tarea ui-draggable" name="<?php echo $data->name_instrument; ?>" >
+	                   
+	                        <div style="position:absolute; z-index: -1;"id="<?php echo $data->id_instrument; ?>0" name="<?php echo $data->name_instrument; ?>" >
 	                            <img  class="img-responsive portfolio-item" src="<?php echo Yii::app()->theme->baseUrl; ?>/images/<?php echo $data->name_instrument; ?>" alt="">
 	                        </div>
-	                    </a>
+							<div id="<?php echo $data->id_instrument; ?>1" class="ui-draggable" name="<?php echo $data->name_instrument; ?>" >
+	                            <img  class="img-responsive portfolio-item" src="<?php echo Yii::app()->theme->baseUrl; ?>/images/<?php echo $data->name_instrument; ?>" alt="">
+	                        </div>
+	                   
 	                </div>
                 <?php endforeach ?>
 
@@ -54,30 +93,33 @@
         </div>
 
 
-    <div id="container" class="container">
-    	<div id="row" class="row">
-    		<div id="col" class="col-md-12" >
-	    		<label id="legend"></label>	
-	    		<table class="table" id="channels">
-	    		</table>		
-    		</div>
-    	</div>
-    </div>
+<!--  Tabla -->		
 
-      
-   <div class="container" id="tableContainer">
-		<table class="table">
-		    <thead>
-		      <tr>
-		      	<th id="number"></th>
-		        <th id="channel"></th>
-		        <th id="microphone"></th>
-		      </tr>
-		    </thead>
-		    <tbody id="tableBody">
-		      	   
-		    </tbody>
-		</table>   
-    </div>
+<style>
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+th, td {
+    padding: 5px;
+    text-align: left;    
+}
+</style>
+
+<body>
+<h2 style="font-weight:30px;">Input List</h2>
+<div style="overflow:scroll; height:200px;">
+<table style="width:100%" id="tableChannel">
+  <tr>
+    <th>Number</th>
+    <th>Input</th>
+	<th>Microphone</th>
+  </tr>
+  
+</table>
+</div>
+</body>
+
+	
 
    				 

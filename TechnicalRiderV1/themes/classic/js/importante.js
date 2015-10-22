@@ -6,20 +6,37 @@ $(document).ready(function(){
 	});
 	var isIn;
 	var ninst=0;
-	var numPiano =1;
-	var numPianoMesa =1;
-	var numGuitar =1;
-	var numSax =1;
-	var numTrompeta =1;
-	var numMicroPortable =1;
-	var numMicrofono =1;
-	var numBateria =1;
+	
+	var numTube=1; nameTube="tube";
+	var numTrumpet =1; nameTrumpet="trumpet";
+	var numTrambone =1; nameTrambone="trambone";
+	var numSaxophone =1; nameSaxophone="saxophone";
+	var numClarnet =1; nameClarnet="clarnet";
+	var numBanjo =1; nameBanjo="banjo";
+	var numGuitar =1; nameGuitar="guitar";
+	var numLyre =1; nameLyre="lyre";
+	var numPiano =1; namePiano="piano";
+	var numViolin =1; nameViolin="violin";
+	var numBass_Drum =1; nameBass_Drum="bass_drum";
+	var numCymbals =1; nameCymbals="cymbals";
+	var numRattle =1; nameRattle="rattle";
+	var numTriangle =1; nameTriangle="triangle";
+	var numXylophone =1; nameXylophone="xylophone";
+	var numCastanets =1; nameCastanets="castanets";
+	var numDrums =1; nameDrums="drums";
+	var numKettledrums =1; nameKettledrums="kettledrums";
+	var numPercussion =1; namePercussion="percussion";
+	var numSide_Drum =1; nameSide_Drum="side_drum";
+	
+	
 	$(".ui-draggable").draggable({
-		revert: false,
+	  
 		start: function(event, ui) {
 			ui.helper.data('dropped', false);
+			
 		}		
 	});
+	
 	
 	
 	$("#soltable").droppable({
@@ -28,247 +45,127 @@ $(document).ready(function(){
 		drop: function( event, ui ) {
 			$(this).html("Lo soltaste!!!");
 
-//DOM elements
-        ninst++;
+
 	    var idElementoMarco = ui.draggable.attr("id");	
-		var div;
-		var input;
-		var select;
-		var option;
-		var tableChannels;
-		var tbody;
-		var tr;
-		var td;
-		
-		elemento = document.getElementById(idElementoMarco);
-		var posicion = elemento.getBoundingClientRect();
+	
+		switch(idElementoMarco) {
+			case nameTube+numTube:
+				createTableChannel(nameTube,numTube);
+				createFieldsInstrumenInformation(nameTube,numTube);
+				createElements(nameTube,++numTube);
+				break;
+			case nameTrumpet+numTrumpet:
+				createTableChannel(nameTrumpet,numTrumpet);
+				createFieldsInstrumenInformation(nameTrumpet,numTrumpet);
+				createElements(nameTrumpet,++numTrumpet);
+				break;
 
-
-		//Instrument Label 
-		div = document.createElement("div");
-		div.setAttribute("id","divName"+ninst);
-		div.setAttribute("class","form-group");
-		document.getElementById("description").appendChild(div);
-		input = document.createElement("input");
-		input.setAttribute("type","text");
-		input.setAttribute("requiered","requiered");
-		input.setAttribute("class","form-control");
-		input.setAttribute("id","name"+ninst);
-		input.setAttribute("placeholder","Instrument");
-		document.getElementById("instruments").appendChild(div);
-		document.getElementById("divName"+ninst).appendChild(input);
-		
-		//Microphone Select
-		div = document.createElement("div");
-		div.setAttribute("id","divMic"+ninst);
-		div.setAttribute("class","form-group");
-		document.getElementById("description").appendChild(div);
-		select = document.createElement("select");
-		select.setAttribute("class", "form-group")
-		select.setAttribute("id", "divMic2"+ninst);
-		option = document.createElement(option);
-		option.setAttribute("value","1");
-		option.setAttribute("id", "1");
-		document.getElementById("instruments").appendChild(div);
-		document.getElementById("divMic"+ninst).appendChild(select);
-		document.getElementById("divMic2"+ninst).appendChild(option);
-		
-		
-		div = document.createElement("div");
-		div.setAttribute("id","divSubmit"+ninst);
-		div.setAttribute("class","form-group");	
-		document.getElementById("description").appendChild(div);	
-        input = document.createElement("input");
-		input.setAttribute("type","submit");
-		input.setAttribute("class","btn btn-primary");
-		input.setAttribute("id","submit"+ninst);
-		input.setAttribute("value","Save");
-		document.getElementById("instruments").appendChild(div);
-		document.getElementById("divSubmit"+ninst).appendChild(input);
-		
-
-		//START : Creating Channels Table 
-		if(ninst == 1){
-			var number = document.createTextNode("Number"); 
-			var channel = document.createTextNode("Channel"); 
-			var microphone = document.createTextNode("Microphone"); 
-			document.getElementById("number").appendChild(number);
-			document.getElementById("channel").appendChild(channel);
-			document.getElementById("microphone").appendChild(microphone);
+			
 		}
-
-         var row = document.createElement("tr");
-         row.setAttribute("class", "success");
-        
-         var cell = document.createElement("td"); 
-         var cell2 = document.createElement("td"); 
-         var cell3 = document.createElement("td");     
-         var cellText = document.createTextNode("cell is row , column "); 
-
-         cell.appendChild(cellText);
-         cell2.appendChild(cellText);
-         cell3.appendChild(cellText);
-         row.appendChild(cell);
-         row.appendChild(cell2);
-         row.appendChild(cell3);
-
-
-        //row added to end of table body
-        document.getElementById("tableBody").appendChild(row);        
-
-        //END OF TABLE CREATION
-        
-		
-
-		//new Image from data base EXAMPLE
-		if(idElementoMarco==5){        	        	
-               ++numPiano;			      
-			   var imagen = document.createElement("img"); 
-               imagen.setAttribute("src", "<?php echo Yii::app()->theme->baseUrl; ?>/images/piano3.png");
-               imagen.setAttribute("id", "5");               
-               $(imagen).draggable();             
-               var div = document.getElementById("piano3.png");
-			   imagen.style.position="absolute";               
-               imagen.style.left="14px";              
-               imagen.style.top="0px";
-			   imagen.style.zIndex="0";               
-               div.appendChild(imagen);               	
-         }  	
-        //previous example
-         
-             if(idElementoMarco=="pianoMesa"+numPianoMesa){
-               ++numPianoMesa;			      
-			      var imagen = document.createElement("img"); 
-               imagen.setAttribute("src", "<?php echo Yii::app()->theme->baseUrl; ?>/img/piano6.png");
-               imagen.setAttribute("id", "pianoMesa"+numPianoMesa);
-               $(imagen).draggable();             
-               var div = document.getElementById("divPianoMesa");
-					imagen.style.position="absolute";               
-               imagen.style.left="14px";              
-               imagen.style.top="0px";
-					imagen.style.zIndex="0";               
-               div.appendChild(imagen);
-               
-              
-        	} 	
-         
-             if(idElementoMarco=="guitar"+numGuitar){
-               ++numGuitar;			      
-			      var imagen = document.createElement("img"); 
-               imagen.setAttribute("src", "<?php echo Yii::app()->theme->baseUrl; ?>/img/guitar5.png");
-               imagen.setAttribute("id", "guitar"+numGuitar);
-               $(imagen).draggable();             
-               var div = document.getElementById("divGuitar");
-					imagen.style.position="absolute";               
-               imagen.style.left="14px";              
-               imagen.style.top="0px";
-					imagen.style.zIndex="0";               
-               div.appendChild(imagen);
-               
-              
-        	}	
-         
-             if(idElementoMarco=="sax"+numSax){
-               ++numSax;			      
-			      var imagen = document.createElement("img"); 
-               imagen.setAttribute("src", "<?php echo Yii::app()->theme->baseUrl; ?>/img/saxophone4.png");
-               imagen.setAttribute("id", "sax"+numSax);
-               $(imagen).draggable();             
-               var div = document.getElementById("divSax");
-					imagen.style.position="absolute";               
-               imagen.style.left="14px";              
-               imagen.style.top="0px";
-					imagen.style.zIndex="0";               
-               div.appendChild(imagen);
-         }
-              
-        	 	
-         
-             if(idElementoMarco=="trompeta"+numTrompeta){
-               ++numTrompeta;			      
-			      var imagen = document.createElement("img"); 
-               imagen.setAttribute("src", "<?php echo Yii::app()->theme->baseUrl; ?>/img/trumpet9.png");
-               imagen.setAttribute("id", "trompeta"+numTrompeta);
-               $(imagen).draggable();             
-               var div = document.getElementById("divTrompeta");
-					imagen.style.position="absolute";               
-               imagen.style.left="14px";              
-               imagen.style.top="0px";
-					imagen.style.zIndex="0";               
-               div.appendChild(imagen);
-               
-              
-        	} 	
-         
-             if(idElementoMarco=="microfonoPortable"+numMicroPortable){
-               ++numMicroPortable;			      
-			      var imagen = document.createElement("img"); 
-               imagen.setAttribute("src", "<?php echo Yii::app()->theme->baseUrl; ?>/img/voice15.png");
-               imagen.setAttribute("id", "microfonoPortable"+numMicroPortable);
-               $(imagen).draggable();             
-               var div = document.getElementById("divMicrofonoPortable");
-					imagen.style.position="absolute";               
-               imagen.style.left="14px";              
-               imagen.style.top="0px";
-					imagen.style.zIndex="0";               
-               div.appendChild(imagen);
-               
-              
-        	}  	
-         
-             if(idElementoMarco=="microfono"+numMicrofono){
-               ++numMicrofono;			      
-			      var imagen = document.createElement("img"); 
-               imagen.setAttribute("src", "<?php echo Yii::app()->theme->baseUrl; ?>/img/microphone37.png");
-               imagen.setAttribute("id", "microfono"+numMicrofono);
-               $(imagen).draggable();             
-               var div = document.getElementById("divMicrofono");
-					imagen.style.position="absolute";               
-               imagen.style.left="14px";              
-               imagen.style.top="0px";
-					imagen.style.zIndex="0";               
-               div.appendChild(imagen);
-               
-              
-        	}  	
-         
-             if(idElementoMarco=="bateria"+numBateria){
-               ++numBateria;			      
-			      var imagen = document.createElement("img"); 
-               imagen.setAttribute("src", "<?php echo Yii::app()->theme->baseUrl; ?>/img/drum24.png");
-               imagen.setAttribute("id", "bateria"+numBateria);
-               $(imagen).draggable();             
-               var div = document.getElementById("divBateria");
-					imagen.style.position="absolute";               
-               imagen.style.left="14px";              
-               imagen.style.top="0px";
-					imagen.style.zIndex="0";               
-               div.appendChild(imagen);
-               
-              }
 
 			ui.draggable.data('dropped', true);
 			$(this).addClass("ui-state-highlight").find("img").html("Dropped!");
 			var currentDraggable = $(ui.draggable).attr('id');
-	
-	
-		},
+	},
 		out: function( event, ui ) {
-	
+			
 			var currentDraggable = $(ui.draggable).attr('id');
-			var elem = document.getElementById(currentDraggable);
-			elem.parentNode.removeChild(elem);
-			var name = document.getElementById("divName"+ninst);
-			var mic = document.getElementById("divMic"+ninst);
-			var submit = document.getElementById("divSubmit"+ninst);
-			name.parentNode.removeChild(name);
-			mic.parentNode.removeChild(mic);
-			submit.parentNode.removeChild(submit);
-			ninst--;
+			var select = document.getElementById("instrumentStage");
+			for (i=0; opt=select.getElementsByTagName('option')[i]; i++) {
+				if (opt.getAttribute('value')==currentDraggable){
+					select.remove(i);
+				}
+			}
+			var table = document.getElementById('tableChannel');
+			for (i=0; trT=table.getElementsByTagName('tr')[i]; i++) {
+				if (trT.getAttribute('id')==currentDraggable){
+				  document.getElementById("tableChannel").deleteRow(i);
+				
+				  var elem = document.getElementById(currentDraggable);
+				  elem.parentNode.removeChild(elem);	
+				}
+				
+			 }
+			   --ninst;
+			   updateDates();
 		}
 	});
 	
 	$("#soltable").droppable("option", "activeClass", "sueltaaqui");
+	
+	
+	
+	
+	function createElements(name,num){
+				var imagen = document.createElement("img"); 
+				imagen.setAttribute("src", "/yii/TechnicalRiderV1/themes/classic/images/"+name+".png");
+				imagen.setAttribute("id", name+num);
+				var auxDiv =document.createElement("div");
+				auxDiv.setAttribute("id", name+num);
+				auxDiv.setAttribute("class","ui-draggable");
+				auxDiv.setAttribute("name",name+".png");
+				auxDiv.setAttribute("value",name+ninst);
+				auxDiv.appendChild(imagen);               	
+				$(auxDiv).draggable();             
+				var div = document.getElementById(name+".png");
+				auxDiv.style.position="absolute";               
+				auxDiv.style.left="15px";              
+				auxDiv.style.top="0px";
+				auxDiv.style.zIndex="0";               
+				div.appendChild(auxDiv);               	
+	}
+	
+	
+	function createTableChannel(name,num){
+		++ninst;
+		var row = document.createElement("tr");
+		row.setAttribute("id",name+num);
+		var fieldNumber = document.createElement("td");
+		var fieldChannel = document.createElement("td");
+		var fieldMicrophone = document.createElement("td");
+		var textNumber = document.createTextNode(ninst);
+		var textChannel = document.createTextNode(name);
+		var textMicrophone = document.createTextNode("Default");
+		fieldNumber.appendChild(textNumber);
+		fieldChannel.appendChild(textChannel);
+		fieldMicrophone.appendChild(textMicrophone);
+		row.appendChild(fieldNumber);
+		row.appendChild(fieldChannel);
+		row.appendChild(fieldMicrophone);
+		var table = document.getElementById("tableChannel");
+		table.appendChild(row);
+		
+	}
+	
+	function createFieldsInstrumenInformation(name,num){
+		 var instOption = document.createElement("option");
+		 instOption.setAttribute("value",name+num);
+		 var textNum_Name = document.createTextNode(name+" "+ninst);
+		 var select = document.getElementById("instrumentStage");
+		 instOption.appendChild(textNum_Name);
+		 select.appendChild(instOption);
+	}
+	
+	
+	function updateDates(){
+		var table = document.getElementById('tableChannel');
+		
+		for (i=0; trT=table.getElementsByTagName('tr')[i]; i++) {
+			var field = trT.getElementsByTagName('td')[0];
+		    if(field!=undefined){
+				field.innerHTML=i;
+			}
+			
+	    }
+		var select = document.getElementById("instrumentStage");
+		for (i=1; opt=select.getElementsByTagName('option')[i]; i++) {
+			var text= opt.getAttribute("value");
+		    var newText = text.substring(0, text.length-1);
+			opt.innerHTML=newText+" "+i;
+		}
+		
+	}
+	
 	
 	function IsIn(){
 		if(!isIn){
