@@ -1,29 +1,3 @@
-<script>
-
-function save(){
-	var instrumentStageSelect= document.getElementById('instrumentStage');
-	if(instrumentStageSelect.selectedIndex<1)
-		window.alert('No hay opción seleccionada');
-	else{
-        var selectOp=instrumentStageSelect.options[instrumentStageSelect.selectedIndex].value;		
-		var textMicro = document.getElementById("txtMicrophone").value;
-		var table = document.getElementById('tableChannel');
-		for (i=0; trT=table.getElementsByTagName('tr')[i]; i++) {
-		   if (trT.getAttribute('id')==selectOp){
-			   editarTd(trT,i,textMicro);
-		   }
-	    }
-	}
-}
-
-function editarTd(trT,i,text){
-	var field = trT.getElementsByTagName('td')[2];
-	field.innerHTML=text;
-}
-
-</script>
-
-
  <!-- Portfolio Item Heading -->
         <div class="row">
             <div class="col-lg-12">
@@ -44,7 +18,7 @@ function editarTd(trT,i,text){
 					<br>				
 					<h5>Select Instrument</h5>
 					<select class="form-control" id="instrumentStage" >
-						<option value=""></option>
+						<option value="">Select</option>
 					</select>
 					<br>
 					<div>                                    
@@ -79,13 +53,28 @@ function editarTd(trT,i,text){
                 <?php foreach ($model as $data):?>
 	                <div id="<?php echo $data->name_instrument; ?>" class="col-sm-3 col-xs-6">
 	                   
-	                        <div style="position:absolute; z-index: -1;"id="<?php echo $data->id_instrument; ?>0" name="<?php echo $data->name_instrument; ?>" >
+	                        <div id="<?php echo $data->id_instrument; ?>0" name="<?php echo $data->name_instrument; ?>" >
 	                            <img  class="img-responsive portfolio-item" src="<?php echo Yii::app()->theme->baseUrl; ?>/images/<?php echo $data->name_instrument; ?>" alt="">
 	                        </div>
-							<div id="<?php echo $data->id_instrument; ?>1" class="ui-draggable" name="<?php echo $data->name_instrument; ?>" >
-	                            <img  class="img-responsive portfolio-item" src="<?php echo Yii::app()->theme->baseUrl; ?>/images/<?php echo $data->name_instrument; ?>" alt="">
-	                        </div>
-	                   
+							<script>
+								var imagen = document.createElement("img"); 
+								imagen.setAttribute("src", "<?php echo Yii::app()->theme->baseUrl; ?>/images/<?php echo $data->name_instrument; ?>");
+								imagen.setAttribute("class","img-responsive portfolio-item");
+								var auxDiv =document.createElement("div");
+								auxDiv.setAttribute("id", "<?php echo $data->id_instrument; ?>"+1);
+								auxDiv.setAttribute("title", "<?php echo $data->id_instrument; ?>"+" "+1);
+								auxDiv.setAttribute("class","ui-draggable");
+								auxDiv.setAttribute("name","<?php echo $data->id_instrument; ?>"+".png");
+								auxDiv.appendChild(imagen);               	
+								$(auxDiv).draggable();             
+								var div = document.getElementById("<?php echo $data->id_instrument; ?>"+".png");
+								auxDiv.style.position="absolute";               
+								auxDiv.style.left="15px";              
+								auxDiv.style.top="0px";
+								auxDiv.style.zIndex="0";               
+								div.appendChild(auxDiv); 
+							</script>
+							
 	                </div>
                 <?php endforeach ?>
 
@@ -105,8 +94,15 @@ th, td {
     text-align: left;    
 }
 </style>
+<script>
 
+</script>
 <body>
+  <div>                                
+    <button type="button" class="btn btn-primary" onclick="">Save Input</button> 
+	<button type="button" class="btn btn-primary" onclick="">Get Input</button> 
+  </div> 
+
 <h2 style="font-weight:30px;">Input List</h2>
 <div style="overflow:scroll; height:200px;">
 <table style="width:100%" id="tableChannel">
