@@ -11862,3 +11862,65 @@ Stack trace:
 #5 {main}
 REQUEST_URI=/yii/TechnicalRiderV1/stage/view
 ---
+2015/10/30 18:03:19 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/pdf.jpg".' in U:\UwAmp\www\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 U:\UwAmp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('images/pdf.jpg')
+#1 U:\UwAmp\www\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 U:\UwAmp\www\yii\TechnicalRiderV1\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/TechnicalRiderV1/images/pdf.jpg
+HTTP_REFERER=http://localhost/yii/TechnicalRiderV1/label
+---
+2015/10/30 18:03:52 [error] [php] include(tlabel.php): failed to open stream: No such file or directory (U:\UwAmp\www\yii\framework\YiiBase.php:432)
+Stack trace:
+#0 U:\UwAmp\www\yii\TechnicalRiderV1\protected\controllers\LabelController.php(33): spl_autoload_call()
+#1 U:\UwAmp\www\yii\framework\web\actions\CInlineAction.php(49): LabelController->actionGenerarPdf()
+#2 U:\UwAmp\www\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#3 U:\UwAmp\www\yii\framework\web\CController.php(286): LabelController->runAction()
+#4 U:\UwAmp\www\yii\framework\web\CController.php(265): LabelController->runActionWithFilters()
+#5 U:\UwAmp\www\yii\framework\web\CWebApplication.php(282): LabelController->run()
+#6 U:\UwAmp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#7 U:\UwAmp\www\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#8 U:\UwAmp\www\yii\TechnicalRiderV1\index.php(13): CWebApplication->run()
+REQUEST_URI=/yii/TechnicalRiderV1/label/generarpdf
+in U:\UwAmp\www\yii\TechnicalRiderV1\protected\controllers\LabelController.php (33)
+in U:\UwAmp\www\yii\TechnicalRiderV1\index.php (13)
+2015/10/30 18:10:02 [error] [php] Undefined variable: Criteria (U:\UwAmp\www\yii\TechnicalRiderV1\protected\controllers\LabelController.php:33)
+Stack trace:
+#0 U:\UwAmp\www\yii\framework\web\CController.php(286): LabelController->runAction()
+#1 U:\UwAmp\www\yii\framework\web\CController.php(265): LabelController->runActionWithFilters()
+#2 U:\UwAmp\www\yii\framework\web\CWebApplication.php(282): LabelController->run()
+#3 U:\UwAmp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#4 U:\UwAmp\www\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#5 U:\UwAmp\www\yii\TechnicalRiderV1\index.php(13): CWebApplication->run()
+REQUEST_URI=/yii/TechnicalRiderV1/label/generarpdf
+in U:\UwAmp\www\yii\TechnicalRiderV1\protected\controllers\LabelController.php (33)
+in U:\UwAmp\www\yii\TechnicalRiderV1\index.php (13)
+2015/10/30 18:10:32 [error] [exception.CException] exception 'CException' with message 'Property "Label.id_producto" is not defined.' in U:\UwAmp\www\yii\framework\base\CComponent.php:130
+Stack trace:
+#0 U:\UwAmp\www\yii\framework\db\ar\CActiveRecord.php(145): CComponent->__get('id_producto')
+#1 U:\UwAmp\www\yii\TechnicalRiderV1\protected\views\label\pdfReport.php(69): CActiveRecord->__get('id_producto')
+#2 U:\UwAmp\www\yii\framework\web\CBaseController.php(126): require('U:\\UwAmp\\www\\yi...')
+#3 U:\UwAmp\www\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('U:\\UwAmp\\www\\yi...', Array, true)
+#4 U:\UwAmp\www\yii\framework\web\CController.php(869): CBaseController->renderFile('U:\\UwAmp\\www\\yi...', Array, true)
+#5 U:\UwAmp\www\yii\TechnicalRiderV1\protected\controllers\LabelController.php(43): CController->renderPartial('pdfReport', Array, true)
+#6 U:\UwAmp\www\yii\framework\web\actions\CInlineAction.php(49): LabelController->actionGenerarPdf()
+#7 U:\UwAmp\www\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#8 U:\UwAmp\www\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#9 U:\UwAmp\www\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 U:\UwAmp\www\yii\framework\web\CWebApplication.php(282): CController->run('generarpdf')
+#11 U:\UwAmp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('label/generarpd...')
+#12 U:\UwAmp\www\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#13 U:\UwAmp\www\yii\TechnicalRiderV1\index.php(13): CApplication->run()
+#14 {main}
+REQUEST_URI=/yii/TechnicalRiderV1/label/generarpdf
+---
+2015/10/30 19:52:53 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/pdf.jpg".' in U:\UwAmp\www\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 U:\UwAmp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('images/pdf.jpg')
+#1 U:\UwAmp\www\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 U:\UwAmp\www\yii\TechnicalRiderV1\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/TechnicalRiderV1/images/pdf.jpg
+HTTP_REFERER=http://localhost/yii/TechnicalRiderV1/label
+---

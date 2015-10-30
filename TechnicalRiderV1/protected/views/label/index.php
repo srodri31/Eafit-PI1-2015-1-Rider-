@@ -122,13 +122,13 @@
    }
 </script>
 
-<div class="row">
-            <div class="col-lg-12">
-                <h1 class="page-header">Rider's 
-                    <small>labels</small>
-                </h1>
-            </div>
-        </div>
+  <div class="row">
+      <div class="col-lg-12">
+          <h1 class="page-header">Rider's 
+              <small><?php echo CHtml::link(CHtml::image(Yii::app()->baseUrl."/images/pdf.jpg","PDF",array("title"=>"Exportar a PDF")),array("generarpdf")); ?></small>
+          </h1>
+      </div>
+  </div>
 
 <br>
 <div id="generate" class="row">
@@ -240,6 +240,8 @@ Some of them are already selected because they are required in any technical rid
   <div id="divSubmit" class="hidden">
     <input type="submit" value="Save" class="btn btn-primary btn-large">
   </dic>
+
+
 
 <?php $this->endWidget(); ?>
 </div>
