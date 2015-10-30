@@ -26,13 +26,12 @@
 	
 
 
-
 $(document).ready(function(){
-	// $(".btn-pref .btn").click(function () {
-	    // $(".btn-pref .btn").removeClass("btn-primary").addClass("btn-default");
-	    // // $(".tab").addClass("active"); // instead of this do the below 
-	    // $(this).removeClass("btn-default").addClass("btn-primary");   
-	// });
+	$(".btn-pref .btn").click(function () {
+	    $(".btn-pref .btn").removeClass("btn-primary").addClass("btn-default");
+	    // $(".tab").addClass("active"); // instead of this do the below 
+	    $(this).removeClass("btn-default").addClass("btn-primary");   
+	});
 	
 	var numIdTable=0;
 	
@@ -74,6 +73,32 @@ $(document).ready(function(){
 
 	    var idElementoMarco = ui.draggable.attr("id");	
 	    
+		// var elemento = $("#tube1");
+		// var posicion = elemento.position();
+		// //alert( "left: " + posicion.left + ", top: " + posicion.top );
+		
+		// var newPtLeft = posicion.left;
+		// var newPtTop = posicion.top;
+        // console.log(newPtLeft);
+        // console.log(newPtTop);		
+		// var imagen = document.createElement("img"); 
+		// imagen.setAttribute("src", "/yii/TechnicalRiderV1/themes/classic/images/guitar.png");
+		// imagen.setAttribute("class","img-responsive portfolio-item");
+		// var auxDiv =document.createElement("div");
+		// auxDiv.setAttribute("id", "guitar3");
+		// auxDiv.setAttribute("title", "guitar 3");
+		// auxDiv.setAttribute("class","ui-draggable");
+		// auxDiv.setAttribute("name","guitar.png");
+		// auxDiv.appendChild(imagen);               	
+		// $(auxDiv).draggable();             
+		// var div = document.getElementById("tube.png");
+		// auxDiv.style.position="absolute";               
+		// auxDiv.style.left= newPtLeft+"px";              
+		// auxDiv.style.top=  newPtTop+"px";
+		// div.appendChild(auxDiv); 
+		
+		
+		
 		switch(idElementoMarco) {
 			case nameTube+numTube:    
 				createTableInput(nameTube,numTube);
@@ -307,12 +332,25 @@ $(document).ready(function(){
 		for (i=1; opt=select.getElementsByTagName('option')[i]; i++) {
 		    if(opt.getAttribute('value')==nameIdOption){
 				opt.setAttribute("id",nameIdOption+aux);
+				opt=select.getElementsByTagName('option')[i]
+				
 				aux++;
 			}	
 		}
 		
+		var select = document.getElementById("instrumentStage");
 		for (i=1; opt=select.getElementsByTagName('option')[i]; i++) {
-				opt.innerHTML= nameIdOption+" "+i;
+				var selectOption = select.options[i].text;
+				var newSelectOpt="";
+				for(j=0;j<selectOption.length;j++){
+				   if(selectOption.charAt(j)!=' '){
+					   newSelectOpt = newSelectOpt+selectOption.charAt(j);
+				   }else{
+					   opt.innerHTML=newSelectOpt+" "+i;
+					   break;
+				   }	
+				}
+				
 	    }
 	}
 	
@@ -399,11 +437,6 @@ $(document).ready(function(){
 			
 		}
 	}
-	
-	
-	
-
-	
 	
 })	
 		
