@@ -34,6 +34,34 @@ class LabelForm extends CFormModel
 		);
 	}
 
+	public function verify(){
+		if($this->name1 != null && $this->desc1 == null){
+			$this->addError('desc1','This cannot be blank');
+			return false;
+		}
+		if($this->name2 != null && $this->desc2 == null){
+			$this->addError('desc2','This cannot be blank');
+			return false;
+		}
+		if($this->name3 != null && $this->desc3 == null){
+			$this->addError('desc3','This cannot be blank');
+			return false;
+		}
+		if($this->name4 != null && $this->desc4 == null){
+			$this->addError('desc4','This cannot be blank');
+			return false;
+		}
+		if($this->name5 != null && $this->desc5 == null){
+			$this->addError('desc5','This cannot be blank');
+			return false;
+		}
+		if($this->name6 != null && $this->desc6 == null){
+			$this->addError('desc6','This cannot be blank');
+			return false;
+		}
+		return true;
+	}
+
 	/**
 	 * Logs in the user using the given username and password in the model.
 	 * @return boolean whether login is successful
@@ -51,6 +79,8 @@ class LabelForm extends CFormModel
 		$this->_label->desc_label = $this->desc2; 
 		if($this->_label->name_label!=null && $this->_label->desc_label!=null){
 			$this->_label->save();
+		}else{
+			return false;
 		}
 		$this->_label = new Label;
 		$this->_label->name_label = $this->name3;
@@ -76,5 +106,6 @@ class LabelForm extends CFormModel
 		if($this->_label->name_label!=null && $this->_label->desc_label!=null){
 			$this->_label->save();
 		}
+		return true;
 	}
 }

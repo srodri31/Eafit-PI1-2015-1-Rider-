@@ -12,24 +12,22 @@ class LabelController extends Controller
 		if(isset($_POST['LabelForm']))
 		{
 			$model->attributes=$_POST['LabelForm'];
-
-			//$model->register();
-			if($model->register()){
 			
-			  $this->redirect(array('index'));	
-			}
+			if($model->register()){	}
+
+
+			$this->redirect(array("generarpdf"));
 				
 		}
 
 		$this->render('index',array('model'=>$model));
 	}
 
-	public function actionRider(){
-		$this->render('rider');
-	}
 
 	public function actionGenerarPdf() {
-		 $model = CActiveRecord::model("Label")->findAll(); //Consulta para buscar todos los registros
+		 $Criteria = new CDbCriteria();
+		 $Criteria->condition = "id_rider = 1";
+		 $model = CActiveRecord::model("Label")->findAll($Criteria); //Consulta para buscar todos los registros
 		 $mPDF1 = Yii::app()->ePdf->mpdf('utf-8','A4','','',15,15,35,25,9,9,'P'); //Esto lo pueden configurar como quieren, para eso deben de entrar en la web de MPDF para ver todo lo que permite.
 		 $mPDF1->useOnlyCoreFonts = true;
 		 $mPDF1->SetTitle("Technical Rider");
@@ -43,7 +41,6 @@ class LabelController extends Controller
 		 $mPDF1->Output('Label'.date('YmdHis'),'I');  //Nombre del pdf y parámetro para ver pdf o descargarlo directamente.
 		 exit;
 	 }
-
 
 }
 

@@ -22,19 +22,13 @@
     <link type="text/css" href="<?php echo Yii::app()->theme->baseUrl; ?>/js/jquery-ui-1.8.16.custom.css" rel="Stylesheet" id="linkestilo">   
     <script type="text/javascript" src="<?php echo Yii::app()->theme->baseUrl; ?>/js/jquery-1.6.2.min.js"></script>
     <script type="text/javascript" src="<?php echo Yii::app()->theme->baseUrl; ?>/js/jquery-ui-1.8.16.custom.min.js"></script>
-	
-	
-    
+    <script  src="<?php echo Yii::app()->theme->baseUrl; ?>/js/importante.js" type="text/javascript"></script>
    
     <link type="text/css" href="<?php echo Yii::app()->theme->baseUrl; ?>/js/jquery-ui-1.8.16.custom.css" rel="Stylesheet" id="linkestilo">   
     <script type="text/javascript" src="<?php echo Yii::app()->theme->baseUrl; ?>/js/jquery-1.6.2.min.js"></script>
     <script type="text/javascript" src="<?php echo Yii::app()->theme->baseUrl; ?>/js/jquery-ui-1.8.16.custom.min.js"></script>
 
-	
-	
-	<script  src="<?php echo Yii::app()->theme->baseUrl; ?>/js/importante.js" type="text/javascript"></script>
-    
-	<style type="text/css">
+    <style type="text/css">
     #soltable{
         padding: 10px;
         background-color: whitesmoke;
