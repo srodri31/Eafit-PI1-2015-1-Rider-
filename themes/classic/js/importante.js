@@ -72,32 +72,7 @@ $(document).ready(function(){
 
 
 	    var idElementoMarco = ui.draggable.attr("id");	
-	    
-		// var elemento = $("#tube1");
-		// var posicion = elemento.position();
-		// //alert( "left: " + posicion.left + ", top: " + posicion.top );
-		
-		// var newPtLeft = posicion.left;
-		// var newPtTop = posicion.top;
-        // console.log(newPtLeft);
-        // console.log(newPtTop);		
-		// var imagen = document.createElement("img"); 
-		// imagen.setAttribute("src", "/yii/TechnicalRiderV1/themes/classic/images/guitar.png");
-		// imagen.setAttribute("class","img-responsive portfolio-item");
-		// var auxDiv =document.createElement("div");
-		// auxDiv.setAttribute("id", "guitar3");
-		// auxDiv.setAttribute("title", "guitar 3");
-		// auxDiv.setAttribute("class","ui-draggable");
-		// auxDiv.setAttribute("name","guitar.png");
-		// auxDiv.appendChild(imagen);               	
-		// $(auxDiv).draggable();             
-		// var div = document.getElementById("tube.png");
-		// auxDiv.style.position="absolute";               
-		// auxDiv.style.left= newPtLeft+"px";              
-		// auxDiv.style.top=  newPtTop+"px";
-		// div.appendChild(auxDiv); 
-		
-		
+
 		
 		switch(idElementoMarco) {
 			case nameTube+numTube:    
@@ -243,7 +218,7 @@ $(document).ready(function(){
 	//--------------------------------------------------------------
 	function createElementsDraggable(name,num){
 		var imagen = document.createElement("img"); 
-		imagen.setAttribute("src", "/yii/TechnicalRiderV1/themes/classic/images/"+name+".png");
+		imagen.setAttribute("src", "/yii/Eafit-PI1-2015-1-Rider-/themes/classic/images/"+name+".png");
 		imagen.setAttribute("class","img-responsive portfolio-item");
 		var auxDiv =document.createElement("div");
 		auxDiv.setAttribute("id", name+num);

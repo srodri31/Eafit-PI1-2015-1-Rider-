@@ -34,7 +34,7 @@
 </div>
 <div class="form-group">
   <input id="backline" type="checkbox" name="backline" disabled checked>
-  Backline: specify those elements thee event should have in order to the band playing there
+  Backline: specify those elements the event should have in order to the band playing there
 </div>
 <div class="form-group">
   <input id="camarin" type="checkbox" name="camarin">
@@ -61,85 +61,99 @@
   )); ?>
 <div class="form-group">
   <div id="divStaff" class="hidden">
+    <div class="form-group">
+        <a href="#openModalStaff">
+            <img src="<?php echo Yii::app()->theme->baseUrl; ?>/images/help.png">
+        </a>
+      </div>
       <?php $model->name1="Staff";?>
       <?php echo $form->textField($model,"name1",array("class"=>"form-control","readonly"=>"true"));?>
       <br>
       <?php echo $form->textArea($model,"desc1",array("class"=>"form-control", "rows"=>7));?>
       <br>
-      <a href="#openModalStaff">
-        <img src="<?php echo Yii::app()->theme->baseUrl; ?>/images/help.png">
-      </a>
     <br>
   </div>
 </div>
 
 <div class="form-group">
+  
   <div id="divPA" class="hidden">
+      <div class="form-group">
+        <a href="#openModalPA">
+            <img src="<?php echo Yii::app()->theme->baseUrl; ?>/images/help.png">
+        </a>
+      </div>
       <?php $model->name2="PA";?>
       <?php echo $form->textField($model,"name2",array("class"=>"form-control","readonly"=>"true"));?>
       <br>
       <?php echo $form->textArea($model,"desc2",array("class"=>"form-control", "rows"=>7));?>
       <?php echo $form->error($model,"desc2");?>
       <br>
-      <a href="#openModalPA">
-        <img src="<?php echo Yii::app()->theme->baseUrl; ?>/images/help.png">
-      </a>
+      
     <br>
   </div>
 </div>
 
 <div class="form-group">
   <div id="divScenary" class="hidden">
+    <div class="form-group">
+        <a href="#openModalScenary">
+            <img src="<?php echo Yii::app()->theme->baseUrl; ?>/images/help.png">
+        </a>
+      </div>
       <?php $model->name3="Scenary";?>
       <?php echo $form->textField($model,"name3",array("class"=>"form-control","readonly"=>"true"));?>
       <br>
       <?php echo $form->textArea($model,"desc3",array("class"=>"form-control", "rows"=>7));?>
       <br>
-      <a href="#openModalScenary">
-        <img src="<?php echo Yii::app()->theme->baseUrl; ?>/images/help.png">
-      </a>
     <br>
   </div>
 </div>
 
 <div class="form-group">
   <div id="divBackline" class="hidden">
+    <div class="form-group">
+        <a href="#openModalBackline">
+            <img src="<?php echo Yii::app()->theme->baseUrl; ?>/images/help.png">
+        </a>
+      </div>
       <?php $model->name4="Backline";?>
       <?php echo $form->textField($model,"name4",array("class"=>"form-control","readonly"=>"true"));?>
       <br>
       <?php echo $form->textArea($model,"desc4",array("class"=>"form-control", "rows"=>7));?>
       <br>
-      <a href="#openModalBackline">
-        <img src="<?php echo Yii::app()->theme->baseUrl; ?>/images/help.png">
-      </a>
     <br>
   </div>
 </div>
 
 <div class="form-group">
   <div id="divCamarin" class="hidden">
+    <div class="form-group">
+        <a href="#openModalCamarin">
+            <img src="<?php echo Yii::app()->theme->baseUrl; ?>/images/help.png">
+        </a>
+      </div>
       <?php $model->name5="Camarin";?>
       <?php echo $form->textField($model,"name5",array("class"=>"form-control","readonly"=>"true"));?>
       <br>
       <?php echo $form->textArea($model,"desc5",array("class"=>"form-control", "rows"=>7));?>
       <br>
-      <a href="#openModalCamarin">
-        <img src="<?php echo Yii::app()->theme->baseUrl; ?>/images/help.png">
-      </a>
     <br>
   </div>
 </div>
 
 <div class="form-group">
   <div id="divCatering" class="hidden">
+    <div class="form-group">
+        <a href="#openModalCatering">
+            <img src="<?php echo Yii::app()->theme->baseUrl; ?>/images/help.png">
+        </a>
+      </div>
       <?php $model->name6="Catering";?>
       <?php echo $form->textField($model,"name6",array("class"=>"form-control","readonly"=>"true"));?>
       <br>
       <?php echo $form->textArea($model,"desc6",array("class"=>"form-control", "rows"=>7));?>
       <br>
-      <a href="#openModalCatering">
-        <img src="<?php echo Yii::app()->theme->baseUrl; ?>/images/help.png">
-      </a>
     <br>
   </div>
 </div>
