@@ -1,6 +1,6 @@
  <!-- Portfolio Item Heading -->
         <div class="row">
-            <div class="col-lg-12">
+            <div id="stage"  class="col-lg-12">
                 <h1 class="page-header">Stage 
                     <small>Plot</small>
                 </h1>
@@ -53,7 +53,7 @@
                 <?php foreach ($model as $data):?>
 	                <div id="<?php echo $data->name_instrument; ?>" class="col-sm-3 col-xs-6">
 	                   
-	                        <div id="<?php echo $data->id_instrument; ?>0" name="<?php echo $data->name_instrument; ?>" >
+	                        <div id="<?php echo $data->id_instrument; ?>0" >
 	                            <img  class="img-responsive portfolio-item" src="<?php echo Yii::app()->theme->baseUrl; ?>/images/<?php echo $data->name_instrument; ?>" alt="">
 	                        </div>
 							<script>
@@ -62,7 +62,6 @@
 								imagen.setAttribute("class","img-responsive portfolio-item");
 								var auxDiv =document.createElement("div");
 								auxDiv.setAttribute("id", "<?php echo $data->id_instrument; ?>"+1);
-								auxDiv.setAttribute("title", "<?php echo $data->id_instrument; ?>"+" "+1);
 								auxDiv.setAttribute("class","ui-draggable");
 								auxDiv.setAttribute("name","<?php echo $data->id_instrument; ?>"+".png");
 								auxDiv.appendChild(imagen);               	
@@ -94,13 +93,99 @@ th, td {
     text-align: left;    
 }
 </style>
+
+
 <script>
 
+
+function optionsBD(){
+	//deleteBaseData();
+	//saveBD();
+}
+
+
+function deleteBaseData(){
+	$.ajax({ 
+		url: <?php echo "'".CController::createUrl('DeleteBD')."'";?>,
+    });
+	
+	
+}
+
+
+function saveBD(){
+	
+	var table = document.getElementById('tableChannel');
+	var cont=0;
+	for (i=1; trT=table.getElementsByTagName('tr')[i];i++) {
+		cont=i;
+	}	
+	var auxCont=1;
+	while(auxCont<=cont){
+		var trT=table.getElementsByTagName('tr')[auxCont];
+		var idInstrumentTable = trT.id;
+		idInstrumentTable = idInstrumentTable.substring(1,idInstrumentTable.length);
+		var nameTable = trT.getElementsByTagName('td')[1].childNodes[0].nodeValue;
+		var microphoneTable = trT.getElementsByTagName('td')[2].childNodes[0].nodeValue;
+		
+		var element = document.getElementById(idInstrumentTable).style;
+		var positionleftImg = element.left;
+		var positiontopImg = element.top;
+		
+	    var nameJSON = JSON.stringify(nameTable);
+		var microphoneJSON = JSON.stringify(microphoneTable);
+		var positionLeftJSON = JSON.stringify(positionleftImg);
+		var positionTopJSON = JSON.stringify(positiontopImg);
+		
+		$.ajax({ 
+		        data: {"name":nameJSON, "microphone":microphoneJSON,
+						"posLeft":positionLeftJSON,
+						"posTop":positionTopJSON},
+				type: "POST",
+                url: <?php echo "'".CController::createUrl('saveInfoBd')."'";?>,
+        }).done(function( result ) {    	
+				 // $('#stage').text(result);
+		}).error(
+			function(XMLHttpRequest, textStatus, errorThrown){
+				console.log('Error '+XMLHttpRequest+" "+errorThrown);
+        });	
+		auxCont++;
+	}
+
+    
+}
 </script>
-<body>
-  <div>                                
-    <button type="button" class="btn btn-primary" onclick="">Save Input</button> 
-	<button type="button" class="btn btn-primary" onclick="">Get Input</button> 
+
+<script>
+	function getBD(){
+		
+		$.ajax({ 
+		    url: <?php echo "'".CController::createUrl('GetInfoBd')."'";?>,
+        }).done(function( result ) {    	
+				//$('#stage').text(result);
+				restore(result); 
+		}).error(
+			function(XMLHttpRequest, textStatus, errorThrown){
+				console.log(XMLHttpRequest+" "+" "+errorThrown);
+        });	
+		
+	} 
+	function restore(result){
+		restoreInformationBD(result);
+	}
+	
+</script>
+
+
+
+
+
+
+
+  <div>   
+    <button type="button" class="btn btn-primary" onclick="deleteBaseData()">Delete Register</button><br><br> 
+    <button type="button" class="btn btn-primary" onclick="saveBD()">Save Input</button> 
+	<button type="button" class="btn btn-primary" onclick="getBD()">Get Input</button> 
   </div> 
 
 <h2 style="font-weight:30px;">Input List</h2>
@@ -114,8 +199,4 @@ th, td {
   
 </table>
 </div>
-</body>
 
-	
-
-   				 
