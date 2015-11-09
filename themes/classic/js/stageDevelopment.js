@@ -10,23 +10,23 @@
 	var numTube=1; nameTube="tube";	stateTube=false; 
 	var numTrumpet =1; nameTrumpet="trumpet"; stateTrumpet=false;
 	var numTrambone =1; nameTrambone="trambone"; stateTrambone=false;
-	var numSaxophone =1; nameSaxophone="saxophone";
-	var numClarnet =1; nameClarnet="clarnet";
-	var numBanjo =1; nameBanjo="banjo";
-	var numGuitar =1; nameGuitar="guitar";
-	var numLyre =1; nameLyre="lyre";
-	var numPiano =1; namePiano="piano";
-	var numViolin =1; nameViolin="violin";
-	var numBass_Drum =1; nameBass_Drum="bass_drum";
-	var numCymbals =1; nameCymbals="cymbals";
-	var numRattle =1; nameRattle="rattle";
-	var numTriangle =1; nameTriangle="triangle";
-	var numXylophone =1; nameXylophone="xylophone";
-	var numCastanets =1; nameCastanets="castanets";
-	var numDrums =1; nameDrums="drums";
-	var numKettledrums =1; nameKettledrums="kettledrums";
-	var numPercussion =1; namePercussion="percussion";
-	var numSide_Drum =1; nameSide_Drum="side_drum";
+	var numSaxophone =1; nameSaxophone="saxophone"; stateSaxophone=false;
+	var numClarnet =1; nameClarnet="clarnet"; stateClarnet=false;
+	var numBanjo =1; nameBanjo="banjo"; stateBanjo=false;
+	var numGuitar =1; nameGuitar="guitar"; stateGuitar=false;
+	var numLyre =1; nameLyre="lyre"; stateLyre=false;
+	var numPiano =1; namePiano="piano"; statePiano=false;
+	var numViolin =1; nameViolin="violin"; stateViolin=false;
+	var numBass_Drum =1; nameBass_Drum="bass_drum"; stateBass_drum=false;
+	var numCymbals =1; nameCymbals="cymbals"; stateCymbals=false;
+	var numRattle =1; nameRattle="rattle"; stateRattle=false;
+	var numTriangle =1; nameTriangle="triangle"; stateTriangle=false;
+	var numXylophone =1; nameXylophone="xylophone"; stateXylophone=false;
+	var numCastanets =1; nameCastanets="castanets"; stateCastanets=false;
+	var numDrums =1; nameDrums="drums"; stateDrums=false;
+	var numKettledrums =1; nameKettledrums="kettledrums"; stateKettledrums=false;
+	var numPercussion =1; namePercussion="percussion"; statePercussion=false;
+	var numSide_Drum =1; nameSide_Drum="side_drum"; stateSide_drum=false;
 
 //----------------------Stage Plot jquery-----------------------------------	
 	
@@ -44,7 +44,6 @@ $(document).ready(function(){
 		tolerance: "fit",
 		accept: '*',
 		drop: function( event, ui ) {
-			$(this).html("Lo soltaste!!!");
 
 
 	    var idElementoMarco = ui.draggable.attr("id");	
@@ -455,6 +454,10 @@ $(document).ready(function(){
 		return str;	
 	}
 
+
+
+
+
 	function restoreInformationBD(result){
 		
 		stringBD = result;
@@ -470,6 +473,7 @@ $(document).ready(function(){
 		    var strMicro=getValues();
 		    var strPosLeft=getValues();
 		    var strPosTop=getValues();		
+			console.log(strName+" "+strMicro+" "+strPosLeft+" "+strPosTop);
 			getNameAndCreate(strName, strMicro, strPosLeft, strPosTop,0)
 			elements.push(strName);
 		}
@@ -531,24 +535,7 @@ $(document).ready(function(){
 					createElementsDraggable(nameTrumpet,numTrumpet);
 				}
 				break;	
-			case "trambone":
-				if(control==0){
-					if(!stateTrambone){
-						deleteElementIntoDiv(numTrambone,nameTrambone);
-						createElement(numTrambone,nameTrambone,strPosLeft,strPosTop);
-						createTableInput(numTrambone,nameTrambone,strMicro);
-						createOptionsSelect(numTrambone,nameTrambone++);
-						stateTrambone=true;
-					}else{
-						createElement(numTrambone,nameTrambone,strPosLeft,strPosTop);		
-						createTableInput(numTrambone,nameTrambone,strMicro);
-						createOptionsSelect(numTrambone,nameTrambone++);
-					}	
-										
-				}else{
-					createElementsDraggable(numTrambone,nameTrambone);
-				}
-				break;	
+				
 			}
 	}
 	

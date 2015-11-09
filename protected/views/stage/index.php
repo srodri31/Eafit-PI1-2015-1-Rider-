@@ -1,16 +1,88 @@
- <!-- Portfolio Item Heading -->
-        <div class="row">
-            <div id="stage"  class="col-lg-12">
-                <h1 class="page-header">Stage 
-                    <small>Plot</small>
-                </h1>
-            </div>
-        </div>
-        <!-- /.row -->
 
-        <!-- Portfolio Item Row -->
+<script>
+	function optionsBD(){
+		//deleteBaseData();
+		//saveBD();
+	}
+
+
+	function deleteBaseData(){
+		$.ajax({ 
+			url: <?php echo "'".CController::createUrl('DeleteBD')."'";?>,
+	 });
+	}
+
+
+function saveBD(){
+	var table = document.getElementById('tableChannel');
+	var cont=0;
+	for (i=1; trT=table.getElementsByTagName('tr')[i];i++) {
+		cont=i;
+	}	
+	var auxCont=1;
+	while(auxCont<=cont){
+		var trT=table.getElementsByTagName('tr')[auxCont];
+		var idInstrumentTable = trT.id;
+		idInstrumentTable = idInstrumentTable.substring(1,idInstrumentTable.length);
+		var nameTable = trT.getElementsByTagName('td')[1].childNodes[0].nodeValue;
+		var microphoneTable = trT.getElementsByTagName('td')[2].childNodes[0].nodeValue;
+		
+		var element = document.getElementById(idInstrumentTable).style;
+		var positionleftImg = element.left;
+		var positiontopImg = element.top;
+		
+	    var nameJSON = JSON.stringify(nameTable);
+		var microphoneJSON = JSON.stringify(microphoneTable);
+		var positionLeftJSON = JSON.stringify(positionleftImg);
+		var positionTopJSON = JSON.stringify(positiontopImg);
+		
+		$.ajax({ 
+		        data: {"name":nameJSON, "microphone":microphoneJSON,
+						"posLeft":positionLeftJSON,
+						"posTop":positionTopJSON},
+				type: "POST",
+                url: <?php echo "'".CController::createUrl('SaveInfoBd')."'";?>,
+        }).done(function( result ) {    	
+				 // $('#stage').text(result);
+		}).error(
+			function(XMLHttpRequest, textStatus, errorThrown){
+				console.log('Error '+XMLHttpRequest+" "+errorThrown);
+        });	
+		auxCont++;
+	}    
+}
+</script>
+
+<script>
+	function getBD(){
+		
+		$.ajax({ 
+		    url: <?php echo "'".CController::createUrl('GetInfoBd')."'";?>,
+        }).done(function( result ) {    	
+				//$('#stage').text(result);
+				restore(result); 
+		}).error(
+			function(XMLHttpRequest, textStatus, errorThrown){
+				console.log(XMLHttpRequest+" "+" "+errorThrown);
+        });	
+		
+	} 
+	function restore(result){
+		restoreInformationBD(result);
+	}
+	
+</script>
+		<br><br>
+		<div class="row">
+			<div class="col-lg-6">				
+		            <h3><div class="btn btn-custom">Step 2:</div> Make your Stage Plot</h3>                                       
+		    </div>
+		    <div class="col-lg-6"></div>
+		</div>
+		<br><br>
+        <!-- Row -->
         <div class="row">
-        	 <div id="description" class="col-md-3">        	 		                         
+        	 <div id="description" class="col-lg-3">        	 		                         
 			    <form method="post" action="">                                
 			        <div class="form-group">                                    
 			            <input value="" type="text"   class="form-control" name="txt_name" id="txt_name" placeholder="Rider's Name">
@@ -26,28 +98,16 @@
 			        </div>
 					<br>
 					<div>                                    
-			           <button type="button" class="btn btn-primary" onclick="save()">Save</button> 
+			           <button type="button" class="btn btn-custom" onclick="save()">Save Instrument Information</button> 
 			        </div>  
 				</form>  
 			 </div>
 
             <div class="col-md-6">
-                <div id="soltable" class="ui-droppable">
-                </div>                                       
+                <div id="soltable" class="ui-droppable"></div>                                       
             </div>
 
-            <div class="col-md-3">
-                
-            <legend> Categorias desde bd</legend>
-                <?php foreach ($categories as $data):?>
-	                <div id="<?php echo $data->name_classification; ?>" class="col-sm-4 col-xs-6">
-	                    <a href="#">
-	                        <?php echo $data->name_classification; ?>
-	                    </a>
-	                </div>
-                <?php endforeach ?><br><br><br>
-
-
+            <div class="col-md-3">     
             <legend> Instrumentos </legend>
             
                 <?php foreach ($model as $data):?>
@@ -79,124 +139,21 @@
 
             </div>
         </div>
-
-
-<!--  Tabla -->		
-
-<style>
-table, th, td {
-    border: 1px solid black;
-    border-collapse: collapse;
-}
-th, td {
-    padding: 5px;
-    text-align: left;    
-}
-</style>
-
-
-<script>
-
-
-function optionsBD(){
-	//deleteBaseData();
-	//saveBD();
-}
-
-
-function deleteBaseData(){
-	$.ajax({ 
-		url: <?php echo "'".CController::createUrl('DeleteBD')."'";?>,
-    });
-	
-	
-}
-
-
-function saveBD(){
-	
-	var table = document.getElementById('tableChannel');
-	var cont=0;
-	for (i=1; trT=table.getElementsByTagName('tr')[i];i++) {
-		cont=i;
-	}	
-	var auxCont=1;
-	while(auxCont<=cont){
-		var trT=table.getElementsByTagName('tr')[auxCont];
-		var idInstrumentTable = trT.id;
-		idInstrumentTable = idInstrumentTable.substring(1,idInstrumentTable.length);
-		var nameTable = trT.getElementsByTagName('td')[1].childNodes[0].nodeValue;
-		var microphoneTable = trT.getElementsByTagName('td')[2].childNodes[0].nodeValue;
-		
-		var element = document.getElementById(idInstrumentTable).style;
-		var positionleftImg = element.left;
-		var positiontopImg = element.top;
-		
-	    var nameJSON = JSON.stringify(nameTable);
-		var microphoneJSON = JSON.stringify(microphoneTable);
-		var positionLeftJSON = JSON.stringify(positionleftImg);
-		var positionTopJSON = JSON.stringify(positiontopImg);
-		
-		$.ajax({ 
-		        data: {"name":nameJSON, "microphone":microphoneJSON,
-						"posLeft":positionLeftJSON,
-						"posTop":positionTopJSON},
-				type: "POST",
-                url: <?php echo "'".CController::createUrl('saveInfoBd')."'";?>,
-        }).done(function( result ) {    	
-				 // $('#stage').text(result);
-		}).error(
-			function(XMLHttpRequest, textStatus, errorThrown){
-				console.log('Error '+XMLHttpRequest+" "+errorThrown);
-        });	
-		auxCont++;
-	}
-
-    
-}
-</script>
-
-<script>
-	function getBD(){
-		
-		$.ajax({ 
-		    url: <?php echo "'".CController::createUrl('GetInfoBd')."'";?>,
-        }).done(function( result ) {    	
-				//$('#stage').text(result);
-				restore(result); 
-		}).error(
-			function(XMLHttpRequest, textStatus, errorThrown){
-				console.log(XMLHttpRequest+" "+" "+errorThrown);
-        });	
-		
-	} 
-	function restore(result){
-		restoreInformationBD(result);
-	}
-	
-</script>
-
-
-
-
-
-
-
-  <div>   
-    <button type="button" class="btn btn-primary" onclick="deleteBaseData()">Delete Register</button><br><br> 
-    <button type="button" class="btn btn-primary" onclick="saveBD()">Save Input</button> 
-	<button type="button" class="btn btn-primary" onclick="getBD()">Get Input</button> 
-  </div> 
+<br>
+<div>   
+	<button type="button" class="btn btn-custom" onclick="deleteBaseData()">Delete Register</button><br><br> 
+	<button type="button" class="btn btn-custom" onclick="saveBD()">Save Input</button> 
+	<button type="button" class="btn btn-custom" onclick="getBD()">Get Input</button> 
+</div> 
 
 <h2 style="font-weight:30px;">Input List</h2>
-<div style="overflow:scroll; height:200px;">
-<table style="width:100%" id="tableChannel">
-  <tr>
-    <th>Number</th>
-    <th>Input</th>
-	<th>Microphone</th>
-  </tr>
-  
-</table>
+<div>
+	<table  class="table table-striped table-bordered table-condensed" style="width:100%; text-align:center;" id="tableChannel">
+		  <tr>
+		    <th>Number</th>
+		    <th>Input</th>
+			<th>Microphone</th>
+		  </tr>  
+	</table>
 </div>
 

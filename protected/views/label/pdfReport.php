@@ -98,15 +98,13 @@
 <!--CHANNEL LIST-->
 <div class="col-lg-4"><h3>Channel List</h3></div>
 
- <table  class="items" width="100%" style="font-size: 9pt; border-collapse: collapse; width:100%; " cellpadding="5">
+ <table  class="items table" width="100%" style="font-size: 9pt; border-collapse: collapse; width:100%; " cellpadding="5">
  <thead>
  <tr>
- <td width="16.666666666667%">Chnnel</td>
- <td width="16.666666666667%">Instrument</td>
- <td width="16.666666666667%">MIC/DI</td>
- <td width="16.666666666667%">Notes</td>
- <td width="16.666666666667%">...</td>
- <td width="16.666666666667%">...</td>
+ <td width="25%">Chnnel</td>
+ <td width="25%">Instrument</td>
+ <td width="25%">MIC/DI</td>
+ <td width="25%">Notes</td>
  </tr>
  </thead>
  <tbody>
@@ -135,24 +133,12 @@
  </table>
  <b>Total Resultados:</b> <?php echo $contador; ?>
 
-
- <!--CAMERIN-->
- <div class="col"><h3>Camerin</h3></div>
-
- <!--CATHERING-->
- <div class="col"><h3>Cathering</h3></div>
-
- <!--LIGHTS-->
- <div class="col"><h3>Lights</h3></div>
-
- <!--TRANSPORTATION-->
- <div class="col"><h3>Transport</h3></div>
-
- <!--SHOW-->
- <div class="col"><h3>Show</h3></div>
-
-
-
+<?php foreach($model as $row): ?>
+	<div class="col">
+		<h3><?php echo $row->name_label?></h3>
+		<?php echo $row->desc_label; ?>
+	</div>
+ <?php endforeach; ?> 
  </body>
  </html>
 <?php endif; ?>

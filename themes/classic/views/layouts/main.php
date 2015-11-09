@@ -16,56 +16,139 @@
     <link href="<?php echo Yii::app()->theme->baseUrl; ?>/css/bootstrap.css" rel="stylesheet">
 
     <!-- Custom CSS -->
-    <link href="<?php echo Yii::app()->theme->baseUrl; ?>/css/portfolio-item.css" rel="stylesheet">
+    <link href="<?php echo Yii::app()->theme->baseUrl; ?>/css/grayscale.css" rel="stylesheet">
 
     <!-- jquereiu-->
     <link type="text/css" href="<?php echo Yii::app()->theme->baseUrl; ?>/js/jquery-ui-1.8.16.custom.css" rel="Stylesheet" id="linkestilo">   
     <script type="text/javascript" src="<?php echo Yii::app()->theme->baseUrl; ?>/js/jquery-1.6.2.min.js"></script>
     <script type="text/javascript" src="<?php echo Yii::app()->theme->baseUrl; ?>/js/jquery-ui-1.8.16.custom.min.js"></script>
-    <script  src="<?php echo Yii::app()->theme->baseUrl; ?>/js/importante.js" type="text/javascript"></script>
+    
    
     <link type="text/css" href="<?php echo Yii::app()->theme->baseUrl; ?>/js/jquery-ui-1.8.16.custom.css" rel="Stylesheet" id="linkestilo">   
     <script type="text/javascript" src="<?php echo Yii::app()->theme->baseUrl; ?>/js/jquery-1.6.2.min.js"></script>
     <script type="text/javascript" src="<?php echo Yii::app()->theme->baseUrl; ?>/js/jquery-ui-1.8.16.custom.min.js"></script>
 
-    <style type="text/css">
-    #soltable{
-        padding: 10px;
-        background-color: whitesmoke;
-        border: 1px solid #ccc;
-        width: 500px;
-        height: 400px;
-        text-align: center;
-    }
-    .sueltaaqui{
-        text-shadow: #0f0 1px 1px 5px;
-        background-color: #fc9;
-        font-weight: bold;
-    }
-
+    <script  src="<?php echo Yii::app()->theme->baseUrl; ?>/js/stageDevelopment.js" type="text/javascript"></script>
     
-    </style>    
+    <!--Style to Forms-->
+    <link type="text/css" href="<?php echo Yii::app()->theme->baseUrl; ?>/css/formsStyle.css" rel="Stylesheet" id="linkestilo">   
+
+    <!--Style to Tabs-->
+    <link type="text/css" href="<?php echo Yii::app()->theme->baseUrl; ?>/css/tabs/tabs.css" rel="Stylesheet" id="linkestilo">   
+
+    <!-- Main Tabs -->   
+   <link href="<?php echo Yii::app()->theme->baseUrl; ?>/css/bootstrap.min(1).css" rel="stylesheet" id="bootstrap-css">
+   <script src="<?php echo Yii::app()->theme->baseUrl; ?>/js/bootstrap.min(2).js"></script>
 
     <script type="text/javascript">
-        $(document).ready(function() {
-  $(".tabs a").html5jTabs();
-});
-    </script>
+            $(document).ready(function () {
+
+                $(".ini").click(function(event){
+                    ChangeUrl('Page1', '');
+                    location.reload();
+                    document.getElementById("ini").addClass("current");
+                    $(this).parent.addClass("current");
+                 });
+
+                $("#stage").click(function () {
+                    ChangeUrl('Page2', 'stage');
+                    location.reload();
+                    document.getElementById("stage").addClass("current");
+                    $(this).parent.addClass("current");
+                });
+
+                $("#label").click(function () {
+                    ChangeUrl('Page3', 'label');
+                    location.reload();
+                    document.getElementById("label").addClass("current");
+                    $(this).parent.addClass("current");
+                });
+
+                 $(".tabs-menu a").click(function(event) {
+                    event.preventDefault();
+                   // $(this).parent().addClass("current");
+                   // $(this).parent().siblings().removeClass("current");
+                    var tab = $(this).attr("href");
+                    $(".tab-content").not(tab).css("display", "none");
+                    $(tab).fadeIn();
+                });  
+
+            });   
+
+            function ChangeUrl(page, url) {
+                if (typeof (history.pushState) != "undefined") {
+                    var obj = { Page: page, Url: url };
+                    history.pushState(obj, obj.Page, obj.Url);
+                } else {
+                    alert("Browser does not support HTML5.");
+                }
+            }
+                           
+    </script>  
+
+    <style type="text/css">
+        #soltable{
+            padding: 10px;
+            background-color: whitesmoke;
+            border: 1px solid #ccc;
+            width: 500px;
+            height: 400px;
+            text-align: center;
+        }
+        .sueltaaqui{
+            text-shadow: #0f0 1px 1px 5px;
+            background-color: #fc9;
+            font-weight: bold;
+        }    
+    </style>  
+
 </head>
-<body style="cursor: auto;"> 
+    <body style="cursor: auto;">
+        <h1></h1>
+        <div class="wizard">
+            <div id="tabs-container">
+             <div  class="wizard-inner">            
+                <div class="connecting-line"></div>
+                <ul class="tabs-menu" role="tablist">
+                    <li role="presentation" class="current" id="ini" value="Page1">
+                        <a href="#step1" data-toggle="tab" aria-controls="step1" role="tab" title="Step 1">
+                            <span class="round-tab">
+                                <i class="glyphicon glyphicon-user"></i>
+                            </span>
+                        </a>
+                    </li>
 
-    <div class="container">        
-      <?php echo $content; ?>
-    </div>   
+                    <li role="presentation" class="" id="stage" value="Page2"> 
+                        <a href="#step2" data-toggle="tab" aria-controls="step1" role="tab" title="Step 1">
+                            <span class="round-tab">
+                                <i class="glyphicon glyphicon-picture"></i>
+                            </span>                           
+                        </a>
+                        <?php echo CHtml::link('1: Stage Plot',array('/stage/index')); ?>
+                    </li>
 
-<!-- Footer -->
-        <footer class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <p>Copyright &copy; <?php echo CHtml::encode($this->pageTitle); ?> 2015</p>
-                 </div>
-            </div>           
-        </footer> 
-<!-- Footer --> 
+
+                    <li role="presentation" class=""  id="label" value="Page3">
+                        <a href="#step3" data-toggle="tab" aria-controls="step1" role="tab" title="Step 1" class="Page1">
+                            <span class="round-tab">
+                                <i class="glyphicon glyphicon-text-background"></i>
+                            </span>
+                        </a>
+                        <?php echo CHtml::link('2: Rider Content',array('/label/index')); ?>
+                    </li>
+
+                    <li role="presentation" class="">
+                        <a href="#complete" data-toggle="tab" aria-controls="step1" role="tab" title="Step 1">
+                            <span class="round-tab">
+                                <i class="glyphicon glyphicon-ok"></i>
+                            </span>                            
+                        </a>
+                        <?php echo CHtml::link('3: Export Rider',array('/label/index')); ?>
+                    </li>
+                </ul>
+             </div>
+                <?php echo $content;?>      
+            </div>
+       </div>
     </body>
 </html>

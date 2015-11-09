@@ -1,169 +1,212 @@
 <link href="<?php echo Yii::app()->theme->baseUrl; ?>/css/modal.css" rel="stylesheet">
+<link href="<?php echo Yii::app()->theme->baseUrl; ?>/css/formStyle.css" rel="stylesheet">
 <script  src="<?php echo Yii::app()->theme->baseUrl; ?>/js/indexLabel.js" type="text/javascript"></script>
-
-
-  <div class="row">
-      <div class="col-lg-12">
-          <h1 class="page-header">Rider's 
-              <small>labels</small>
-          </h1>
-      </div>
+<br><br>
+<div class="row">
+  <div class="col-lg-8">  
+    <h3><div class="btn btn-custom">Step 3:</div> Select addional Info to Your Rider</h3>                                 
   </div>
+  <div class="col-lg-4"></div>
+</div>
+<br><br>
 
-<br>
 <div id="generate" class="row">
-<div class="form-group">
-<legend>Select the labels you think are necessary for your rider.</legend><br>
-  <b>Some of them are already selected because they are required in any technical rider.</b>
-</div>
-<div class="form-group">
-  <input id="staff" type="checkbox" name="staff">
-  Staff: Describe the muscicians integrated in the band and also the support group
-</div>
-<div class="form-group">
-  <input id="PA" type="checkbox" name="PA" disabled checked>
-  PA system: amplification system that will be used during the presentation
-</div>
-<div class="form-group">
-  <input type="checkbox" name="input" disabled checked>
-  Input list: show the instruments placed in the stage plot and their specific information (this is generated automatically)
-</div>
-<div class="form-group">
-  <input id="scenary" type="checkbox" name="scenary">
-  Scenary: specify the dimensions and some other things
-</div>
-<div class="form-group">
-  <input id="backline" type="checkbox" name="backline" disabled checked>
-  Backline: specify those elements the event should have in order to the band playing there
-</div>
-<div class="form-group">
-  <input id="camarin" type="checkbox" name="camarin">
-  Camarin
-</div>
-<div class="form-group">
-  <input id="catering" type="checkbox" name="catering">
-  Catering
-</div>
-  <br>
-  <div>
-    <button class="btn btn-primary btn-large" id="Cform" onclick="CreateForm()">Generate</button>
-  </div>
-  <br><br>
-</div>
-
-<div id="form" class="row">
- <?php $form=$this->beginWidget('CActiveForm', array(
-    'id'=>'label-form',
-    'enableClientValidation'=>true,
-    'clientOptions'=>array(
-    'validateOnSubmit'=>true,
-    ),
-  )); ?>
-<div class="form-group">
-  <div id="divStaff" class="hidden">
-    <div class="form-group">
-        <a href="#openModalStaff">
-            <img src="<?php echo Yii::app()->theme->baseUrl; ?>/images/help.png">
-        </a>
-      </div>
-      <?php $model->name1="Staff";?>
-      <?php echo $form->textField($model,"name1",array("class"=>"form-control","readonly"=>"true"));?>
-      <br>
-      <?php echo $form->textArea($model,"desc1",array("class"=>"form-control", "rows"=>7));?>
-      <br>
-    <br>
-  </div>
-</div>
-
-<div class="form-group">
-  
-  <div id="divPA" class="hidden">
+  <div class="col-lg-6">
       <div class="form-group">
-        <a href="#openModalPA">
-            <img src="<?php echo Yii::app()->theme->baseUrl; ?>/images/help.png">
-        </a>
+      <legend>Select the labels you think are necessary for your rider.</legend><br>
+        <b>Some of them are already selected because they are required in any technical rider.</b>
       </div>
-      <?php $model->name2="PA";?>
-      <?php echo $form->textField($model,"name2",array("class"=>"form-control","readonly"=>"true"));?>
-      <br>
-      <?php echo $form->textArea($model,"desc2",array("class"=>"form-control", "rows"=>7));?>
-      <?php echo $form->error($model,"desc2");?>
-      <br>
-      
-    <br>
-  </div>
-</div>
 
-<div class="form-group">
-  <div id="divScenary" class="hidden">
-    <div class="form-group">
-        <a href="#openModalScenary">
-            <img src="<?php echo Yii::app()->theme->baseUrl; ?>/images/help.png">
-        </a>
+      <div class="row">
+        <div class="col-lg-4">
+          <div class="headLabel"><input id="staff" type="checkbox" name="staff"> Staff</div>    
+          <div class="form-group">      
+             Describe the musicians integrated in the band and also the support group
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="headLabel"><input id="PA" type="checkbox" name="PA" disabled checked> PA System</div>
+          <div class="form-group">
+             Amplification system that will be used during the presentation
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="headLabel"><input type="checkbox" name="input" disabled checked> Input List</div>
+          <div class="form-group">      
+             Show the instruments placed in the stage plot and their specific information (this is generated automatically)
+          </div>
+        </div>
       </div>
-      <?php $model->name3="Scenary";?>
-      <?php echo $form->textField($model,"name3",array("class"=>"form-control","readonly"=>"true"));?>
-      <br>
-      <?php echo $form->textArea($model,"desc3",array("class"=>"form-control", "rows"=>7));?>
-      <br>
-    <br>
-  </div>
-</div>
 
-<div class="form-group">
-  <div id="divBackline" class="hidden">
-    <div class="form-group">
-        <a href="#openModalBackline">
-            <img src="<?php echo Yii::app()->theme->baseUrl; ?>/images/help.png">
-        </a>
+
+      <div class="row">
+        <div class="col-lg-4">
+          <div class="headLabel"><input id="scenary" type="checkbox" name="scenary"> Scenary</div>
+          <div class="form-group">      
+             Specify the dimensions and some other things
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="headLabel"><input id="backline" type="checkbox" name="backline" disabled checked> Backline</div>
+          <div class="form-group">      
+            Specify those elements the event should have in order to the band playing there
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="headLabel"><input id="camarin" type="checkbox" name="camarin"> Camarin</div>
+          <div class="form-group">
+            ....
+          </div>
+        </div>
       </div>
-      <?php $model->name4="Backline";?>
-      <?php echo $form->textField($model,"name4",array("class"=>"form-control","readonly"=>"true"));?>
-      <br>
-      <?php echo $form->textArea($model,"desc4",array("class"=>"form-control", "rows"=>7));?>
-      <br>
-    <br>
-  </div>
-</div>
 
-<div class="form-group">
-  <div id="divCamarin" class="hidden">
-    <div class="form-group">
-        <a href="#openModalCamarin">
-            <img src="<?php echo Yii::app()->theme->baseUrl; ?>/images/help.png">
-        </a>
+
+      <div class="row">
+        <div class="col-lg-4">
+          <div class="headLabel"><input id="catering" type="checkbox" name="catering"> Catering</div>
+          <div class="form-group" >      
+            ....
+          </div>
+        </div>
       </div>
-      <?php $model->name5="Camarin";?>
-      <?php echo $form->textField($model,"name5",array("class"=>"form-control","readonly"=>"true"));?>
-      <br>
-      <?php echo $form->textArea($model,"desc5",array("class"=>"form-control", "rows"=>7));?>
-      <br>
-    <br>
-  </div>
-</div>
 
-<div class="form-group">
-  <div id="divCatering" class="hidden">
-    <div class="form-group">
-        <a href="#openModalCatering">
-            <img src="<?php echo Yii::app()->theme->baseUrl; ?>/images/help.png">
-        </a>
+      <div class="form-group">
+        <button class="btn btn-custom btn-large" id="Cform" onclick="CreateForm()">Generate</button>
       </div>
-      <?php $model->name6="Catering";?>
-      <?php echo $form->textField($model,"name6",array("class"=>"form-control","readonly"=>"true"));?>
-      <br>
-      <?php echo $form->textArea($model,"desc6",array("class"=>"form-control", "rows"=>7));?>
-      <br>
-    <br>
   </div>
+
+
+<div class="col-lg-6">
+           <?php $form=$this->beginWidget('CActiveForm', array(
+              'method'=>'POST',
+              'id'=>'label-form',
+              'enableClientValidation'=>true,
+              'clientOptions'=>array(
+              'validateOnSubmit'=>true,
+              ),
+            )); ?>
+          <div class="form-group">
+            <div id="divStaff" class="hidden">
+              <div class="form-group">
+                  <a href="#openModalStaff">
+                      <span class="round-tab">
+                          <i class="glyphicon glyphicon-comment"></i>
+                      </span>
+                  </a>
+                </div>
+                <?php $model->name1="Staff";?>
+                <?php echo $form->textField($model,"name1",array("class"=>"form-control","readonly"=>"true"));?>
+                <br>
+                <?php echo $form->textArea($model,"desc1",array("class"=>"form-control", "rows"=>7));?>
+                <br>
+              <br>
+            </div>
+          </div>
+
+          <div class="form-group">
+            
+            <div id="divPA" class="hidden">
+                <div class="form-group">
+                  <a href="#openModalPA">
+                      <span class="round-tab">
+                          <i class="glyphicon glyphicon-comment"></i>
+                      </span>
+                  </a>
+                </div>
+                <?php $model->name2="PA";?>
+                <?php echo $form->textField($model,"name2",array("class"=>"form-control","readonly"=>"true"));?>
+                <br>
+                <?php echo $form->textArea($model,"desc2",array("class"=>"form-control", "rows"=>7));?>
+                <?php echo $form->error($model,"desc2");?>
+                <br>
+                
+              <br>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <div id="divScenary" class="hidden">
+              <div class="form-group">
+                  <a href="#openModalScenary">
+                       <span class="round-tab">
+                          <i class="glyphicon glyphicon-comment"></i>
+                      </span>
+                  </a>
+                </div>
+                <?php $model->name3="Scenary";?>
+                <?php echo $form->textField($model,"name3",array("class"=>"form-control","readonly"=>"true"));?>
+                <br>
+                <?php echo $form->textArea($model,"desc3",array("class"=>"form-control", "rows"=>7));?>
+                <br>
+              <br>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <div id="divBackline" class="hidden">
+              <div class="form-group">
+                  <a href="#openModalBackline">
+                      <span class="round-tab">
+                          <i class="glyphicon glyphicon-comment"></i>
+                      </span>
+                  </a>
+                </div>
+                <?php $model->name4="Backline";?>
+                <?php echo $form->textField($model,"name4",array("class"=>"form-control","readonly"=>"true"));?>
+                <br>
+                <?php echo $form->textArea($model,"desc4",array("class"=>"form-control", "rows"=>7));?>
+                <br>
+              <br>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <div id="divCamarin" class="hidden">
+              <div class="form-group">
+                  <a href="#openModalCamarin">
+                       <span class="round-tab">
+                          <i class="glyphicon glyphicon-comment"></i>
+                      </span>
+                  </a>
+                </div>
+                <?php $model->name5="Camarin";?>
+                <?php echo $form->textField($model,"name5",array("class"=>"form-control","readonly"=>"true"));?>
+                <br>
+                <?php echo $form->textArea($model,"desc5",array("class"=>"form-control", "rows"=>7));?>
+                <br>
+              <br>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <div id="divCatering" class="hidden">
+              <div class="form-group">
+                  <a href="#openModalCatering">
+                       <span class="round-tab">
+                          <i class="glyphicon glyphicon-comment"></i>
+                      </span>
+                  </a>
+                </div>
+                <?php $model->name6="Catering";?>
+                <?php echo $form->textField($model,"name6",array("class"=>"form-control","readonly"=>"true"));?>
+                <br>
+                <?php echo $form->textArea($model,"desc6",array("class"=>"form-control", "rows"=>7));?>
+                <br>
+              <br>
+            </div>
+          </div>
+
+          <?php echo $form->textField($model,"idRider",array("class"=>"form-control", "value"=>1));?>           
+
+          <div id="divSubmit" class="hidden">
+            <?php echo CHtml::submitButton('Save', array("class"=>"btn btn-primary btn-large")); ?>
+          </div>
+
+          <?php $this->endWidget(); ?>
+      </div>
 </div>
 
-  <div id="divSubmit" class="hidden">
-    <?php echo CHtml::submitButton('Save', array("class"=>"btn btn-primary btn-large")); ?>
-  </dic>
 
-<?php $this->endWidget(); ?>
-</div>
 
 <div class="modalDialog" id="openModalPA">
         <div>
@@ -174,6 +217,7 @@
           <p>Speakers: Depending on the space of the place (preferred option: JBL/RCF).</p>
         </div>
 </div>
+
 
 <div class="modalDialog" id="openModalStaff">
         <div>
@@ -231,7 +275,7 @@
           <a title="Close" class="close" href="#close">X</a>
           <h2>Camarin</h2>
           <p>
-            A place for at least 12 people, a door with key and security, ideal if it has mirrors, tables and chairs, also access to a
+             A place for at least 12 people, a door with key and security, ideal if it has mirrors, tables and chairs, also access to a
              bathroom.
           </p>
         </div>

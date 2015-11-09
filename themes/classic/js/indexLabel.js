@@ -60,10 +60,5 @@ $(document).ready(function() {
           div.parentNode.removeChild(div);
         }
 
-        $("#divSubmit").removeClass("hidden");
-
-        div = document.getElementById("generate");
-        div.parentNode.removeChild(div);
-
-        bool = true;
+        $("#divSubmit").removeClass("hidden");       
    }
