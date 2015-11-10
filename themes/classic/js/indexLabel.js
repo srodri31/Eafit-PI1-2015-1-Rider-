@@ -23,26 +23,38 @@ $(document).ready(function() {
         
         if(staff){
            $("#divStaff").removeClass("hidden");
+        }else{
+           $("#divStaff").addClass("hidden");
         }
 
         if(PA){
           $("#divPA").removeClass("hidden");
+        }else{
+          $("#divPA").addClass("hidden");
         }
 
         if(scenary){
           $("#divScenary").removeClass("hidden");
+        }else{
+          $("#divScenary").addClass("hidden");
         }
 
         if(backline){
           $("#divBackline").removeClass("hidden");
+        }else{
+          $("#divBackline").addClass("hidden");
         }
 
         if(camarin){
           $("#divCamarin").removeClass("hidden");
+        }else{
+          $("#divCamarin").addClass("hidden");
         }
 
         if(catering){
           $("#divCatering").removeClass("hidden");
+        }else{
+          $("#divCatering").addClass("hidden");
         }
 
         $("#divSubmit").removeClass("hidden");       

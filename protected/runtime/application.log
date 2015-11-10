@@ -15801,3 +15801,126 @@ Stack trace:
 REQUEST_URI=/yii/Eafit-PI1-2015-1-Rider-/themes/classic/css/formStyle.css
 HTTP_REFERER=http://localhost/yii/Eafit-PI1-2015-1-Rider-/label
 ---
+2015/11/10 13:26:00 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "themes/classic/css/formStyle.css".' in C:\Users\Santiago\Desktop\UwAmp\www\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\Users\Santiago\Desktop\UwAmp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('themes/classic/...')
+#1 C:\Users\Santiago\Desktop\UwAmp\www\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 C:\Users\Santiago\Desktop\UwAmp\www\yii\Eafit-PI1-2015-1-Rider-\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/Eafit-PI1-2015-1-Rider-/themes/classic/css/formStyle.css
+HTTP_REFERER=http://localhost/yii/Eafit-PI1-2015-1-Rider-/label
+---
+2015/11/10 13:26:50 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'class_instrument' in 'where clause'. The SQL statement executed was: SELECT * FROM `tinstrument` `t` WHERE class_instrument = 1.
+in C:\Users\Santiago\Desktop\UwAmp\www\yii\Eafit-PI1-2015-1-Rider-\protected\controllers\StageController.php (10)
+in C:\Users\Santiago\Desktop\UwAmp\www\yii\Eafit-PI1-2015-1-Rider-\index.php (13)
+2015/11/10 13:26:50 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'class_instrument' in 'where clause'. The SQL statement executed was: SELECT * FROM `tinstrument` `t` WHERE class_instrument = 1' in C:\Users\Santiago\Desktop\UwAmp\www\yii\framework\db\CDbCommand.php:543
+Stack trace:
+#0 C:\Users\Santiago\Desktop\UwAmp\www\yii\framework\db\CDbCommand.php(396): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 C:\Users\Santiago\Desktop\UwAmp\www\yii\framework\db\ar\CActiveRecord.php(1356): CDbCommand->queryAll()
+#2 C:\Users\Santiago\Desktop\UwAmp\www\yii\framework\db\ar\CActiveRecord.php(1475): CActiveRecord->query(Object(CDbCriteria), true)
+#3 C:\Users\Santiago\Desktop\UwAmp\www\yii\Eafit-PI1-2015-1-Rider-\protected\controllers\StageController.php(10): CActiveRecord->findAll(Object(CDbCriteria))
+#4 C:\Users\Santiago\Desktop\UwAmp\www\yii\framework\web\actions\CInlineAction.php(49): StageController->actionIndex()
+#5 C:\Users\Santiago\Desktop\UwAmp\www\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#6 C:\Users\Santiago\Desktop\UwAmp\www\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#7 C:\Users\Santiago\Desktop\UwAmp\www\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 C:\Users\Santiago\Desktop\UwAmp\www\yii\framework\web\CWebApplication.php(282): CController->run('')
+#9 C:\Users\Santiago\Desktop\UwAmp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('stage')
+#10 C:\Users\Santiago\Desktop\UwAmp\www\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#11 C:\Users\Santiago\Desktop\UwAmp\www\yii\Eafit-PI1-2015-1-Rider-\index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/yii/Eafit-PI1-2015-1-Rider-/stage
+---
+2015/11/10 13:29:08 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "themes/classic/css/formStyle.css".' in C:\Users\Santiago\Desktop\UwAmp\www\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\Users\Santiago\Desktop\UwAmp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('themes/classic/...')
+#1 C:\Users\Santiago\Desktop\UwAmp\www\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 C:\Users\Santiago\Desktop\UwAmp\www\yii\Eafit-PI1-2015-1-Rider-\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/Eafit-PI1-2015-1-Rider-/themes/classic/css/formStyle.css
+HTTP_REFERER=http://localhost/yii/Eafit-PI1-2015-1-Rider-/label
+---
+2015/11/10 13:29:20 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "themes/classic/css/formStyle.css".' in C:\Users\Santiago\Desktop\UwAmp\www\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\Users\Santiago\Desktop\UwAmp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('themes/classic/...')
+#1 C:\Users\Santiago\Desktop\UwAmp\www\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 C:\Users\Santiago\Desktop\UwAmp\www\yii\Eafit-PI1-2015-1-Rider-\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/Eafit-PI1-2015-1-Rider-/themes/classic/css/formStyle.css
+HTTP_REFERER=http://localhost/yii/Eafit-PI1-2015-1-Rider-/label
+---
+2015/11/10 13:30:04 [warning] [application] Failed to set unsafe attribute "idRider" of "LabelForm".
+in C:\Users\Santiago\Desktop\UwAmp\www\yii\Eafit-PI1-2015-1-Rider-\protected\controllers\LabelController.php (13)
+in C:\Users\Santiago\Desktop\UwAmp\www\yii\Eafit-PI1-2015-1-Rider-\index.php (13)
+2015/11/10 13:30:04 [error] [exception.CException] exception 'CException' with message 'Property "Label.id_rider" is not defined.' in C:\Users\Santiago\Desktop\UwAmp\www\yii\framework\base\CComponent.php:173
+Stack trace:
+#0 C:\Users\Santiago\Desktop\UwAmp\www\yii\framework\db\ar\CActiveRecord.php(161): CComponent->__set('id_rider', NULL)
+#1 C:\Users\Santiago\Desktop\UwAmp\www\yii\Eafit-PI1-2015-1-Rider-\protected\models\LabelForm.php(75): CActiveRecord->__set('id_rider', NULL)
+#2 C:\Users\Santiago\Desktop\UwAmp\www\yii\Eafit-PI1-2015-1-Rider-\protected\controllers\LabelController.php(14): LabelForm->register()
+#3 C:\Users\Santiago\Desktop\UwAmp\www\yii\framework\web\actions\CInlineAction.php(49): LabelController->actionIndex()
+#4 C:\Users\Santiago\Desktop\UwAmp\www\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#5 C:\Users\Santiago\Desktop\UwAmp\www\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#6 C:\Users\Santiago\Desktop\UwAmp\www\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\Users\Santiago\Desktop\UwAmp\www\yii\framework\web\CWebApplication.php(282): CController->run('')
+#8 C:\Users\Santiago\Desktop\UwAmp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('label')
+#9 C:\Users\Santiago\Desktop\UwAmp\www\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#10 C:\Users\Santiago\Desktop\UwAmp\www\yii\Eafit-PI1-2015-1-Rider-\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/yii/Eafit-PI1-2015-1-Rider-/label
+HTTP_REFERER=http://localhost/yii/Eafit-PI1-2015-1-Rider-/label
+---
+2015/11/10 13:37:22 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "themes/classic/css/formStyle.css".' in C:\Users\Santiago\Desktop\UwAmp\www\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\Users\Santiago\Desktop\UwAmp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('themes/classic/...')
+#1 C:\Users\Santiago\Desktop\UwAmp\www\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 C:\Users\Santiago\Desktop\UwAmp\www\yii\Eafit-PI1-2015-1-Rider-\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/Eafit-PI1-2015-1-Rider-/themes/classic/css/formStyle.css
+HTTP_REFERER=http://localhost/yii/Eafit-PI1-2015-1-Rider-/label
+---
+2015/11/10 14:50:23 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'class_instrument' in 'where clause'. The SQL statement executed was: SELECT * FROM `tinstrument` `t` WHERE class_instrument = 1.
+in C:\Users\Santiago\Desktop\UwAmp\www\yii\Eafit-PI1-2015-1-Rider-\protected\controllers\StageController.php (10)
+in C:\Users\Santiago\Desktop\UwAmp\www\yii\Eafit-PI1-2015-1-Rider-\index.php (13)
+2015/11/10 14:50:24 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'class_instrument' in 'where clause'. The SQL statement executed was: SELECT * FROM `tinstrument` `t` WHERE class_instrument = 1' in C:\Users\Santiago\Desktop\UwAmp\www\yii\framework\db\CDbCommand.php:543
+Stack trace:
+#0 C:\Users\Santiago\Desktop\UwAmp\www\yii\framework\db\CDbCommand.php(396): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 C:\Users\Santiago\Desktop\UwAmp\www\yii\framework\db\ar\CActiveRecord.php(1356): CDbCommand->queryAll()
+#2 C:\Users\Santiago\Desktop\UwAmp\www\yii\framework\db\ar\CActiveRecord.php(1475): CActiveRecord->query(Object(CDbCriteria), true)
+#3 C:\Users\Santiago\Desktop\UwAmp\www\yii\Eafit-PI1-2015-1-Rider-\protected\controllers\StageController.php(10): CActiveRecord->findAll(Object(CDbCriteria))
+#4 C:\Users\Santiago\Desktop\UwAmp\www\yii\framework\web\actions\CInlineAction.php(49): StageController->actionIndex()
+#5 C:\Users\Santiago\Desktop\UwAmp\www\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#6 C:\Users\Santiago\Desktop\UwAmp\www\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#7 C:\Users\Santiago\Desktop\UwAmp\www\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 C:\Users\Santiago\Desktop\UwAmp\www\yii\framework\web\CWebApplication.php(282): CController->run('')
+#9 C:\Users\Santiago\Desktop\UwAmp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('stage')
+#10 C:\Users\Santiago\Desktop\UwAmp\www\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#11 C:\Users\Santiago\Desktop\UwAmp\www\yii\Eafit-PI1-2015-1-Rider-\index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/yii/Eafit-PI1-2015-1-Rider-/stage
+---
+2015/11/10 14:52:27 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "themes/classic/css/formStyle.css".' in C:\Users\Santiago\Desktop\UwAmp\www\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\Users\Santiago\Desktop\UwAmp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('themes/classic/...')
+#1 C:\Users\Santiago\Desktop\UwAmp\www\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 C:\Users\Santiago\Desktop\UwAmp\www\yii\Eafit-PI1-2015-1-Rider-\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/Eafit-PI1-2015-1-Rider-/themes/classic/css/formStyle.css
+HTTP_REFERER=http://localhost/yii/Eafit-PI1-2015-1-Rider-/label
+---
+2015/11/10 14:56:38 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "themes/classic/css/formStyle.css".' in C:\Users\Santiago\Desktop\UwAmp\www\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\Users\Santiago\Desktop\UwAmp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('themes/classic/...')
+#1 C:\Users\Santiago\Desktop\UwAmp\www\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 C:\Users\Santiago\Desktop\UwAmp\www\yii\Eafit-PI1-2015-1-Rider-\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/Eafit-PI1-2015-1-Rider-/themes/classic/css/formStyle.css
+HTTP_REFERER=http://localhost/yii/Eafit-PI1-2015-1-Rider-/label
+---
+2015/11/10 15:05:07 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "themes/classic/css/formStyle.css".' in C:\Users\Santiago\Desktop\UwAmp\www\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\Users\Santiago\Desktop\UwAmp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('themes/classic/...')
+#1 C:\Users\Santiago\Desktop\UwAmp\www\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 C:\Users\Santiago\Desktop\UwAmp\www\yii\Eafit-PI1-2015-1-Rider-\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/Eafit-PI1-2015-1-Rider-/themes/classic/css/formStyle.css
+HTTP_REFERER=http://localhost/yii/Eafit-PI1-2015-1-Rider-/label
+---
