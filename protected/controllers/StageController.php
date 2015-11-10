@@ -4,11 +4,27 @@ class StageController extends Controller
 	
 	public function actionIndex()
 	{
-		//$Criteria = new CDbCriteria();
-		//$Criteria->condition = "id_classification = 1";
-		$model = CActiveRecord::model("Instrument")->findAll();
-		//$categories = CActiveRecord::model("Classification")->findAll();
-		$this -> render("index", array("model"=>$model));	
+		//Wind
+		$wind = new CDbCriteria();
+		$wind->condition = "class_instrument = 1";
+		$modelwind = CActiveRecord::model("Instrument")->findAll($wind);
+
+		//String
+		$string = new CDbCriteria();
+		$string->condition = "class_instrument = 2";
+		$modelstring = CActiveRecord::model("Instrument")->findAll($string);
+
+		//Percussion
+		$percussion = new CDbCriteria();
+		$percussion->condition = "class_instrument = 4";
+		$modelpercussion = CActiveRecord::model("Instrument")->findAll($percussion);
+
+		//Key
+		$key = new CDbCriteria();
+		$key->condition = "class_instrument = 3";
+		$modelkey = CActiveRecord::model("Instrument")->findAll($key);
+		
+		$this -> render("index", array("modelwind"=>$modelwind, "modelstring"=>$modelstring,"modelpercussion"=>$modelpercussion,"modelkey"=>$modelkey));	
 	}
 	
 	public function actionDeleteBD(){
@@ -35,8 +51,7 @@ class StageController extends Controller
 	}
 	
 	
-	public function actionGetInfoBd(){
-		
+	public function actionGetInfoBd(){		
 		$model=new Tstage_information();
 		$idR = 1;
 		$resultData = Tstage_information::model()->findAllBySql('SELECT name,microphone,positionLeft,positionTop FROM tstage_information WHERE idRider=1');

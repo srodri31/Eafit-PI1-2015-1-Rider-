@@ -19,6 +19,7 @@ class LabelForm extends CFormModel
 	public $desc5;
 	public $name6;
 	public $desc6;
+	public $idRider;
 
 	private $_label;
 
@@ -70,13 +71,15 @@ class LabelForm extends CFormModel
 	{
 		$this->_label = new Label;
 		$this->_label->name_label = $this->name1;
-		$this->_label->desc_label = $this->desc1; 
+		$this->_label->desc_label = $this->desc1;
+		$this->_label->id_rider = $this->idRider;
 		if($this->_label->name_label!=null && $this->_label->desc_label!=null){
 			$this->_label->save();
 		}
 		$this->_label = new Label;
 		$this->_label->name_label = $this->name2;
 		$this->_label->desc_label = $this->desc2; 
+		$this->_label->id_rider = $this->idRider;
 		if($this->_label->name_label!=null && $this->_label->desc_label!=null){
 			$this->_label->save();
 		}else{
@@ -85,24 +88,28 @@ class LabelForm extends CFormModel
 		$this->_label = new Label;
 		$this->_label->name_label = $this->name3;
 		$this->_label->desc_label = $this->desc3; 
+		$this->_label->id_rider = $this->idRider;
 		if($this->_label->name_label!=null && $this->_label->desc_label!=null){
 			$this->_label->save();
 		}
 		$this->_label = new Label;
 		$this->_label->name_label = $this->name4;
-		$this->_label->desc_label = $this->desc4; 
+		$this->_label->desc_label = $this->desc4;
+		$this->_label->id_rider = $this->idRider; 
 		if($this->_label->name_label!=null && $this->_label->desc_label!=null){
 			$this->_label->save();
 		}
 		$this->_label = new Label;
 		$this->_label->name_label = $this->name5;
-		$this->_label->desc_label = $this->desc5; 
+		$this->_label->desc_label = $this->desc5; 		 
+		$this->_label->id_rider = $this->idRider;
 		if($this->_label->name_label!=null && $this->_label->desc_label!=null){
 			$this->_label->save();
 		}
 		$this->_label = new Label;
 		$this->_label->name_label = $this->name6;
 		$this->_label->desc_label = $this->desc6; 
+		$this->_label->id_rider = $this->idRider;
 		if($this->_label->name_label!=null && $this->_label->desc_label!=null){
 			$this->_label->save();
 		}

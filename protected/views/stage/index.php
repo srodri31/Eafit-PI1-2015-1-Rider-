@@ -1,16 +1,10 @@
 
 <script>
-	function optionsBD(){
-		//deleteBaseData();
-		//saveBD();
-	}
-
-
-	function deleteBaseData(){
-		$.ajax({ 
-			url: <?php echo "'".CController::createUrl('DeleteBD')."'";?>,
-	 });
-	}
+function deleteBaseData(){
+	$.ajax({ 
+		url: <?php echo "'".CController::createUrl('DeleteBD')."'";?>,
+ 	});
+}
 
 
 function saveBD(){
@@ -54,21 +48,17 @@ function saveBD(){
 </script>
 
 <script>
-	function getBD(){
-		
+	function getBD(){		
 		$.ajax({ 
 		    url: <?php echo "'".CController::createUrl('GetInfoBd')."'";?>,
         }).done(function( result ) {    	
 				//$('#stage').text(result);
-				restore(result); 
+				restoreInformationBD(result); 
 		}).error(
 			function(XMLHttpRequest, textStatus, errorThrown){
-				console.log(XMLHttpRequest+" "+" "+errorThrown);
+			console.log(XMLHttpRequest+" "+" "+errorThrown);
         });	
 		
-	} 
-	function restore(result){
-		restoreInformationBD(result);
 	}
 	
 </script>
@@ -107,12 +97,11 @@ function saveBD(){
                 <div id="soltable" class="ui-droppable"></div>                                       
             </div>
 
-            <div class="col-md-3">     
-            <legend> Instrumentos </legend>
-            
-                <?php foreach ($model as $data):?>
-	                <div id="<?php echo $data->name_instrument; ?>" class="col-sm-3 col-xs-6">
-	                   
+            <div class="col-md-3"> 
+            <input type="button" id="btn-login" class="btn btn-custom btn-lg btn-block" value="Wind"> 
+            <legend>  </legend>                    
+                <?php foreach ($modelwind as $data):?>
+	                <div id="<?php echo $data->name_instrument; ?>" class="col-sm-3 col-xs-6">	                   
 	                        <div id="<?php echo $data->id_instrument; ?>0" >
 	                            <img  class="img-responsive portfolio-item" src="<?php echo Yii::app()->theme->baseUrl; ?>/images/<?php echo $data->name_instrument; ?>" alt="">
 	                        </div>
@@ -132,11 +121,94 @@ function saveBD(){
 								auxDiv.style.top="0px";
 								auxDiv.style.zIndex="0";               
 								div.appendChild(auxDiv); 
-							</script>
-							
+							</script>							
 	                </div>
                 <?php endforeach ?>
+                <legend>  </legend>
 
+
+                <input type="button" id="btn-login" class="btn btn-custom btn-lg btn-block" value="String"> 
+                <legend>  </legend>           
+                <?php foreach ($modelstring as $data):?>
+	                <div id="<?php echo $data->name_instrument; ?>" class="col-sm-3 col-xs-6">	                   
+	                        <div id="<?php echo $data->id_instrument; ?>0" >
+	                            <img  class="img-responsive portfolio-item" src="<?php echo Yii::app()->theme->baseUrl; ?>/images/<?php echo $data->name_instrument; ?>" alt="">
+	                        </div>
+							<script>
+								var imagen = document.createElement("img"); 
+								imagen.setAttribute("src", "<?php echo Yii::app()->theme->baseUrl; ?>/images/<?php echo $data->name_instrument; ?>");
+								imagen.setAttribute("class","img-responsive portfolio-item");
+								var auxDiv =document.createElement("div");
+								auxDiv.setAttribute("id", "<?php echo $data->id_instrument; ?>"+1);
+								auxDiv.setAttribute("class","ui-draggable");
+								auxDiv.setAttribute("name","<?php echo $data->id_instrument; ?>"+".png");
+								auxDiv.appendChild(imagen);               	
+								$(auxDiv).draggable();             
+								var div = document.getElementById("<?php echo $data->id_instrument; ?>"+".png");
+								auxDiv.style.position="absolute";               
+								auxDiv.style.left="15px";              
+								auxDiv.style.top="0px";
+								auxDiv.style.zIndex="0";               
+								div.appendChild(auxDiv); 
+							</script>							
+	                </div>
+                <?php endforeach ?>
+                <legend>  </legend>
+
+                <input type="button" id="btn-login" class="btn btn-custom btn-lg btn-block" value="Percussion">   
+                <legend>  </legend>        
+                <?php foreach ($modelpercussion as $data):?>
+	                <div id="<?php echo $data->name_instrument; ?>" class="col-sm-3 col-xs-6">	                   
+	                        <div id="<?php echo $data->id_instrument; ?>0" >
+	                            <img  class="img-responsive portfolio-item" src="<?php echo Yii::app()->theme->baseUrl; ?>/images/<?php echo $data->name_instrument; ?>" alt="">
+	                        </div>
+							<script>
+								var imagen = document.createElement("img"); 
+								imagen.setAttribute("src", "<?php echo Yii::app()->theme->baseUrl; ?>/images/<?php echo $data->name_instrument; ?>");
+								imagen.setAttribute("class","img-responsive portfolio-item");
+								var auxDiv =document.createElement("div");
+								auxDiv.setAttribute("id", "<?php echo $data->id_instrument; ?>"+1);
+								auxDiv.setAttribute("class","ui-draggable");
+								auxDiv.setAttribute("name","<?php echo $data->id_instrument; ?>"+".png");
+								auxDiv.appendChild(imagen);               	
+								$(auxDiv).draggable();             
+								var div = document.getElementById("<?php echo $data->id_instrument; ?>"+".png");
+								auxDiv.style.position="absolute";               
+								auxDiv.style.left="15px";              
+								auxDiv.style.top="0px";
+								auxDiv.style.zIndex="0";               
+								div.appendChild(auxDiv); 
+							</script>							
+	                </div>
+                <?php endforeach ?>
+                <legend>  </legend>
+                  
+                <input type="button" id="btn-login" class="btn btn-custom btn-lg btn-block" value="Keys-Keypads">    
+                <legend>  </legend> 
+                <?php foreach ($modelkey as $data):?>
+	                <div id="<?php echo $data->name_instrument; ?>" class="col-sm-3 col-xs-6">	                   
+	                        <div id="<?php echo $data->id_instrument; ?>0" >
+	                            <img  class="img-responsive portfolio-item" src="<?php echo Yii::app()->theme->baseUrl; ?>/images/<?php echo $data->name_instrument; ?>" alt="">
+	                        </div>
+							<script>
+								var imagen = document.createElement("img"); 
+								imagen.setAttribute("src", "<?php echo Yii::app()->theme->baseUrl; ?>/images/<?php echo $data->name_instrument; ?>");
+								imagen.setAttribute("class","img-responsive portfolio-item");
+								var auxDiv =document.createElement("div");
+								auxDiv.setAttribute("id", "<?php echo $data->id_instrument; ?>"+1);
+								auxDiv.setAttribute("class","ui-draggable");
+								auxDiv.setAttribute("name","<?php echo $data->id_instrument; ?>"+".png");
+								auxDiv.appendChild(imagen);               	
+								$(auxDiv).draggable();             
+								var div = document.getElementById("<?php echo $data->id_instrument; ?>"+".png");
+								auxDiv.style.position="absolute";               
+								auxDiv.style.left="15px";              
+								auxDiv.style.top="0px";
+								auxDiv.style.zIndex="0";               
+								div.appendChild(auxDiv); 
+							</script>							
+	                </div>
+                <?php endforeach ?>
             </div>
         </div>
 <br>

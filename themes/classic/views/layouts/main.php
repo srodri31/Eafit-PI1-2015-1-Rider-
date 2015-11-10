@@ -36,14 +36,10 @@
     <!--Style to Tabs-->
     <link type="text/css" href="<?php echo Yii::app()->theme->baseUrl; ?>/css/tabs/tabs.css" rel="Stylesheet" id="linkestilo">   
 
-    <!-- Main Tabs -->   
-   <link href="<?php echo Yii::app()->theme->baseUrl; ?>/css/bootstrap.min(1).css" rel="stylesheet" id="bootstrap-css">
-   <script src="<?php echo Yii::app()->theme->baseUrl; ?>/js/bootstrap.min(2).js"></script>
-
     <script type="text/javascript">
             $(document).ready(function () {
 
-                $(".ini").click(function(event){
+                $("#ini").click(function(event){
                     ChangeUrl('Page1', '');
                     location.reload();
                     document.getElementById("ini").addClass("current");
@@ -59,6 +55,13 @@
 
                 $("#label").click(function () {
                     ChangeUrl('Page3', 'label');
+                    location.reload();
+                    document.getElementById("label").addClass("current");
+                    $(this).parent.addClass("current");
+                });
+
+                $("#export").click(function () {
+                    ChangeUrl('Page4', 'pdf');
                     location.reload();
                     document.getElementById("label").addClass("current");
                     $(this).parent.addClass("current");
@@ -119,7 +122,7 @@
                     </li>
 
                     <li role="presentation" class="" id="stage" value="Page2"> 
-                        <a href="#step2" data-toggle="tab" aria-controls="step1" role="tab" title="Step 1">
+                        <a href="#step2" data-toggle="tab" aria-controls="step2" role="tab" title="Step 1">
                             <span class="round-tab">
                                 <i class="glyphicon glyphicon-picture"></i>
                             </span>                           
@@ -129,7 +132,7 @@
 
 
                     <li role="presentation" class=""  id="label" value="Page3">
-                        <a href="#step3" data-toggle="tab" aria-controls="step1" role="tab" title="Step 1" class="Page1">
+                        <a href="#step3" data-toggle="tab" aria-controls="step3" role="tab" title="Step 1" class="Page1">
                             <span class="round-tab">
                                 <i class="glyphicon glyphicon-text-background"></i>
                             </span>
@@ -137,8 +140,8 @@
                         <?php echo CHtml::link('2: Rider Content',array('/label/index')); ?>
                     </li>
 
-                    <li role="presentation" class="">
-                        <a href="#complete" data-toggle="tab" aria-controls="step1" role="tab" title="Step 1">
+                    <li role="presentation" class="" id="export" value="Page4">
+                        <a href="#complete" data-toggle="tab" aria-controls="step4" role="tab" title="Step 1">
                             <span class="round-tab">
                                 <i class="glyphicon glyphicon-ok"></i>
                             </span>                            

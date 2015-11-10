@@ -1,4 +1,4 @@
- var staff;
+    var staff;
     var PA;
     var scenary;
     var backline;
@@ -8,10 +8,7 @@
     var bool = false;
 
 $(document).ready(function() {
-    if(bool){
-      var div = document.getElementById("generate");
-      div.parentNode.removeChild(div);
-    }
+   
 })
 
    function CreateForm(){
@@ -26,9 +23,6 @@ $(document).ready(function() {
         
         if(staff){
            $("#divStaff").removeClass("hidden");
-        }else{
-          div = document.getElementById("divStaff");
-          div.parentNode.removeChild(div);
         }
 
         if(PA){
@@ -37,9 +31,6 @@ $(document).ready(function() {
 
         if(scenary){
           $("#divScenary").removeClass("hidden");
-        }else{
-          div = document.getElementById("divScenary");
-          div.parentNode.removeChild(div);
         }
 
         if(backline){
@@ -48,16 +39,10 @@ $(document).ready(function() {
 
         if(camarin){
           $("#divCamarin").removeClass("hidden");
-        }else{
-          div = document.getElementById("divCamarin");
-          div.parentNode.removeChild(div);
         }
 
         if(catering){
           $("#divCatering").removeClass("hidden");
-        }else{
-          div = document.getElementById("divCatering");
-          div.parentNode.removeChild(div);
         }
 
         $("#divSubmit").removeClass("hidden");       

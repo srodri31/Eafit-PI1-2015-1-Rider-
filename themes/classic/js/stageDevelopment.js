@@ -44,15 +44,12 @@ $(document).ready(function(){
 		tolerance: "fit",
 		accept: '*',
 		drop: function( event, ui ) {
-
-
 	    var idElementoMarco = ui.draggable.attr("id");	
 		locateInstrument(idElementoMarco);
 		
 
 	},
-		out: function( event, ui ) {
-			
+		out: function( event, ui ) {			
 			var currentDraggable = $(ui.draggable).attr('id');
 			deleteDragElement(currentDraggable);
             var nombreDraggable = $(ui.draggable).attr('name');
@@ -459,7 +456,7 @@ $(document).ready(function(){
 
 
 	function restoreInformationBD(result){
-		
+		alert(result);
 		stringBD = result;
 		var cont=0;
 		for(i=0; i<=result.length;i++){

@@ -1,6 +1,28 @@
 <?php $contador=count($model); if ($model !== null):?>
 <html>
 <head>
+
+<script>
+
+	window.onload = function() {		
+	 	$.ajax({ 
+		    url: <?php echo "'".CController::createUrl('GetInfoBd')."'";?>,
+        }).done(function( result ) {   
+				restoreInformationBD(result); 
+		}).error(
+			function(XMLHttpRequest, textStatus, errorThrown){
+					console.log(XMLHttpRequest+" "+" "+errorThrown);
+	        });		
+		} 
+
+		var sol = document.getElementById("soltable");
+		sol.html("hOLAAAAAAAAA");
+		console.log(sol);
+		console.log("hOLAAAAAAAAA");
+	}
+	
+	
+</script>
 <style>
 	 body {font-family: sans-serif;
 	 	font-size: 10pt;
@@ -45,6 +67,11 @@
 <!-- Bootstrap Core CSS -->
     <link href="<?php echo Yii::app()->theme->baseUrl; ?>/css/bootstrap.min.css" rel="stylesheet">
     <link href="<?php echo Yii::app()->theme->baseUrl; ?>/css/bootstrap.css" rel="stylesheet">
+
+<!--To restore the stage Info-->
+    <link href="<?php echo Yii::app()->theme->baseUrl; ?>/js/stageDevelopment.css" rel="stylesheet">
+
+
 </head>
 <body>
  
@@ -90,6 +117,9 @@
 <!--STAGE PLOT-->
 <div class="col-lg-4"><h3>Stage Plot</h3></div>
 <div class="stagePlot">	
+	<div class="col-md-6">
+	    <div id="soltable" class="ui-droppable"></div>                                      
+	</div>
 </div>
 <div style="text-align: right"><b>Fecha: </b><?php echo date("d/m/Y"); ?> </div>
 <br><br><br><br><br><br>
@@ -109,19 +139,19 @@
  </thead>
  <tbody>
  <!-- ITEMS -->
- <?php foreach($model as $row): ?>
+ <?php foreach($channels as $row): ?>
 	 <tr>
 		 <td align="center">
-		 	<?php echo $row->id_label; ?>
+		 	:D
 		 </td>
 		 <td align="center">
-		 	<?php echo $row->name_label?>
+		 	<?php echo $row->name?>
 		 </td>
 		 <td align="center">
-		 	<?php echo $row->desc_label; ?>
+		 	<?php echo $row->microphone; ?>
 		 </td>
 		 <td align="center">
-			 <?php echo $row->content_label; ?>
+			 :D
 		 </td>
 	 </tr>
  <?php endforeach; ?>
