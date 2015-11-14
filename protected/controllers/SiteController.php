@@ -23,9 +23,244 @@ class SiteController extends Controller
 	 */
 	public function actionIndex()
 	{
-		// renders the view file 'protected/views/site/index.php'
-		// using the default layout 'protected/views/layouts/main.php'
-		$this->render('index');
+		$model=new LoginForm;
+		// if it is ajax validation request
+		if(isset($_POST['ajax']) && $_POST['ajax']==='login-form')
+		{
+			echo CActiveForm::validate($model);
+			Yii::app()->end();
+		}
+
+		// collect user input data
+		if(isset($_POST['LoginForm']))
+		{
+			$model->attributes=$_POST['LoginForm'];
+			// validate user input and redirect to the previous page if valid
+			if($model->validate() && $model->login())
+				$this->redirect(array('rider'));
+		}
+		// display the login form
+		$this->render('index',array('model'=>$model));
+	}
+
+	public function actionSignup()
+	{
+		$model=new signupForm;
+        $user=new LoginForm;
+
+		if(isset($_POST['signupForm']))
+		{
+			$model->attributes=$_POST['signupForm'];
+			// validate user input and redirect to the previous page if valid
+			if($model->signup()){
+				$user->username=$model->name;
+				$user->password=$model->password;
+				if($user->login())
+					$this->redirect(array('rider'));
+			}
+		}
+
+		$this->render('signup',array('model'=>$model));
+	}
+
+	public function actionRider()
+	{
+
+		$band = new CDbCriteria();
+		$user = Yii::app()->user->name;
+		
+		$resultData = new Band();
+		$resultData = Band::model()->findAllBySql('SELECT id_band FROM tband WHERE name_band = "'.$user.'"');
+		//echo $resultData;
+		$band->condition = "id_band = ".$resultData[0]->id_band;
+		
+		$model = CActiveRecord::model("Rider")->findAll($band);
+		$this->render('rider', array('model'=>$model, 'user'=>$user));
+	}
+
+	public function actionLabel(){
+		$model=new LabelForm;
+
+		if(isset($_POST['LabelForm']))
+		{
+			$model->attributes=$_POST['LabelForm'];			
+			if($model->register()){	}
+			$this->redirect(array("generarpdf"));				
+		}
+
+		$this->render('label',array('model'=>$model));
+	}
+
+	public function actionGenerarPdf() {
+		
+		//Channel List : select * from labels where id_rider && name_label = channel
+		//pa : select * from labels where id_rider && name_label = pa
+		//nameLabel : select * from labels where id_rider && name_label = nameLabel
+		//The next block is fROM stageController and its just to a test
+		//Wind
+		$wind = new CDbCriteria();
+		$wind->condition = "class_instrument = 1";
+		$modelwind = CActiveRecord::model("Instrument")->findAll($wind);
+
+		//String
+		$string = new CDbCriteria();
+		$string->condition = "class_instrument = 2";
+		$modelstring = CActiveRecord::model("Instrument")->findAll($string);
+
+		//Percussion
+		$percussion = new CDbCriteria();
+		$percussion->condition = "class_instrument = 4";
+		$modelpercussion = CActiveRecord::model("Instrument")->findAll($percussion);
+
+		//Key
+		$key = new CDbCriteria();
+		$key->condition = "class_instrument = 3";
+		$modelkey = CActiveRecord::model("Instrument")->findAll($key);
+
+		//end of block
+
+
+		 $Criteria = new CDbCriteria();
+		 $Criteria->condition = "id_rider = 1";
+
+		 //Stage Info And Ubication
+		 $model=new Tstage_information();
+		 $stage = Tstage_information::model()->findAllBySql('SELECT name,microphone,positionLeft,positionTop FROM tstage_information WHERE idRider=1');		 
+		 //$stageInfo = implode("", $stage);
+		 $stageInfo = "tube~Default~-286px~86px¬tube~Default~-314px~129px¬trumpet~Default~-409px~77px¬tube~Default~-14px~129px¬tube~Default~-286px~86px¬trumpet~Default~-409px~77px¬";
+		 echo "<script>";	
+		 echo "restoreInformationBD($stageInfo)";
+		 echo "</script>";
+
+		 $channelList = CActiveRecord::model("Tstage_information")->findAll();
+		 $model = CActiveRecord::model("Label")->findAll(); 
+
+		
+
+		 $this->renderPartial('pdfReport', array('model'=>$model, 'channels'=>$channelList, 'stage'=>$stage, "modelwind"=>$modelwind, "modelstring"=>$modelstring,"modelpercussion"=>$modelpercussion,"modelkey"=>$modelkey));
+	 }
+
+
+	 public function actionGenerarYa(){
+	 		//Channel List : select * from labels where id_rider && name_label = channel
+		//pa : select * from labels where id_rider && name_label = pa
+		//nameLabel : select * from labels where id_rider && name_label = nameLabel
+		//The next block is fROM stageController and its just to a test
+		//Wind
+		$wind = new CDbCriteria();
+		$wind->condition = "class_instrument = 1";
+		$modelwind = CActiveRecord::model("Instrument")->findAll($wind);
+
+		//String
+		$string = new CDbCriteria();
+		$string->condition = "class_instrument = 2";
+		$modelstring = CActiveRecord::model("Instrument")->findAll($string);
+
+		//Percussion
+		$percussion = new CDbCriteria();
+		$percussion->condition = "class_instrument = 4";
+		$modelpercussion = CActiveRecord::model("Instrument")->findAll($percussion);
+
+		//Key
+		$key = new CDbCriteria();
+		$key->condition = "class_instrument = 3";
+		$modelkey = CActiveRecord::model("Instrument")->findAll($key);
+
+		//end of block
+
+
+		 $Criteria = new CDbCriteria();
+		 $Criteria->condition = "id_rider = 1";
+
+		 //Stage Info And Ubication
+		 $model=new Tstage_information();
+		 $stage = Tstage_information::model()->findAllBySql('SELECT name,microphone,positionLeft,positionTop FROM tstage_information WHERE idRider=1');		 
+		 //$stageInfo = implode("", $stage);
+		 $stageInfo = "tube~Default~-286px~86px¬tube~Default~-314px~129px¬trumpet~Default~-409px~77px¬tube~Default~-14px~129px¬tube~Default~-286px~86px¬trumpet~Default~-409px~77px¬";
+		 
+		 $channelList = CActiveRecord::model("Tstage_information")->findAll();
+		 $model = CActiveRecord::model("Label")->findAll(); 
+
+
+
+
+	 	 $mPDF1 = Yii::app()->ePdf->mpdf('utf-8','A4','','',15,15,35,25,9,9,'P'); 
+		 $mPDF1->useOnlyCoreFonts = true;
+		 $mPDF1->SetTitle("Technical Rider");
+		 $mPDF1->SetAuthor("Name of Band");
+		 $mPDF1->showWatermarkText = true;
+		 $mPDF1->watermark_font = 'DejaVuSansCondensed';
+		 $mPDF1->watermarkTextAlpha = 0.1;
+		 $mPDF1->SetDisplayMode('fullpage');
+		 $mPDF1->WriteHTML($this->renderPartial('pdfReport', array('model'=>$model, 'channels'=>$channelList, 'stage'=>$stage, "modelwind"=>$modelwind, "modelstring"=>$modelstring,"modelpercussion"=>$modelpercussion,"modelkey"=>$modelkey), true)); 
+		 $mPDF1->Output('Label'.date('YmdHis'),'I'); 
+	 }
+
+
+
+	public function actionStage()
+	{
+		//Wind
+		$wind = new CDbCriteria();
+		$wind->condition = "class_instrument = 1";
+		$modelwind = CActiveRecord::model("Instrument")->findAll($wind);
+
+		//String
+		$string = new CDbCriteria();
+		$string->condition = "class_instrument = 2";
+		$modelstring = CActiveRecord::model("Instrument")->findAll($string);
+
+		//Percussion
+		$percussion = new CDbCriteria();
+		$percussion->condition = "class_instrument = 4";
+		$modelpercussion = CActiveRecord::model("Instrument")->findAll($percussion);
+
+		//Key
+		$key = new CDbCriteria();
+		$key->condition = "class_instrument = 3";
+		$modelkey = CActiveRecord::model("Instrument")->findAll($key);
+		
+		$this -> render("stage", array("modelwind"=>$modelwind, "modelstring"=>$modelstring,"modelpercussion"=>$modelpercussion,"modelkey"=>$modelkey));	
+	}
+	
+	public function actionDeleteBD(){
+		Tstage_information::model()->deleteAll('idRider = :id',array('id' => '1'));
+		
+	}
+
+	public function actionSaveInfoBd(){
+	  $model= new Tstage_information();
+      
+	  if(isset($_POST['name'])){
+		$name = json_decode($_POST['name']);
+		$micro = json_decode($_POST['microphone']);
+		$posLeftImg = json_decode($_POST['posLeft']);
+		$posTopImg = json_decode($_POST['posTop']);
+	
+		$model->name= $name;
+		$model->microphone= $micro;
+		$model->positionLeft= $posLeftImg;
+		$model->positionTop= $posTopImg;
+		$model->idRider= 1;
+		$model->save();
+	  }
+	}
+	
+	
+	public function actionGetInfoBd(){		
+		$model=new Tstage_information();
+		$idR = 1;
+		$resultData = Tstage_information::model()->findAllBySql('SELECT name,microphone,positionLeft,positionTop FROM tstage_information WHERE idRider=1');
+		foreach($resultData as $data){
+			echo $data->name;
+			echo "~";
+			echo $data->microphone;
+			echo "~";
+			echo $data->positionLeft;
+			echo "~";
+			echo $data->positionTop;
+			echo "¬";
+	    }	
 	}
 
 	/**

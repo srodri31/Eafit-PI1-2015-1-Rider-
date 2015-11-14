@@ -4,7 +4,7 @@
 <br><br>
 <div class="row">
   <div class="col-lg-8">  
-    <h3><div class="btn btn-custom">Step 3:</div> Select addional Info to Your Rider</h3>                                 
+    <h3><div class="btn btn-custom">Step 2:</div> Select addional Info to Your Rider</h3>                                 
   </div>
   <div class="col-lg-4"></div>
 </div>

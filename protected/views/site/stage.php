@@ -65,7 +65,7 @@ function saveBD(){
 		<br><br>
 		<div class="row">
 			<div class="col-lg-6">				
-		            <h3><div class="btn btn-custom">Step 2:</div> Make your Stage Plot</h3>                                       
+		            <h3><div class="btn btn-custom">Step 1:</div> Make your Stage Plot</h3>                                       
 		    </div>
 		    <div class="col-lg-6"></div>
 		</div>
@@ -88,7 +88,7 @@ function saveBD(){
 			        </div>
 					<br>
 					<div>                                    
-			           <button type="button" class="btn btn-custom" onclick="save()">Save Instrument Information</button> 
+			           <button type="button" class="btn btn-custom" onclick="save()">Save Instrument Info</button> 
 			        </div>  
 				</form>  
 			 </div>

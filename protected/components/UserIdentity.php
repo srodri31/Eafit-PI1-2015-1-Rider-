@@ -20,12 +20,21 @@ class UserIdentity extends CUserIdentity
 		$user = Band::model()->findByAttributes(array('name_band'=>$this->username)); //create model in the models folder
 		if ($user===null) { // No user found!
 			$this->errorCode=self::ERROR_USERNAME_INVALID;
-		} else if ($user->code_band !== $this->password ) { // Invalid password!
+		} else if ($user->password_band !== $this->password ) { // Invalid password!
 			$this->errorCode=self::ERROR_PASSWORD_INVALID;
 		} else { // Okay!
 			$this->errorCode=self::ERROR_NONE;
 		}
 		return !$this->errorCode;
+	}
+
+	public function signup()
+	{
+		$user = new Band;
+		$user->name_band = $this->username;
+		$user->code_band = $this->password; 
+		$user->save();
+		///return !$this->errorCode;
 	}
 
 }

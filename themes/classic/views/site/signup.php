@@ -12,10 +12,10 @@
         <div class="row">
             <div class="col-xs-12">
                 <div class="form-wrap">
-                    <h1>Login</h1>
+                    <h1>Signup</h1>
                     <div class="form">
                     <?php $form=$this->beginWidget('CActiveForm', array(
-                        'id'=>'login-form',
+                        'id'=>'signup-form',
                         'enableClientValidation'=>true,
                         'clientOptions'=>array(
                             'validateOnSubmit'=>true,
@@ -23,18 +23,34 @@
                     )); ?>
 
                         <div class="form-group">
-                            <?php echo $form->textField($model,'username',array("class"=>"form-control","placeholder"=>"user")); ?>
-                            <?php echo $form->error($model,'username'); ?>
+                            <?php echo $form->textField($model,'name',array("class"=>"form-control","placeholder"=>"band's name")); ?>
+                            <?php echo $form->error($model,'name'); ?>
                         </div>
 
                         <div class="form-group">
                             <?php echo $form->passwordField($model,'password',array("class"=>"form-control","placeholder"=>"password")); ?>
                             <?php echo $form->error($model,'password'); ?>
                         </div>
-                        <input type="submit" id="btn-login" class="btn btn-custom btn-lg btn-block" value="Login">
+
+                        <div class="form-group">
+                            <?php echo $form->textField($model,'page',array("class"=>"form-control","placeholder"=>"web page")); ?>
+                        </div>
+
+                        <div class="form-group">
+                            <?php echo $form->textField($model,'email',array("class"=>"form-control","placeholder"=>"email")); ?>
+                        </div>            
+
+                        <div class="form-group">
+                            <?php echo $form->textField($model,'genre',array("class"=>"form-control","placeholder"=>"genre")); ?>
+                        </div>   
+
+                        <div class="form-group">
+                            <?php echo $form->textArea($model,"desc",array("class"=>"form-control", "placeholder"=>"band's description", "rows"=>5));?>         
+                        </div>
+
+                        <input type="submit" id="btn-login" class="btn btn-custom btn-lg btn-block" value="Sign up">
                     <?php $this->endWidget(); ?>
                     </div><!-- form -->
-                    <?php echo CHtml::link('Signup', array('signup')); ?>
                     
                     <!--<a href="javascript:;" class="forget" data-toggle="modal" data-target=".forget-modal">Forgot your password?</a>-->
                     <hr>

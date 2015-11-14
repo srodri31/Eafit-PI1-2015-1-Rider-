@@ -24,11 +24,11 @@
   }
 
   .modalDialog > div {
-    width: 400px;
+    width: 450px;
     position: relative;
     margin: 10% auto;
-    padding: 5px 20px 13px 20px;
-    border-radius: 10px;
+    padding: 20px 20px 13px 20px;
+    border-radius: 6px;
     background: #fff;
     background: -moz-linear-gradient(#fff, #999);
     background: -webkit-linear-gradient(#fff, #999);

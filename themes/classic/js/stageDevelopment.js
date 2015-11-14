@@ -17,7 +17,7 @@
 	var numLyre =1; nameLyre="lyre"; stateLyre=false;
 	var numPiano =1; namePiano="piano"; statePiano=false;
 	var numViolin =1; nameViolin="violin"; stateViolin=false;
-	var numBass_Drum =1; nameBass_Drum="bass_drum"; stateBass_drum=false;
+	var numBass_Drum =1; nameBass_Drum="bass_drum"; stateBass_Drum=false;
 	var numCymbals =1; nameCymbals="cymbals"; stateCymbals=false;
 	var numRattle =1; nameRattle="rattle"; stateRattle=false;
 	var numTriangle =1; nameTriangle="triangle"; stateTriangle=false;
@@ -26,8 +26,11 @@
 	var numDrums =1; nameDrums="drums"; stateDrums=false;
 	var numKettledrums =1; nameKettledrums="kettledrums"; stateKettledrums=false;
 	var numPercussion =1; namePercussion="percussion"; statePercussion=false;
-	var numSide_Drum =1; nameSide_Drum="side_drum"; stateSide_drum=false;
+	var numSide_Drum =1; nameSide_Drum="side_drum"; stateSide_Drum=false;
 
+	
+	
+	
 //----------------------Stage Plot jquery-----------------------------------	
 	
 $(document).ready(function(){
@@ -44,12 +47,16 @@ $(document).ready(function(){
 		tolerance: "fit",
 		accept: '*',
 		drop: function( event, ui ) {
+			$(this).html("Lo soltaste!!!");
+
+
 	    var idElementoMarco = ui.draggable.attr("id");	
 		locateInstrument(idElementoMarco);
 		
 
 	},
-		out: function( event, ui ) {			
+		out: function( event, ui ) {
+			
 			var currentDraggable = $(ui.draggable).attr('id');
 			deleteDragElement(currentDraggable);
             var nombreDraggable = $(ui.draggable).attr('name');
@@ -451,12 +458,8 @@ $(document).ready(function(){
 		return str;	
 	}
 
-
-
-
-
 	function restoreInformationBD(result){
-		alert(result);
+		
 		stringBD = result;
 		var cont=0;
 		for(i=0; i<=result.length;i++){
@@ -470,7 +473,6 @@ $(document).ready(function(){
 		    var strMicro=getValues();
 		    var strPosLeft=getValues();
 		    var strPosTop=getValues();		
-			console.log(strName+" "+strMicro+" "+strPosLeft+" "+strPosTop);
 			getNameAndCreate(strName, strMicro, strPosLeft, strPosTop,0)
 			elements.push(strName);
 		}
@@ -532,6 +534,331 @@ $(document).ready(function(){
 					createElementsDraggable(nameTrumpet,numTrumpet);
 				}
 				break;	
+			case "trambone":
+				if(control==0){
+					if(!stateTrambone){
+						deleteElementIntoDiv(nameTrambone,numTrambone);
+						createElement(nameTrambone,numTrambone,strPosLeft,strPosTop);
+						createTableInput(nameTrambone,numTrambone,strMicro);
+						createOptionsSelect(nameTrambone,numTrambone++);
+						stateTrambone=true;
+					}else{
+						createElement(nameTrambone,numTrambone,strPosLeft,strPosTop);		
+						createTableInput(nameTrambone,numTrambone,strMicro);
+						createOptionsSelect(nameTrambone,numTrambone++);
+					}	
+										
+				}else{
+					createElementsDraggable(nameTrambone,numTrambone);
+				}
+				break;	
+			case "saxophone":
+				if(control==0){
+					if(!stateSaxophone){
+						deleteElementIntoDiv(nameSaxophone,numSaxophone);
+						createElement(nameSaxophone,numSaxophone,strPosLeft,strPosTop);
+						createTableInput(nameSaxophone,numSaxophone,strMicro);
+						createOptionsSelect(nameSaxophone,numSaxophone++);
+						stateSaxophone=true;
+					}else{
+						createElement(nameSaxophone,numSaxophone,strPosLeft,strPosTop);		
+						createTableInput(nameSaxophone,numSaxophone,strMicro);
+						createOptionsSelect(nameSaxophone,numSaxophone++);
+					}	
+										
+				}else{
+					createElementsDraggable(nameSaxophone,numSaxophone);
+				}
+				break;	
+			case "clarnet":
+				if(control==0){
+					if(!stateClarnet){
+						deleteElementIntoDiv(nameClarnet,numClarnet);
+						createElement(nameClarnet,numClarnet,strPosLeft,strPosTop);
+						createTableInput(nameClarnet,numClarnet,strMicro);
+						createOptionsSelect(nameClarnet,numClarnet++);
+						stateClarnet=true;
+					}else{
+						createElement(nameClarnet,numClarnet,strPosLeft,strPosTop);		
+						createTableInput(nameClarnet,numClarnet,strMicro);
+						createOptionsSelect(nameClarnet,numClarnet++);
+					}	
+										
+				}else{
+					createElementsDraggable(nameClarnet,numClarnet);
+				}
+				break;	
+			case "banjo":
+				if(control==0){
+					if(!stateBanjo){
+						deleteElementIntoDiv(nameBanjo,numBanjo);
+						createElement(nameBanjo,numBanjo,strPosLeft,strPosTop);
+						createTableInput(nameBanjo,numBanjo,strMicro);
+						createOptionsSelect(nameBanjo,numBanjo++);
+						stateBanjo=true;
+					}else{
+						createElement(nameBanjo,numBanjo,strPosLeft,strPosTop);		
+						createTableInput(nameBanjo,numBanjo,strMicro);
+						createOptionsSelect(nameBanjo,numBanjo++);
+					}	
+										
+				}else{
+					createElementsDraggable(nameBanjo,numBanjo);
+				}
+				break;	
+			
+			case "guitar":
+				if(control==0){
+					if(!stateGuitar){
+						deleteElementIntoDiv(nameGuitar,numGuitar);
+						createElement(nameGuitar,numGuitar,strPosLeft,strPosTop);
+						createTableInput(nameGuitar,numGuitar,strMicro);
+						createOptionsSelect(nameGuitar,numGuitar++);
+						stateGuitar=true;
+					}else{
+						createElement(nameGuitar,numGuitar,strPosLeft,strPosTop);		
+						createTableInput(nameGuitar,numGuitar,strMicro);
+						createOptionsSelect(nameGuitar,numGuitar++);
+					}	
+										
+				}else{
+					createElementsDraggable(nameGuitar,numGuitar);
+				}
+				break;	
+			case "lyre":
+				if(control==0){
+					if(!stateLyre){
+						deleteElementIntoDiv(nameLyre,numLyre);
+						createElement(nameLyre,numLyre,strPosLeft,strPosTop);
+						createTableInput(nameLyre,numLyre,strMicro);
+						createOptionsSelect(nameLyre,numLyre++);
+						stateLyre=true;
+					}else{
+						createElement(nameLyre,numLyre,strPosLeft,strPosTop);		
+						createTableInput(nameLyre,numLyre,strMicro);
+						createOptionsSelect(nameLyre,numLyre++);
+					}	
+										
+				}else{
+					createElementsDraggable(nameLyre,numLyre);
+				}
+				break;	
+			case "piano":
+				if(control==0){
+					if(!statePiano){
+						deleteElementIntoDiv(namePiano,numPiano);
+						createElement(namePiano,numPiano,strPosLeft,strPosTop);
+						createTableInput(namePiano,numPiano,strMicro);
+						createOptionsSelect(namePiano,numPiano++);
+						statePiano=true;
+					}else{
+						createElement(namePiano,numPiano,strPosLeft,strPosTop);		
+						createTableInput(namePiano,numPiano,strMicro);
+						createOptionsSelect(namePiano,numPiano++);
+					}	
+										
+				}else{
+					createElementsDraggable(namePiano,numPiano);
+				}
+				break;	
+			case "violin":
+				if(control==0){
+					if(!stateViolin){
+						deleteElementIntoDiv(nameViolin,numViolin);
+						createElement(nameViolin,numViolin,strPosLeft,strPosTop);
+						createTableInput(nameViolin,numViolin,strMicro);
+						createOptionsSelect(nameViolin,numViolin++);
+						stateViolin=true;
+					}else{
+						createElement(nameViolin,numViolin,strPosLeft,strPosTop);		
+						createTableInput(nameViolin,numViolin,strMicro);
+						createOptionsSelect(nameViolin,numViolin++);
+					}	
+										
+				}else{
+					createElementsDraggable(nameViolin,numViolin);
+				}
+				break;	
+			case "bass_drum":
+				if(control==0){
+					if(!stateBass_Drum){
+						deleteElementIntoDiv(nameBass_Drum,numBass_Drum);
+						createElement(nameBass_Drum,numBass_Drum,strPosLeft,strPosTop);
+						createTableInput(nameBass_Drum,numBass_Drum,strMicro);
+						createOptionsSelect(nameBass_Drum,numBass_Drum++);
+						stateBass_Drum=true;
+					}else{
+						createElement(nameBass_Drum,numBass_Drum,strPosLeft,strPosTop);		
+						createTableInput(nameBass_Drum,numBass_Drum,strMicro);
+						createOptionsSelect(nameBass_Drum,numBass_Drum++);
+					}	
+										
+				}else{
+					createElementsDraggable(nameBass_Drum,numBass_Drum);
+				}
+				break;
+			case "cymbals":
+				if(control==0){
+					if(!stateCymbals){
+						deleteElementIntoDiv(nameCymbals,numCymbals);
+						createElement(nameCymbals,numCymbals,strPosLeft,strPosTop);
+						createTableInput(nameCymbals,numCymbals,strMicro);
+						createOptionsSelect(nameCymbals,numCymbals++);
+						stateCymbals=true;
+					}else{
+						createElement(nameCymbals,numCymbals,strPosLeft,strPosTop);		
+						createTableInput(nameCymbals,numCymbals,strMicro);
+						createOptionsSelect(nameCymbals,numCymbals++);
+					}	
+										
+				}else{
+					createElementsDraggable(nameCymbals,numCymbals);
+				}
+				break;
+			case "rattle":
+				if(control==0){
+					if(!stateRattle){
+						deleteElementIntoDiv(nameRattle,numRattle);
+						createElement(nameRattle,numRattle,strPosLeft,strPosTop);
+						createTableInput(nameRattle,numRattle,strMicro);
+						createOptionsSelect(nameRattle,numRattle++);
+						stateRattle=true;
+					}else{
+						createElement(nameRattle,numRattle,strPosLeft,strPosTop);		
+						createTableInput(nameRattle,numRattle,strMicro);
+						createOptionsSelect(nameRattle,numRattle++);
+					}	
+										
+				}else{
+					createElementsDraggable(nameRattle,numRattle);
+				}
+				break;
+			case "triangle":
+				if(control==0){
+					if(!stateTriangle){
+						deleteElementIntoDiv(nameTriangle,numTriangle);
+						createElement(nameTriangle,numTriangle,strPosLeft,strPosTop);
+						createTableInput(nameTriangle,numTriangle,strMicro);
+						createOptionsSelect(nameTriangle,numTriangle++);
+						stateTriangle=true;
+					}else{
+						createElement(nameTriangle,numTriangle,strPosLeft,strPosTop);		
+						createTableInput(nameTriangle,numTriangle,strMicro);
+						createOptionsSelect(nameTriangle,numTriangle++);
+					}	
+										
+				}else{
+					createElementsDraggable(nameTriangle,numTriangle);
+				}
+				break;
+			case "xylophone":
+				if(control==0){
+					if(!stateXylophone){
+						deleteElementIntoDiv(nameXylophone,numXylophone);
+						createElement(nameXylophone,numXylophone,strPosLeft,strPosTop);
+						createTableInput(nameXylophone,numXylophone,strMicro);
+						createOptionsSelect(nameXylophone,numXylophone++);
+						stateXylophone=true;
+					}else{
+						createElement(nameXylophone,numXylophone,strPosLeft,strPosTop);		
+						createTableInput(nameXylophone,numXylophone,strMicro);
+						createOptionsSelect(nameXylophone,numXylophone++);
+					}	
+										
+				}else{
+					createElementsDraggable(nameXylophone,numXylophone);
+				}
+				break;
+			case "castanets":
+				if(control==0){
+					if(!stateCastanets){
+						deleteElementIntoDiv(nameCastanets,numCastanets);
+						createElement(nameCastanets,numCastanets,strPosLeft,strPosTop);
+						createTableInput(nameCastanets,numCastanets,strMicro);
+						createOptionsSelect(nameCastanets,numCastanets++);
+						stateCastanets=true;
+					}else{
+						createElement(nameCastanets,numCastanets,strPosLeft,strPosTop);		
+						createTableInput(nameCastanets,numCastanets,strMicro);
+						createOptionsSelect(nameCastanets,numCastanets++);
+					}	
+										
+				}else{
+					createElementsDraggable(nameCastanets,numCastanets);
+				}
+				break;
+			case "drums":
+				if(control==0){
+					if(!stateDrums){
+						deleteElementIntoDiv(nameDrums,numDrums);
+						createElement(nameDrums,numDrums,strPosLeft,strPosTop);
+						createTableInput(nameDrums,numDrums,strMicro);
+						createOptionsSelect(nameDrums,numDrums++);
+						stateDrums=true;
+					}else{
+						createElement(nameDrums,numDrums,strPosLeft,strPosTop);		
+						createTableInput(nameDrums,numDrums,strMicro);
+						createOptionsSelect(nameDrums,numDrums++);
+					}	
+										
+				}else{
+					createElementsDraggable(nameDrums,numDrums);
+				}
+				break;
+			case "kettledrums":
+				if(control==0){
+					if(!stateKettledrums){
+						deleteElementIntoDiv(nameKettledrums,numKettledrums);
+						createElement(nameKettledrums,numKettledrums,strPosLeft,strPosTop);
+						createTableInput(nameKettledrums,numKettledrums,strMicro);
+						createOptionsSelect(nameKettledrums,numKettledrums++);
+						stateKettledrums=true;
+					}else{
+						createElement(nameKettledrums,numKettledrums,strPosLeft,strPosTop);		
+						createTableInput(nameKettledrums,numKettledrums,strMicro);
+						createOptionsSelect(nameKettledrums,numKettledrums++);
+					}	
+										
+				}else{
+					createElementsDraggable(nameKettledrums,numKettledrums);
+				}
+				break;
+			case "percussion":
+				if(control==0){
+					if(!statePercussion){
+						deleteElementIntoDiv(namePercussion,numPercussion);
+						createElement(namePercussion,numPercussion,strPosLeft,strPosTop);
+						createTableInput(namePercussion,numPercussion,strMicro);
+						createOptionsSelect(namePercussion,numPercussion++);
+						statePercussion=true;
+					}else{
+						createElement(namePercussion,numPercussion,strPosLeft,strPosTop);		
+						createTableInput(namePercussion,numPercussion,strMicro);
+						createOptionsSelect(namePercussion,numPercussion++);
+					}	
+										
+				}else{
+					createElementsDraggable(namePercussion,numPercussion);
+				}
+				break;
+			case "side_drum":
+				if(control==0){
+					if(!stateSide_Drum){
+						deleteElementIntoDiv(nameSide_Drum,numSide_Drum);
+						createElement(nameSide_Drum,numSide_Drum,strPosLeft,strPosTop);
+						createTableInput(nameSide_Drum,numSide_Drum,strMicro);
+						createOptionsSelect(nameSide_Drum,numSide_Drum++);
+						stateSide_Drum=true;
+					}else{
+						createElement(nameSide_Drum,numSide_Drum,strPosLeft,strPosTop);		
+						createTableInput(nameSide_Drum,numSide_Drum,strMicro);
+						createOptionsSelect(nameSide_Drum,numSide_Drum++);
+					}	
+										
+				}else{
+					createElementsDraggable(nameSide_Drum,numSide_Drum);
+				}
+				break;
 				
 			}
 	}

@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="And" >
 
-    <title>Home</title>
+    <title>Rider</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="<?php echo Yii::app()->theme->baseUrl; ?>/css/bootstrap.min.css" rel="stylesheet">
@@ -40,7 +40,7 @@
             $(document).ready(function () {
 
                 $("#ini").click(function(event){
-                    ChangeUrl('Page1', '');
+                    ChangeUrl('Page1', 'rider');
                     location.reload();
                     document.getElementById("ini").addClass("current");
                     $(this).parent.addClass("current");
@@ -108,20 +108,29 @@
 </head>
     <body style="cursor: auto;">
         <h1></h1>
-        <div class="wizard">
+        <?php
+            $visible= Yii::app()->user->isGuest;
+            if($visible){
+                $visibility = "visibility: hidden";
+            }else{
+                $visibility = "visibility: visible";
+            }
+        ?>
+        <div class="wizard" >
             <div id="tabs-container">
              <div  class="wizard-inner">            
                 <div class="connecting-line"></div>
                 <ul class="tabs-menu" role="tablist">
-                    <li role="presentation" class="current" id="ini" value="Page1">
+                    <li role="presentation" class="current" id="ini" value="Page1" style="<?php echo $visibility; ?>">
                         <a href="#step1" data-toggle="tab" aria-controls="step1" role="tab" title="Step 1">
                             <span class="round-tab">
                                 <i class="glyphicon glyphicon-user"></i>
                             </span>
+                            <?php echo CHtml::link( Yii::app()->user->name ,array('/site/rider')); ?>
                         </a>
                     </li>
 
-                    <li role="presentation" class="" id="stage" value="Page2"> 
+                    <li role="presentation" class="" id="stage" value="Page2" style="<?php echo $visibility; ?>"> 
                         <a href="#step2" data-toggle="tab" aria-controls="step2" role="tab" title="Step 1">
                             <span class="round-tab">
                                 <i class="glyphicon glyphicon-picture"></i>
@@ -131,16 +140,16 @@
                     </li>
 
 
-                    <li role="presentation" class=""  id="label" value="Page3">
+                    <li role="presentation" class=""  id="label" value="Page3" style="<?php echo $visibility; ?>">
                         <a href="#step3" data-toggle="tab" aria-controls="step3" role="tab" title="Step 1" class="Page1">
                             <span class="round-tab">
                                 <i class="glyphicon glyphicon-text-background"></i>
                             </span>
                         </a>
-                        <?php echo CHtml::link('2: Rider Content',array('/label/index')); ?>
+                        <?php echo CHtml::link('2: Rider Content',array('label')); ?>
                     </li>
 
-                    <li role="presentation" class="" id="export" value="Page4">
+                    <li role="presentation" class="" id="export" value="Page4" style="<?php echo $visibility; ?>">
                         <a href="#complete" data-toggle="tab" aria-controls="step4" role="tab" title="Step 1">
                             <span class="round-tab">
                                 <i class="glyphicon glyphicon-ok"></i>
@@ -149,9 +158,11 @@
                         <?php echo CHtml::link('3: Export Rider',array('/label/index')); ?>
                     </li>
                 </ul>
-             </div>
-                <?php echo $content;?>      
-            </div>
+             
        </div>
     </body>
+
+    </div>
+        <?php echo $content;?>
+    </div>
 </html>
