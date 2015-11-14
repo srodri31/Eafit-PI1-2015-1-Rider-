@@ -75,6 +75,9 @@ class SiteController extends Controller
 		$band->condition = "id_band = ".$resultData[0]->id_band;
 		
 		$model = CActiveRecord::model("Rider")->findAll($band);
+
+		
+
 		$this->render('rider', array('model'=>$model, 'user'=>$user));
 	}
 
@@ -200,6 +203,8 @@ class SiteController extends Controller
 
 	public function actionStage()
 	{
+
+
 		//Wind
 		$wind = new CDbCriteria();
 		$wind->condition = "class_instrument = 1";
@@ -224,7 +229,10 @@ class SiteController extends Controller
 	}
 	
 	public function actionDeleteBD(){
-		Tstage_information::model()->deleteAll('idRider = :id',array('id' => '1'));
+		if(isset($_POST['id'])){
+			$idR = json_decode($_POST['id']);
+		}	
+		Tstage_information::model()->deleteAll('idRider = :id',array('id' => $idR));
 		
 	}
 
@@ -241,16 +249,26 @@ class SiteController extends Controller
 		$model->microphone= $micro;
 		$model->positionLeft= $posLeftImg;
 		$model->positionTop= $posTopImg;
-		$model->idRider= 1;
+		$model->idRider= 2;
 		$model->save();
+		
 	  }
+
+
 	}
 	
-	
-	public function actionGetInfoBd(){		
-		$model=new Tstage_information();
-		$idR = 1;
-		$resultData = Tstage_information::model()->findAllBySql('SELECT name,microphone,positionLeft,positionTop FROM tstage_information WHERE idRider=1');
+	public function actionCallStage($id){
+		$this->redirect(array("stage", array('id'=>$id)));
+	}
+
+	public function actionGetInfoBd(){	
+		
+	if(isset($_POST['id'])){
+		$idR = json_decode($_POST['id']);
+	}	
+	$model=new Tstage_information();
+		
+		$resultData = Tstage_information::model()->findAllBySql('SELECT name,microphone,positionLeft,positionTop FROM tstage_information WHERE idRider='.$idR);
 		foreach($resultData as $data){
 			echo $data->name;
 			echo "~";
@@ -260,7 +278,9 @@ class SiteController extends Controller
 			echo "~";
 			echo $data->positionTop;
 			echo "¬";
-	    }	
+	    }
+	    
+	   	
 	}
 
 	/**

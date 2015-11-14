@@ -199,7 +199,7 @@
           <?php echo $form->textField($model,"idRider",array("class"=>"form-control", "value"=>1, "class"=>"hidden"));?>           
 
           <div id="divSubmit" class="hidden">
-            <?php echo CHtml::submitButton('Save', array("class"=>"btn btn-primary btn-large")); ?>
+            <?php echo CHtml::submitButton('Save', array("class"=>"btn btn-custom")); ?>
           </div>
 
           <?php $this->endWidget(); ?>

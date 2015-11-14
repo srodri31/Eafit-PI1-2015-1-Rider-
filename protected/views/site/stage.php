@@ -1,9 +1,17 @@
 
 <script>
+
 function deleteBaseData(){
-	$.ajax({ 
-		url: <?php echo "'".CController::createUrl('DeleteBD')."'";?>,
- 	});
+
+ 	var url = window.location.search;
+		var id = url.substring(11);
+		var idJSON = JSON.stringify(id);
+
+		$.ajax({ 
+		    data: {"id": idJSON},
+		    type: "POST",
+		    url: <?php echo "'".CController::createUrl('DeleteBD')."'";?>,
+        });		
 }
 
 
@@ -36,8 +44,8 @@ function saveBD(){
 						"posTop":positionTopJSON},
 				type: "POST",
                 url: <?php echo "'".CController::createUrl('SaveInfoBd')."'";?>,
-        }).done(function( result ) {    	
-				 // $('#stage').text(result);
+        }).done(function( result ) {	
+				// $('#stage').text(result);
 		}).error(
 			function(XMLHttpRequest, textStatus, errorThrown){
 				console.log('Error '+XMLHttpRequest+" "+errorThrown);
@@ -45,27 +53,36 @@ function saveBD(){
 		auxCont++;
 	}    
 }
-</script>
 
-<script>
-	function getBD(){		
+function getBD(){		
+		//var id = document.getElementById("txt_name").value;
+
+		var url = window.location.search;
+		var id = url.substring(11);
+		var idJSON = JSON.stringify(id);
+
 		$.ajax({ 
-		    url: <?php echo "'".CController::createUrl('GetInfoBd')."'";?>,
+		    data: {"id": idJSON},
+		    type: "POST",
+		    url: <?php echo "'".CController::createUrl('GetInfoBD')."'";?>,
         }).done(function( result ) {    	
 				//$('#stage').text(result);
+				console.log(result);
 				restoreInformationBD(result); 
 		}).error(
 			function(XMLHttpRequest, textStatus, errorThrown){
 			console.log(XMLHttpRequest+" "+" "+errorThrown);
-        });	
+        });		
 		
 	}
-	
+
+
 </script>
+
 		<br><br>
 		<div class="row">
 			<div class="col-lg-6">				
-		            <h3><div class="btn btn-custom">Step 1:</div> Make your Stage Plot</h3>                                       
+		            <h3><div  class="btn btn-custom">Step 1:</div> Make your Stage Plot</h3>                                       
 		    </div>
 		    <div class="col-lg-6"></div>
 		</div>
@@ -121,6 +138,8 @@ function saveBD(){
 								auxDiv.style.top="0px";
 								auxDiv.style.zIndex="0";               
 								div.appendChild(auxDiv); 
+
+
 							</script>							
 	                </div>
                 <?php endforeach ?>
@@ -213,9 +232,9 @@ function saveBD(){
         </div>
 <br>
 <div>   
-	<button type="button" class="btn btn-custom" onclick="deleteBaseData()">Delete Register</button><br><br> 
-	<button type="button" class="btn btn-custom" onclick="saveBD()">Save Input</button> 
-	<button type="button" class="btn btn-custom" onclick="getBD()">Get Input</button> 
+	
+	<button type="button" class="btn btn-custom" onmouseenter="deleteBaseData()" onclick="saveBD()">Save Input</button> 
+	 <?php echo CHtml::link( 'Next step',array('label')); ?> 
 </div> 
 
 <h2 style="font-weight:30px;">Input List</h2>
@@ -227,5 +246,7 @@ function saveBD(){
 			<th>Microphone</th>
 		  </tr>  
 	</table>
+
+<body onload="getBD()"></body>
 </div>
 
