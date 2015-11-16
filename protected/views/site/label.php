@@ -1,6 +1,75 @@
 <link href="<?php echo Yii::app()->theme->baseUrl; ?>/css/modal.css" rel="stylesheet">
 <link href="<?php echo Yii::app()->theme->baseUrl; ?>/css/formStyle.css" rel="stylesheet">
 <script  src="<?php echo Yii::app()->theme->baseUrl; ?>/js/indexLabel.js" type="text/javascript"></script>
+
+<script>
+  function deleteLabelData(){
+
+  var url = window.location.search;
+    var id = url.substring(11);
+    console.log(id);
+    var idJSON = JSON.stringify(id);
+
+    $.ajax({ 
+        data: {"id": idJSON},
+        type: "POST",
+        url: <?php echo "'".CController::createUrl('Deletelbl')."'";?>,
+        });   
+}
+</script>
+
+<?php
+$vStaff="hidden";
+$vPA="hidden";
+$vScenary="hidden";
+$vBackline="hidden";
+$vCamarin="hidden";
+$vCatering="hidden";
+
+$cStaff="";
+$cScenary="";
+$cCamarin="";
+$cCatering="";
+
+$url=$_SERVER['REQUEST_URI'];
+$id = substr($url,50);
+$cond = new CDbCriteria();
+$cond->condition = "id_rider = ".$id;
+$labels = CActiveRecord::model("Label")->findAll($cond);  
+foreach ($labels as $data): 
+  if($data->name_label == "PA"){
+      $model->desc2=$data->desc_label;
+      $vPA="";
+      $cPA="checked";
+  }
+  if($data->name_label == "Backline"){
+      $model->desc4=$data->desc_label;
+      $vBackline="";
+      $cBackline="checked";
+  }
+  if($data->name_label == "Staff"){
+      $model->desc1=$data->desc_label;
+      $vStaff="";
+      $cStaff="checked";
+  }
+  if($data->name_label == "Scenary"){
+      $model->desc3=$data->desc_label;
+      $vScenary="";
+      $cScenary="checked";
+  }
+  if($data->name_label == "Camarin"){
+      $model->desc5=$data->desc_label;
+      $vCamarin="";
+      $cCamarin="checked";
+  }
+  if($data->name_label == "Catering"){
+      $model->desc6=$data->desc_label;
+      $vCatering="";
+      $cCatering="checked";
+  }
+endforeach
+?>
+
 <br><br>
 <div class="row">
   <div class="col-lg-8">  
@@ -19,7 +88,7 @@
 
       <div class="row">
         <div class="col-lg-4">
-          <div class="headLabel"><input id="staff" type="checkbox" name="staff"> Staff</div>    
+          <div class="headLabel"><input id="staff" type="checkbox" name="staff" <?php echo $cStaff;?> > Staff</div>    
           <div class="form-group">      
              Describe the musicians integrated in the band and also the support group
           </div>
@@ -41,7 +110,7 @@
 
       <div class="row">
         <div class="col-lg-4">
-          <div class="headLabel"><input id="scenary" type="checkbox" name="scenary"> Scenary</div>
+          <div class="headLabel"><input id="scenary" type="checkbox" name="scenary" <?php echo $cScenary;?>> Scenary</div>
           <div class="form-group">      
              Specify the dimensions and some other things
           </div>
@@ -53,7 +122,7 @@
           </div>
         </div>
         <div class="col-lg-4">
-          <div class="headLabel"><input id="camarin" type="checkbox" name="camarin"> Camarin</div>
+          <div class="headLabel"><input id="camarin" type="checkbox" name="camarin" <?php echo $cCamarin;?>> Camarin</div>
           <div class="form-group">
             ....
           </div>
@@ -63,7 +132,7 @@
 
       <div class="row">
         <div class="col-lg-4">
-          <div class="headLabel"><input id="catering" type="checkbox" name="catering"> Catering</div>
+          <div class="headLabel"><input id="catering" type="checkbox" name="catering" <?php echo $cCatering;?>> Catering</div>
           <div class="form-group" >      
             ....
           </div>
@@ -75,7 +144,6 @@
       </div>
   </div>
 
-
 <div class="col-lg-6">
            <?php $form=$this->beginWidget('CActiveForm', array(
               'method'=>'POST',
@@ -86,7 +154,7 @@
               ),
             )); ?>
           <div class="form-group">
-            <div id="divStaff" class="hidden">
+            <div id="divStaff" class="<?php echo $vStaff;?>">
               <div class="form-group">
                   <a href="#openModalStaff">
                       <span class="round-tab">
@@ -105,7 +173,7 @@
 
           <div class="form-group">
             
-            <div id="divPA" class="hidden">
+            <div id="divPA" class="<?php echo $vPA;?>">
                 <div class="form-group">
                   <a href="#openModalPA">
                       <span class="round-tab">
@@ -113,7 +181,8 @@
                       </span>
                   </a>
                 </div>
-                <?php $model->name2="PA";?>
+                <?php $model->name2="PA";
+                ?>
                 <?php echo $form->textField($model,"name2",array("class"=>"form-control","readonly"=>"true"));?>
                 <br>
                 <?php echo $form->textArea($model,"desc2",array("class"=>"form-control", "rows"=>7));?>
@@ -125,7 +194,7 @@
           </div>
 
           <div class="form-group">
-            <div id="divScenary" class="hidden">
+            <div id="divScenary" class="<?php echo $vScenary;?>">
               <div class="form-group">
                   <a href="#openModalScenary">
                        <span class="round-tab">
@@ -143,7 +212,7 @@
           </div>
 
           <div class="form-group">
-            <div id="divBackline" class="hidden">
+            <div id="divBackline" class="<?php echo $vBackline;?>">
               <div class="form-group">
                   <a href="#openModalBackline">
                       <span class="round-tab">
@@ -161,7 +230,7 @@
           </div>
 
           <div class="form-group">
-            <div id="divCamarin" class="hidden">
+            <div id="divCamarin" class="<?php echo $vCamarin;?>">
               <div class="form-group">
                   <a href="#openModalCamarin">
                        <span class="round-tab">
@@ -179,7 +248,7 @@
           </div>
 
           <div class="form-group">
-            <div id="divCatering" class="hidden">
+            <div id="divCatering" class="<?php echo $vCatering;?>">
               <div class="form-group">
                   <a href="#openModalCatering">
                        <span class="round-tab">
@@ -195,11 +264,11 @@
               <br>
             </div>
           </div>
+          <?php $model->idRider = $id; ?>
+          <?php echo $form->textField($model,"idRider",array("class"=>"form-control", 'class'=>'hidden'));?>           
 
-          <?php echo $form->textField($model,"idRider",array("class"=>"form-control", "value"=>1, "class"=>"hidden"));?>           
-
-          <div id="divSubmit" class="hidden">
-            <?php echo CHtml::submitButton('Save', array("class"=>"btn btn-custom")); ?>
+          <div id="divSubmit" class="<?php echo $vPA;?>">
+            <?php echo CHtml::submitButton('Save', array("class"=>"btn btn-custom", 'onmouseenter'=>'deleteLabelData()')); ?>
           </div>
 
           <?php $this->endWidget(); ?>
@@ -235,7 +304,7 @@
             </ul> 
           </p>
           <p>Support</p>
-          <p>Phil Dunphy: Life sound.</p>
+          <p>Phil Dunphy: Live sound.</p>
         </div>
 </div>
 

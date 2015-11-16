@@ -31,7 +31,7 @@ class LabelForm extends CFormModel
 	public function rules()
 	{
 		return array(
-			array('name1, name2, name3, name4, name5, name6, desc1, desc2, desc3, desc4, desc5, desc6', 'required'),
+			array('name1, name2, name3, name4, name5, name6, desc1, desc2, desc3, desc4, desc5, desc6, idRider', 'required'),
 		);
 	}
 

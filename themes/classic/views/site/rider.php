@@ -45,7 +45,7 @@ foreach ($model as $data):?>
 		<?php echo CHtml::link( $data->name_rider ,array('CallStage', 'id'=>$data->id_rider)); ?> 
 	</legend>
 <?php endforeach ?>
-<?php echo CHtml::link( 'Nuevo rider',array('stage')); ?> 
+<?php echo CHtml::link( 'Nuevo rider',array('NewStage')); ?> 
 <div>
 </section>
 <?php echo CHtml::link('logout',array('logout')); ?>

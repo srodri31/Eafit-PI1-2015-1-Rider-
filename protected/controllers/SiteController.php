@@ -68,7 +68,6 @@ class SiteController extends Controller
 
 		$band = new CDbCriteria();
 		$user = Yii::app()->user->name;
-		
 		$resultData = new Band();
 		$resultData = Band::model()->findAllBySql('SELECT id_band FROM tband WHERE name_band = "'.$user.'"');
 		//echo $resultData;
@@ -88,10 +87,22 @@ class SiteController extends Controller
 		{
 			$model->attributes=$_POST['LabelForm'];			
 			if($model->register()){	}
-			$this->redirect(array("generarpdf"));				
+			//$this->redirect(array("generarpdf"));				
 		}
 
 		$this->render('label',array('model'=>$model));
+	}
+
+	public function actionCallLabel($id){
+		$this->redirect(array("label", array('id'=>$id)));
+	}
+
+	public function actionDeletelbl(){
+		if(isset($_POST['id'])){
+			$idR = json_decode($_POST['id']);
+		}	
+		Label::model()->deleteAll('id_rider = :id',array('id' => $idR));
+		
 	}
 
 	public function actionGenerarPdf() {
@@ -199,8 +210,6 @@ class SiteController extends Controller
 		 $mPDF1->Output('Label'.date('YmdHis'),'I'); 
 	 }
 
-
-
 	public function actionStage()
 	{
 
@@ -244,17 +253,33 @@ class SiteController extends Controller
 		$micro = json_decode($_POST['microphone']);
 		$posLeftImg = json_decode($_POST['posLeft']);
 		$posTopImg = json_decode($_POST['posTop']);
+		$idR = json_decode($_POST['id']);
 	
 		$model->name= $name;
 		$model->microphone= $micro;
 		$model->positionLeft= $posLeftImg;
 		$model->positionTop= $posTopImg;
-		$model->idRider= 2;
+		$model->idRider= $idR;
 		$model->save();
 		
 	  }
 
 
+	}
+
+	public function actionRiderName(){
+		//aqui va el codigo
+	}
+
+	public function actionNewStage(){
+		$user = Yii::app()->user->name;
+		$resultData = new Band();
+		$resultData = Band::model()->findAllBySql('SELECT id_band FROM tband WHERE name_band = "'.$user.'"');
+		$rider = new Rider;
+		$rider->name_rider="nuevo";
+		$rider->id_band=$resultData[0]->id_band;
+		$rider->save();
+		$this->redirect(array("stage", array('id'=>$rider->id_rider)));
 	}
 	
 	public function actionCallStage($id){

@@ -1,5 +1,7 @@
 
 <script>
+var url = window.location.search;
+var id = url.substring(11);
 
 function deleteBaseData(){
 
@@ -22,6 +24,11 @@ function saveBD(){
 		cont=i;
 	}	
 	var auxCont=1;
+	var url = window.location.search;
+	var id = url.substring(11);
+	var idJSON = JSON.stringify(id);
+	var nameRider = document.getElementById("txt_name").value;
+	var nRJSON = JSON.stringify(nameRider);
 	while(auxCont<=cont){
 		var trT=table.getElementsByTagName('tr')[auxCont];
 		var idInstrumentTable = trT.id;
@@ -41,7 +48,7 @@ function saveBD(){
 		$.ajax({ 
 		        data: {"name":nameJSON, "microphone":microphoneJSON,
 						"posLeft":positionLeftJSON,
-						"posTop":positionTopJSON},
+						"posTop":positionTopJSON, "id": idJSON},
 				type: "POST",
                 url: <?php echo "'".CController::createUrl('SaveInfoBd')."'";?>,
         }).done(function( result ) {	
@@ -51,8 +58,23 @@ function saveBD(){
 				console.log('Error '+XMLHttpRequest+" "+errorThrown);
         });	
 		auxCont++;
-	}    
-}
+
+		$("#link").removeClass("hidden");
+
+	}
+
+	/*$.ajax({ 
+		        data: {"nameR":nRJSON},
+				type: "POST",
+                url: <?php echo "'".CController::createUrl('RiderName')."'";?>,
+        }).done(function( result ) {	
+				// $('#stage').text(result);
+		}).error(
+			function(XMLHttpRequest, textStatus, errorThrown){
+				console.log('Error '+XMLHttpRequest+" "+errorThrown);
+        });	    
+*/
+}	
 
 function getBD(){		
 		//var id = document.getElementById("txt_name").value;
@@ -79,6 +101,7 @@ function getBD(){
 
 </script>
 
+<link href="<?php echo Yii::app()->theme->baseUrl; ?>/css/modal.css" rel="stylesheet">
 		<br><br>
 		<div class="row">
 			<div class="col-lg-6">				
@@ -92,7 +115,7 @@ function getBD(){
         	 <div id="description" class="col-lg-3">        	 		                         
 			    <form method="post" action="">                                
 			        <div class="form-group">                                    
-			            <input value="" type="text"   class="form-control" name="txt_name" id="txt_name" placeholder="Rider's Name">
+			            <input value="" type="text" class="form-control" name="txt_name" id="txt_name" placeholder="Rider's Name">
 			        </div>  
 					<br>				
 					<h5>Select Instrument</h5>
@@ -232,9 +255,14 @@ function getBD(){
         </div>
 <br>
 <div>   
-	
+	<?php
+		$url=$_SERVER['REQUEST_URI'];
+		$id = substr($url,50);
+	?>
 	<button type="button" class="btn btn-custom" onmouseenter="deleteBaseData()" onclick="saveBD()">Save Input</button> 
-	 <?php echo CHtml::link( 'Next step',array('label')); ?> 
+	<div class="hidden" id="link">
+	 	<h3><?php echo CHtml::link( 'Next step',array('CallLabel', 'id'=>$id)); ?></h3> 
+	</div>
 </div> 
 
 <h2 style="font-weight:30px;">Input List</h2>
