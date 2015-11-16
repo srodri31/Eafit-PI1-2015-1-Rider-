@@ -21382,3 +21382,353 @@ Stack trace:
 REQUEST_URI=/yii/Eafit-PI1-2015-1-Rider-/themes/classic/css/formStyle.css
 HTTP_REFERER=http://localhost/yii/Eafit-PI1-2015-1-Rider-/site/label?0%5Bid%5D=10
 ---
+2015/11/16 13:01:16 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "themes/classic/css/formStyle.css".' in C:\Users\Santiago\Desktop\UwAmp\www\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\Users\Santiago\Desktop\UwAmp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('themes/classic/...')
+#1 C:\Users\Santiago\Desktop\UwAmp\www\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 C:\Users\Santiago\Desktop\UwAmp\www\yii\Eafit-PI1-2015-1-Rider-\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/Eafit-PI1-2015-1-Rider-/themes/classic/css/formStyle.css
+HTTP_REFERER=http://localhost/yii/Eafit-PI1-2015-1-Rider-/site/label?0%5Bid%5D=1
+---
+2015/11/16 13:01:27 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "themes/classic/css/formStyle.css".' in C:\Users\Santiago\Desktop\UwAmp\www\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\Users\Santiago\Desktop\UwAmp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('themes/classic/...')
+#1 C:\Users\Santiago\Desktop\UwAmp\www\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 C:\Users\Santiago\Desktop\UwAmp\www\yii\Eafit-PI1-2015-1-Rider-\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/Eafit-PI1-2015-1-Rider-/themes/classic/css/formStyle.css
+HTTP_REFERER=http://localhost/yii/Eafit-PI1-2015-1-Rider-/site/label?0%5Bid%5D=10
+---
+2015/11/16 13:02:04 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "themes/classic/css/formStyle.css".' in C:\Users\Santiago\Desktop\UwAmp\www\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\Users\Santiago\Desktop\UwAmp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('themes/classic/...')
+#1 C:\Users\Santiago\Desktop\UwAmp\www\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 C:\Users\Santiago\Desktop\UwAmp\www\yii\Eafit-PI1-2015-1-Rider-\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/Eafit-PI1-2015-1-Rider-/themes/classic/css/formStyle.css
+HTTP_REFERER=http://localhost/yii/Eafit-PI1-2015-1-Rider-/site/label?0%5Bid%5D=11
+---
+2015/11/16 13:02:30 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "themes/classic/css/formStyle.css".' in C:\Users\Santiago\Desktop\UwAmp\www\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\Users\Santiago\Desktop\UwAmp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('themes/classic/...')
+#1 C:\Users\Santiago\Desktop\UwAmp\www\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 C:\Users\Santiago\Desktop\UwAmp\www\yii\Eafit-PI1-2015-1-Rider-\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/Eafit-PI1-2015-1-Rider-/themes/classic/css/formStyle.css
+HTTP_REFERER=http://localhost/yii/Eafit-PI1-2015-1-Rider-/site/label?0%5Bid%5D=11
+---
+2015/11/16 13:02:43 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "themes/classic/css/formStyle.css".' in C:\Users\Santiago\Desktop\UwAmp\www\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\Users\Santiago\Desktop\UwAmp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('themes/classic/...')
+#1 C:\Users\Santiago\Desktop\UwAmp\www\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 C:\Users\Santiago\Desktop\UwAmp\www\yii\Eafit-PI1-2015-1-Rider-\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/Eafit-PI1-2015-1-Rider-/themes/classic/css/formStyle.css
+HTTP_REFERER=http://localhost/yii/Eafit-PI1-2015-1-Rider-/site/label?0%5Bid%5D=11
+---
+2015/11/16 13:19:53 [error] [php] Undefined variable: 10 (C:\Users\Santiago\Desktop\UwAmp\www\yii\Eafit-PI1-2015-1-Rider-\protected\controllers\SiteController.php:276)
+Stack trace:
+#0 C:\Users\Santiago\Desktop\UwAmp\www\yii\framework\web\CController.php(286): SiteController->runAction()
+#1 C:\Users\Santiago\Desktop\UwAmp\www\yii\framework\web\CController.php(265): SiteController->runActionWithFilters()
+#2 C:\Users\Santiago\Desktop\UwAmp\www\yii\framework\web\CWebApplication.php(282): SiteController->run()
+#3 C:\Users\Santiago\Desktop\UwAmp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#4 C:\Users\Santiago\Desktop\UwAmp\www\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#5 C:\Users\Santiago\Desktop\UwAmp\www\yii\Eafit-PI1-2015-1-Rider-\index.php(13): CWebApplication->run()
+REQUEST_URI=/yii/Eafit-PI1-2015-1-Rider-/site/RiderName
+in C:\Users\Santiago\Desktop\UwAmp\www\yii\Eafit-PI1-2015-1-Rider-\protected\controllers\SiteController.php (276)
+in C:\Users\Santiago\Desktop\UwAmp\www\yii\Eafit-PI1-2015-1-Rider-\index.php (13)
+2015/11/16 13:19:55 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "themes/classic/css/formStyle.css".' in C:\Users\Santiago\Desktop\UwAmp\www\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\Users\Santiago\Desktop\UwAmp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('themes/classic/...')
+#1 C:\Users\Santiago\Desktop\UwAmp\www\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 C:\Users\Santiago\Desktop\UwAmp\www\yii\Eafit-PI1-2015-1-Rider-\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/Eafit-PI1-2015-1-Rider-/themes/classic/css/formStyle.css
+HTTP_REFERER=http://localhost/yii/Eafit-PI1-2015-1-Rider-/site/label?0%5Bid%5D=10
+---
+2015/11/16 13:29:08 [error] [php] Undefined variable: 10 (C:\Users\Santiago\Desktop\UwAmp\www\yii\Eafit-PI1-2015-1-Rider-\protected\controllers\SiteController.php:276)
+Stack trace:
+#0 C:\Users\Santiago\Desktop\UwAmp\www\yii\framework\web\CController.php(286): SiteController->runAction()
+#1 C:\Users\Santiago\Desktop\UwAmp\www\yii\framework\web\CController.php(265): SiteController->runActionWithFilters()
+#2 C:\Users\Santiago\Desktop\UwAmp\www\yii\framework\web\CWebApplication.php(282): SiteController->run()
+#3 C:\Users\Santiago\Desktop\UwAmp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#4 C:\Users\Santiago\Desktop\UwAmp\www\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#5 C:\Users\Santiago\Desktop\UwAmp\www\yii\Eafit-PI1-2015-1-Rider-\index.php(13): CWebApplication->run()
+REQUEST_URI=/yii/Eafit-PI1-2015-1-Rider-/site/RiderName
+in C:\Users\Santiago\Desktop\UwAmp\www\yii\Eafit-PI1-2015-1-Rider-\protected\controllers\SiteController.php (276)
+in C:\Users\Santiago\Desktop\UwAmp\www\yii\Eafit-PI1-2015-1-Rider-\index.php (13)
+2015/11/16 13:29:56 [error] [php] Undefined variable: 10 (C:\Users\Santiago\Desktop\UwAmp\www\yii\Eafit-PI1-2015-1-Rider-\protected\controllers\SiteController.php:276)
+Stack trace:
+#0 C:\Users\Santiago\Desktop\UwAmp\www\yii\framework\web\CController.php(286): SiteController->runAction()
+#1 C:\Users\Santiago\Desktop\UwAmp\www\yii\framework\web\CController.php(265): SiteController->runActionWithFilters()
+#2 C:\Users\Santiago\Desktop\UwAmp\www\yii\framework\web\CWebApplication.php(282): SiteController->run()
+#3 C:\Users\Santiago\Desktop\UwAmp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#4 C:\Users\Santiago\Desktop\UwAmp\www\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#5 C:\Users\Santiago\Desktop\UwAmp\www\yii\Eafit-PI1-2015-1-Rider-\index.php(13): CWebApplication->run()
+REQUEST_URI=/yii/Eafit-PI1-2015-1-Rider-/site/RiderName
+in C:\Users\Santiago\Desktop\UwAmp\www\yii\Eafit-PI1-2015-1-Rider-\protected\controllers\SiteController.php (276)
+in C:\Users\Santiago\Desktop\UwAmp\www\yii\Eafit-PI1-2015-1-Rider-\index.php (13)
+2015/11/16 13:30:47 [error] [php] Undefined variable: 10 (C:\Users\Santiago\Desktop\UwAmp\www\yii\Eafit-PI1-2015-1-Rider-\protected\controllers\SiteController.php:276)
+Stack trace:
+#0 C:\Users\Santiago\Desktop\UwAmp\www\yii\framework\web\CController.php(286): SiteController->runAction()
+#1 C:\Users\Santiago\Desktop\UwAmp\www\yii\framework\web\CController.php(265): SiteController->runActionWithFilters()
+#2 C:\Users\Santiago\Desktop\UwAmp\www\yii\framework\web\CWebApplication.php(282): SiteController->run()
+#3 C:\Users\Santiago\Desktop\UwAmp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#4 C:\Users\Santiago\Desktop\UwAmp\www\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#5 C:\Users\Santiago\Desktop\UwAmp\www\yii\Eafit-PI1-2015-1-Rider-\index.php(13): CWebApplication->run()
+REQUEST_URI=/yii/Eafit-PI1-2015-1-Rider-/site/RiderName
+in C:\Users\Santiago\Desktop\UwAmp\www\yii\Eafit-PI1-2015-1-Rider-\protected\controllers\SiteController.php (276)
+in C:\Users\Santiago\Desktop\UwAmp\www\yii\Eafit-PI1-2015-1-Rider-\index.php (13)
+2015/11/16 13:31:14 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "themes/classic/css/formStyle.css".' in C:\Users\Santiago\Desktop\UwAmp\www\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\Users\Santiago\Desktop\UwAmp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('themes/classic/...')
+#1 C:\Users\Santiago\Desktop\UwAmp\www\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 C:\Users\Santiago\Desktop\UwAmp\www\yii\Eafit-PI1-2015-1-Rider-\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/Eafit-PI1-2015-1-Rider-/themes/classic/css/formStyle.css
+HTTP_REFERER=http://localhost/yii/Eafit-PI1-2015-1-Rider-/site/label?0%5Bid%5D=10
+---
+2015/11/16 13:32:45 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "themes/classic/css/formStyle.css".' in C:\Users\Santiago\Desktop\UwAmp\www\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\Users\Santiago\Desktop\UwAmp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('themes/classic/...')
+#1 C:\Users\Santiago\Desktop\UwAmp\www\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 C:\Users\Santiago\Desktop\UwAmp\www\yii\Eafit-PI1-2015-1-Rider-\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/Eafit-PI1-2015-1-Rider-/themes/classic/css/formStyle.css
+HTTP_REFERER=http://localhost/yii/Eafit-PI1-2015-1-Rider-/site/label?0%5Bid%5D=10
+---
+2015/11/16 13:35:44 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "themes/classic/css/formStyle.css".' in C:\Users\Santiago\Desktop\UwAmp\www\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\Users\Santiago\Desktop\UwAmp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('themes/classic/...')
+#1 C:\Users\Santiago\Desktop\UwAmp\www\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 C:\Users\Santiago\Desktop\UwAmp\www\yii\Eafit-PI1-2015-1-Rider-\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/Eafit-PI1-2015-1-Rider-/themes/classic/css/formStyle.css
+HTTP_REFERER=http://localhost/yii/Eafit-PI1-2015-1-Rider-/site/label?0%5Bid%5D=10
+---
+2015/11/16 13:43:31 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "themes/classic/css/formStyle.css".' in C:\Users\Santiago\Desktop\UwAmp\www\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\Users\Santiago\Desktop\UwAmp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('themes/classic/...')
+#1 C:\Users\Santiago\Desktop\UwAmp\www\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 C:\Users\Santiago\Desktop\UwAmp\www\yii\Eafit-PI1-2015-1-Rider-\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/Eafit-PI1-2015-1-Rider-/themes/classic/css/formStyle.css
+HTTP_REFERER=http://localhost/yii/Eafit-PI1-2015-1-Rider-/site/label?0%5Bid%5D=12
+---
+2015/11/16 13:43:45 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "themes/classic/css/formStyle.css".' in C:\Users\Santiago\Desktop\UwAmp\www\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\Users\Santiago\Desktop\UwAmp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('themes/classic/...')
+#1 C:\Users\Santiago\Desktop\UwAmp\www\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 C:\Users\Santiago\Desktop\UwAmp\www\yii\Eafit-PI1-2015-1-Rider-\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/Eafit-PI1-2015-1-Rider-/themes/classic/css/formStyle.css
+HTTP_REFERER=http://localhost/yii/Eafit-PI1-2015-1-Rider-/site/label?0%5Bid%5D=12
+---
+2015/11/16 13:43:55 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "themes/classic/css/formStyle.css".' in C:\Users\Santiago\Desktop\UwAmp\www\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\Users\Santiago\Desktop\UwAmp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('themes/classic/...')
+#1 C:\Users\Santiago\Desktop\UwAmp\www\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 C:\Users\Santiago\Desktop\UwAmp\www\yii\Eafit-PI1-2015-1-Rider-\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/Eafit-PI1-2015-1-Rider-/themes/classic/css/formStyle.css
+HTTP_REFERER=http://localhost/yii/Eafit-PI1-2015-1-Rider-/site/label?0%5Bid%5D=12
+---
+2015/11/16 13:51:41 [error] [php] Undefined variable: user (C:\Users\Santiago\Desktop\UwAmp\www\yii\Eafit-PI1-2015-1-Rider-\protected\controllers\SiteController.php:276)
+Stack trace:
+#0 C:\Users\Santiago\Desktop\UwAmp\www\yii\framework\web\CController.php(286): SiteController->runAction()
+#1 C:\Users\Santiago\Desktop\UwAmp\www\yii\framework\web\CController.php(265): SiteController->runActionWithFilters()
+#2 C:\Users\Santiago\Desktop\UwAmp\www\yii\framework\web\CWebApplication.php(282): SiteController->run()
+#3 C:\Users\Santiago\Desktop\UwAmp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#4 C:\Users\Santiago\Desktop\UwAmp\www\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#5 C:\Users\Santiago\Desktop\UwAmp\www\yii\Eafit-PI1-2015-1-Rider-\index.php(13): CWebApplication->run()
+REQUEST_URI=/yii/Eafit-PI1-2015-1-Rider-/site/RiderName
+in C:\Users\Santiago\Desktop\UwAmp\www\yii\Eafit-PI1-2015-1-Rider-\protected\controllers\SiteController.php (276)
+in C:\Users\Santiago\Desktop\UwAmp\www\yii\Eafit-PI1-2015-1-Rider-\index.php (13)
+2015/11/16 13:51:42 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "themes/classic/css/formStyle.css".' in C:\Users\Santiago\Desktop\UwAmp\www\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\Users\Santiago\Desktop\UwAmp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('themes/classic/...')
+#1 C:\Users\Santiago\Desktop\UwAmp\www\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 C:\Users\Santiago\Desktop\UwAmp\www\yii\Eafit-PI1-2015-1-Rider-\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/Eafit-PI1-2015-1-Rider-/themes/classic/css/formStyle.css
+HTTP_REFERER=http://localhost/yii/Eafit-PI1-2015-1-Rider-/site/label?0%5Bid%5D=13
+---
+2015/11/16 13:52:17 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "themes/classic/css/formStyle.css".' in C:\Users\Santiago\Desktop\UwAmp\www\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\Users\Santiago\Desktop\UwAmp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('themes/classic/...')
+#1 C:\Users\Santiago\Desktop\UwAmp\www\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 C:\Users\Santiago\Desktop\UwAmp\www\yii\Eafit-PI1-2015-1-Rider-\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/Eafit-PI1-2015-1-Rider-/themes/classic/css/formStyle.css
+HTTP_REFERER=http://localhost/yii/Eafit-PI1-2015-1-Rider-/site/label?0%5Bid%5D=13
+---
+2015/11/16 13:52:39 [error] [php] Undefined variable: user (C:\Users\Santiago\Desktop\UwAmp\www\yii\Eafit-PI1-2015-1-Rider-\protected\controllers\SiteController.php:276)
+Stack trace:
+#0 C:\Users\Santiago\Desktop\UwAmp\www\yii\framework\web\CController.php(286): SiteController->runAction()
+#1 C:\Users\Santiago\Desktop\UwAmp\www\yii\framework\web\CController.php(265): SiteController->runActionWithFilters()
+#2 C:\Users\Santiago\Desktop\UwAmp\www\yii\framework\web\CWebApplication.php(282): SiteController->run()
+#3 C:\Users\Santiago\Desktop\UwAmp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#4 C:\Users\Santiago\Desktop\UwAmp\www\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#5 C:\Users\Santiago\Desktop\UwAmp\www\yii\Eafit-PI1-2015-1-Rider-\index.php(13): CWebApplication->run()
+REQUEST_URI=/yii/Eafit-PI1-2015-1-Rider-/site/RiderName
+in C:\Users\Santiago\Desktop\UwAmp\www\yii\Eafit-PI1-2015-1-Rider-\protected\controllers\SiteController.php (276)
+in C:\Users\Santiago\Desktop\UwAmp\www\yii\Eafit-PI1-2015-1-Rider-\index.php (13)
+2015/11/16 13:52:41 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "themes/classic/css/formStyle.css".' in C:\Users\Santiago\Desktop\UwAmp\www\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\Users\Santiago\Desktop\UwAmp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('themes/classic/...')
+#1 C:\Users\Santiago\Desktop\UwAmp\www\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 C:\Users\Santiago\Desktop\UwAmp\www\yii\Eafit-PI1-2015-1-Rider-\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/Eafit-PI1-2015-1-Rider-/themes/classic/css/formStyle.css
+HTTP_REFERER=http://localhost/yii/Eafit-PI1-2015-1-Rider-/site/label?0%5Bid%5D=13
+---
+2015/11/16 14:01:34 [error] [php] Undefined variable: user (C:\Users\Santiago\Desktop\UwAmp\www\yii\Eafit-PI1-2015-1-Rider-\protected\controllers\SiteController.php:276)
+Stack trace:
+#0 C:\Users\Santiago\Desktop\UwAmp\www\yii\framework\web\CController.php(286): SiteController->runAction()
+#1 C:\Users\Santiago\Desktop\UwAmp\www\yii\framework\web\CController.php(265): SiteController->runActionWithFilters()
+#2 C:\Users\Santiago\Desktop\UwAmp\www\yii\framework\web\CWebApplication.php(282): SiteController->run()
+#3 C:\Users\Santiago\Desktop\UwAmp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#4 C:\Users\Santiago\Desktop\UwAmp\www\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#5 C:\Users\Santiago\Desktop\UwAmp\www\yii\Eafit-PI1-2015-1-Rider-\index.php(13): CWebApplication->run()
+REQUEST_URI=/yii/Eafit-PI1-2015-1-Rider-/site/RiderName
+in C:\Users\Santiago\Desktop\UwAmp\www\yii\Eafit-PI1-2015-1-Rider-\protected\controllers\SiteController.php (276)
+in C:\Users\Santiago\Desktop\UwAmp\www\yii\Eafit-PI1-2015-1-Rider-\index.php (13)
+2015/11/16 14:01:49 [error] [php] Undefined variable: user (C:\Users\Santiago\Desktop\UwAmp\www\yii\Eafit-PI1-2015-1-Rider-\protected\controllers\SiteController.php:276)
+Stack trace:
+#0 C:\Users\Santiago\Desktop\UwAmp\www\yii\framework\web\CController.php(286): SiteController->runAction()
+#1 C:\Users\Santiago\Desktop\UwAmp\www\yii\framework\web\CController.php(265): SiteController->runActionWithFilters()
+#2 C:\Users\Santiago\Desktop\UwAmp\www\yii\framework\web\CWebApplication.php(282): SiteController->run()
+#3 C:\Users\Santiago\Desktop\UwAmp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#4 C:\Users\Santiago\Desktop\UwAmp\www\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#5 C:\Users\Santiago\Desktop\UwAmp\www\yii\Eafit-PI1-2015-1-Rider-\index.php(13): CWebApplication->run()
+REQUEST_URI=/yii/Eafit-PI1-2015-1-Rider-/site/RiderName
+in C:\Users\Santiago\Desktop\UwAmp\www\yii\Eafit-PI1-2015-1-Rider-\protected\controllers\SiteController.php (276)
+in C:\Users\Santiago\Desktop\UwAmp\www\yii\Eafit-PI1-2015-1-Rider-\index.php (13)
+2015/11/16 14:01:50 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "themes/classic/css/formStyle.css".' in C:\Users\Santiago\Desktop\UwAmp\www\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\Users\Santiago\Desktop\UwAmp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('themes/classic/...')
+#1 C:\Users\Santiago\Desktop\UwAmp\www\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 C:\Users\Santiago\Desktop\UwAmp\www\yii\Eafit-PI1-2015-1-Rider-\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/Eafit-PI1-2015-1-Rider-/themes/classic/css/formStyle.css
+HTTP_REFERER=http://localhost/yii/Eafit-PI1-2015-1-Rider-/site/label?0%5Bid%5D=13
+---
+2015/11/16 14:02:59 [error] [php] Undefined variable: user (C:\Users\Santiago\Desktop\UwAmp\www\yii\Eafit-PI1-2015-1-Rider-\protected\controllers\SiteController.php:276)
+Stack trace:
+#0 C:\Users\Santiago\Desktop\UwAmp\www\yii\framework\web\CController.php(286): SiteController->runAction()
+#1 C:\Users\Santiago\Desktop\UwAmp\www\yii\framework\web\CController.php(265): SiteController->runActionWithFilters()
+#2 C:\Users\Santiago\Desktop\UwAmp\www\yii\framework\web\CWebApplication.php(282): SiteController->run()
+#3 C:\Users\Santiago\Desktop\UwAmp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#4 C:\Users\Santiago\Desktop\UwAmp\www\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#5 C:\Users\Santiago\Desktop\UwAmp\www\yii\Eafit-PI1-2015-1-Rider-\index.php(13): CWebApplication->run()
+REQUEST_URI=/yii/Eafit-PI1-2015-1-Rider-/site/RiderName
+in C:\Users\Santiago\Desktop\UwAmp\www\yii\Eafit-PI1-2015-1-Rider-\protected\controllers\SiteController.php (276)
+in C:\Users\Santiago\Desktop\UwAmp\www\yii\Eafit-PI1-2015-1-Rider-\index.php (13)
+2015/11/16 14:03:00 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "themes/classic/css/formStyle.css".' in C:\Users\Santiago\Desktop\UwAmp\www\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\Users\Santiago\Desktop\UwAmp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('themes/classic/...')
+#1 C:\Users\Santiago\Desktop\UwAmp\www\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 C:\Users\Santiago\Desktop\UwAmp\www\yii\Eafit-PI1-2015-1-Rider-\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/Eafit-PI1-2015-1-Rider-/themes/classic/css/formStyle.css
+HTTP_REFERER=http://localhost/yii/Eafit-PI1-2015-1-Rider-/site/label?0%5Bid%5D=13
+---
+2015/11/16 14:03:34 [error] [php] Undefined variable: user (C:\Users\Santiago\Desktop\UwAmp\www\yii\Eafit-PI1-2015-1-Rider-\protected\controllers\SiteController.php:276)
+Stack trace:
+#0 C:\Users\Santiago\Desktop\UwAmp\www\yii\framework\web\CController.php(286): SiteController->runAction()
+#1 C:\Users\Santiago\Desktop\UwAmp\www\yii\framework\web\CController.php(265): SiteController->runActionWithFilters()
+#2 C:\Users\Santiago\Desktop\UwAmp\www\yii\framework\web\CWebApplication.php(282): SiteController->run()
+#3 C:\Users\Santiago\Desktop\UwAmp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#4 C:\Users\Santiago\Desktop\UwAmp\www\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#5 C:\Users\Santiago\Desktop\UwAmp\www\yii\Eafit-PI1-2015-1-Rider-\index.php(13): CWebApplication->run()
+REQUEST_URI=/yii/Eafit-PI1-2015-1-Rider-/site/RiderName
+in C:\Users\Santiago\Desktop\UwAmp\www\yii\Eafit-PI1-2015-1-Rider-\protected\controllers\SiteController.php (276)
+in C:\Users\Santiago\Desktop\UwAmp\www\yii\Eafit-PI1-2015-1-Rider-\index.php (13)
+2015/11/16 14:03:37 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "themes/classic/css/formStyle.css".' in C:\Users\Santiago\Desktop\UwAmp\www\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\Users\Santiago\Desktop\UwAmp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('themes/classic/...')
+#1 C:\Users\Santiago\Desktop\UwAmp\www\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 C:\Users\Santiago\Desktop\UwAmp\www\yii\Eafit-PI1-2015-1-Rider-\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/Eafit-PI1-2015-1-Rider-/themes/classic/css/formStyle.css
+HTTP_REFERER=http://localhost/yii/Eafit-PI1-2015-1-Rider-/site/label?0%5Bid%5D=12
+---
+2015/11/16 14:04:39 [error] [php] Undefined variable: user (C:\Users\Santiago\Desktop\UwAmp\www\yii\Eafit-PI1-2015-1-Rider-\protected\controllers\SiteController.php:276)
+Stack trace:
+#0 C:\Users\Santiago\Desktop\UwAmp\www\yii\framework\web\CController.php(286): SiteController->runAction()
+#1 C:\Users\Santiago\Desktop\UwAmp\www\yii\framework\web\CController.php(265): SiteController->runActionWithFilters()
+#2 C:\Users\Santiago\Desktop\UwAmp\www\yii\framework\web\CWebApplication.php(282): SiteController->run()
+#3 C:\Users\Santiago\Desktop\UwAmp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#4 C:\Users\Santiago\Desktop\UwAmp\www\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#5 C:\Users\Santiago\Desktop\UwAmp\www\yii\Eafit-PI1-2015-1-Rider-\index.php(13): CWebApplication->run()
+REQUEST_URI=/yii/Eafit-PI1-2015-1-Rider-/site/RiderName
+in C:\Users\Santiago\Desktop\UwAmp\www\yii\Eafit-PI1-2015-1-Rider-\protected\controllers\SiteController.php (276)
+in C:\Users\Santiago\Desktop\UwAmp\www\yii\Eafit-PI1-2015-1-Rider-\index.php (13)
+2015/11/16 14:04:41 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "themes/classic/css/formStyle.css".' in C:\Users\Santiago\Desktop\UwAmp\www\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\Users\Santiago\Desktop\UwAmp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('themes/classic/...')
+#1 C:\Users\Santiago\Desktop\UwAmp\www\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 C:\Users\Santiago\Desktop\UwAmp\www\yii\Eafit-PI1-2015-1-Rider-\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/Eafit-PI1-2015-1-Rider-/themes/classic/css/formStyle.css
+HTTP_REFERER=http://localhost/yii/Eafit-PI1-2015-1-Rider-/site/label?0%5Bid%5D=12
+---
+2015/11/16 14:05:55 [error] [php] Undefined variable: user (C:\Users\Santiago\Desktop\UwAmp\www\yii\Eafit-PI1-2015-1-Rider-\protected\controllers\SiteController.php:276)
+Stack trace:
+#0 C:\Users\Santiago\Desktop\UwAmp\www\yii\framework\web\CController.php(286): SiteController->runAction()
+#1 C:\Users\Santiago\Desktop\UwAmp\www\yii\framework\web\CController.php(265): SiteController->runActionWithFilters()
+#2 C:\Users\Santiago\Desktop\UwAmp\www\yii\framework\web\CWebApplication.php(282): SiteController->run()
+#3 C:\Users\Santiago\Desktop\UwAmp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#4 C:\Users\Santiago\Desktop\UwAmp\www\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#5 C:\Users\Santiago\Desktop\UwAmp\www\yii\Eafit-PI1-2015-1-Rider-\index.php(13): CWebApplication->run()
+REQUEST_URI=/yii/Eafit-PI1-2015-1-Rider-/site/RiderName
+in C:\Users\Santiago\Desktop\UwAmp\www\yii\Eafit-PI1-2015-1-Rider-\protected\controllers\SiteController.php (276)
+in C:\Users\Santiago\Desktop\UwAmp\www\yii\Eafit-PI1-2015-1-Rider-\index.php (13)
+2015/11/16 14:05:56 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "themes/classic/css/formStyle.css".' in C:\Users\Santiago\Desktop\UwAmp\www\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\Users\Santiago\Desktop\UwAmp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('themes/classic/...')
+#1 C:\Users\Santiago\Desktop\UwAmp\www\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 C:\Users\Santiago\Desktop\UwAmp\www\yii\Eafit-PI1-2015-1-Rider-\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/Eafit-PI1-2015-1-Rider-/themes/classic/css/formStyle.css
+HTTP_REFERER=http://localhost/yii/Eafit-PI1-2015-1-Rider-/site/label?0%5Bid%5D=10
+---
+2015/11/16 14:06:44 [error] [php] Undefined variable: user (C:\Users\Santiago\Desktop\UwAmp\www\yii\Eafit-PI1-2015-1-Rider-\protected\controllers\SiteController.php:276)
+Stack trace:
+#0 C:\Users\Santiago\Desktop\UwAmp\www\yii\framework\web\CController.php(286): SiteController->runAction()
+#1 C:\Users\Santiago\Desktop\UwAmp\www\yii\framework\web\CController.php(265): SiteController->runActionWithFilters()
+#2 C:\Users\Santiago\Desktop\UwAmp\www\yii\framework\web\CWebApplication.php(282): SiteController->run()
+#3 C:\Users\Santiago\Desktop\UwAmp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#4 C:\Users\Santiago\Desktop\UwAmp\www\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#5 C:\Users\Santiago\Desktop\UwAmp\www\yii\Eafit-PI1-2015-1-Rider-\index.php(13): CWebApplication->run()
+REQUEST_URI=/yii/Eafit-PI1-2015-1-Rider-/site/RiderName
+in C:\Users\Santiago\Desktop\UwAmp\www\yii\Eafit-PI1-2015-1-Rider-\protected\controllers\SiteController.php (276)
+in C:\Users\Santiago\Desktop\UwAmp\www\yii\Eafit-PI1-2015-1-Rider-\index.php (13)
+2015/11/16 14:08:09 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "themes/classic/css/formStyle.css".' in C:\Users\Santiago\Desktop\UwAmp\www\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\Users\Santiago\Desktop\UwAmp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('themes/classic/...')
+#1 C:\Users\Santiago\Desktop\UwAmp\www\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 C:\Users\Santiago\Desktop\UwAmp\www\yii\Eafit-PI1-2015-1-Rider-\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/Eafit-PI1-2015-1-Rider-/themes/classic/css/formStyle.css
+HTTP_REFERER=http://localhost/yii/Eafit-PI1-2015-1-Rider-/site/label?0%5Bid%5D=10
+---
+2015/11/16 14:08:41 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "themes/classic/css/formStyle.css".' in C:\Users\Santiago\Desktop\UwAmp\www\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\Users\Santiago\Desktop\UwAmp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('themes/classic/...')
+#1 C:\Users\Santiago\Desktop\UwAmp\www\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 C:\Users\Santiago\Desktop\UwAmp\www\yii\Eafit-PI1-2015-1-Rider-\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/Eafit-PI1-2015-1-Rider-/themes/classic/css/formStyle.css
+HTTP_REFERER=http://localhost/yii/Eafit-PI1-2015-1-Rider-/site/label?0%5Bid%5D=10
+---
+2015/11/16 14:19:17 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "themes/classic/css/formStyle.css".' in C:\Users\Santiago\Desktop\UwAmp\www\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\Users\Santiago\Desktop\UwAmp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('themes/classic/...')
+#1 C:\Users\Santiago\Desktop\UwAmp\www\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 C:\Users\Santiago\Desktop\UwAmp\www\yii\Eafit-PI1-2015-1-Rider-\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/Eafit-PI1-2015-1-Rider-/themes/classic/css/formStyle.css
+HTTP_REFERER=http://localhost/yii/Eafit-PI1-2015-1-Rider-/site/label?0%5Bid%5D=13
+---

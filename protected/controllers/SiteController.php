@@ -268,6 +268,19 @@ class SiteController extends Controller
 	}
 
 	public function actionRiderName(){
+		if(isset($_POST['id'])){
+			$idR = json_decode($_POST['id']);
+			$name = json_decode($_POST['nameR']);
+		}
+		$user = Yii::app()->user->name;
+		$resultData = new Band();
+		$resultData = Band::model()->findAllBySql('SELECT id_band FROM tband WHERE name_band = "'.$user.'"');
+		Rider::model()->deleteAll('id_rider = :id',array('id' => $idR));
+		$rider = new Rider;
+		$rider->id_rider = $idR;
+		$rider->name_rider=$name;
+		$rider->id_band=$resultData[0]->id_band;
+		$rider->save();
 		//aqui va el codigo
 	}
 
@@ -276,7 +289,7 @@ class SiteController extends Controller
 		$resultData = new Band();
 		$resultData = Band::model()->findAllBySql('SELECT id_band FROM tband WHERE name_band = "'.$user.'"');
 		$rider = new Rider;
-		$rider->name_rider="nuevo";
+		$rider->name_rider="Nuevo rider";
 		$rider->id_band=$resultData[0]->id_band;
 		$rider->save();
 		$this->redirect(array("stage", array('id'=>$rider->id_rider)));

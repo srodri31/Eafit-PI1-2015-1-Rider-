@@ -29,6 +29,12 @@ function saveBD(){
 	var idJSON = JSON.stringify(id);
 	var nameRider = document.getElementById("txt_name").value;
 	var nRJSON = JSON.stringify(nameRider);
+	$.ajax({ 
+		    data: {"id": idJSON, "nameR": nRJSON}, 
+		    type: "POST",
+		    url: <?php echo "'".CController::createUrl('RiderName')."'";?>,
+     });
+
 	while(auxCont<=cont){
 		var trT=table.getElementsByTagName('tr')[auxCont];
 		var idInstrumentTable = trT.id;
@@ -62,18 +68,6 @@ function saveBD(){
 		$("#link").removeClass("hidden");
 
 	}
-
-	/*$.ajax({ 
-		        data: {"nameR":nRJSON},
-				type: "POST",
-                url: <?php echo "'".CController::createUrl('RiderName')."'";?>,
-        }).done(function( result ) {	
-				// $('#stage').text(result);
-		}).error(
-			function(XMLHttpRequest, textStatus, errorThrown){
-				console.log('Error '+XMLHttpRequest+" "+errorThrown);
-        });	    
-*/
 }	
 
 function getBD(){		
@@ -101,6 +95,17 @@ function getBD(){
 
 </script>
 
+<?php
+	$url=$_SERVER['REQUEST_URI'];
+	$id = substr($url,50);
+	$cond = new CDbCriteria();
+	$cond->condition = "id_rider = ".$id;
+	$rider = CActiveRecord::model("Rider")->findAll($cond);
+	foreach ($rider as $data):
+		$Rname = $data->name_rider;
+	endforeach 
+?>
+
 <link href="<?php echo Yii::app()->theme->baseUrl; ?>/css/modal.css" rel="stylesheet">
 		<br><br>
 		<div class="row">
@@ -115,7 +120,7 @@ function getBD(){
         	 <div id="description" class="col-lg-3">        	 		                         
 			    <form method="post" action="">                                
 			        <div class="form-group">                                    
-			            <input value="" type="text" class="form-control" name="txt_name" id="txt_name" placeholder="Rider's Name">
+			            <input value="<?php echo $Rname;?>" type="text" class="form-control" name="txt_name" id="txt_name" placeholder="Rider's Name">
 			        </div>  
 					<br>				
 					<h5>Select Instrument</h5>
@@ -254,11 +259,7 @@ function getBD(){
             </div>
         </div>
 <br>
-<div>   
-	<?php
-		$url=$_SERVER['REQUEST_URI'];
-		$id = substr($url,50);
-	?>
+<div> 
 	<button type="button" class="btn btn-custom" onmouseenter="deleteBaseData()" onclick="saveBD()">Save Input</button> 
 	<div class="hidden" id="link">
 	 	<h3><?php echo CHtml::link( 'Next step',array('CallLabel', 'id'=>$id)); ?></h3> 
