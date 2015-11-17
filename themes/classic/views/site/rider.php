@@ -42,7 +42,8 @@ if($model == null){
 }
 foreach ($model as $data):?>
 	<legend>
-		<?php echo CHtml::link( $data->name_rider ,array('CallStage', 'id'=>$data->id_rider)); ?> 
+		<?php echo CHtml::link( $data->name_rider ,array('CallStage', 'id'=>$data->id_rider)); ?> <br>
+		<small><?php echo CHtml::link("Delete",array('delete','id'=>$data->id_rider),array("confirm"=>"Esta seguro"));?></small>
 	</legend>
 <?php endforeach ?>
 <?php echo CHtml::link( 'Nuevo rider',array('NewStage')); ?> 

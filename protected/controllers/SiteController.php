@@ -394,4 +394,12 @@ class SiteController extends Controller
 		Yii::app()->user->logout();
 		$this->redirect(Yii::app()->homeUrl);
 	}
+	
+	public function actionDelete($id)
+	{
+		Tstage_information::model()->deleteAll('idRider = :id',array('id' => $id));
+	    Label::model()->deleteAll('id_rider = :id',array('id' => $id));
+		Rider::model()->deleteAll('id_rider = :id',array('id' => $id));
+		$this->redirect(array('rider'));	
+	}
 }
