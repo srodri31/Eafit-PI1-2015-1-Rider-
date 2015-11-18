@@ -321,6 +321,14 @@ class SiteController extends Controller
 	   	
 	}
 
+	public function actionDelete($id)
+	{
+		Tstage_information::model()->deleteAll('idRider = :id',array('id' => $id));
+	    Label::model()->deleteAll('id_rider = :id',array('id' => $id));
+		Rider::model()->deleteAll('id_rider = :id',array('id' => $id));
+		$this->redirect(array('rider'));	
+	}
+
 	/**
 	 * This is the action to handle external exceptions.
 	 */
