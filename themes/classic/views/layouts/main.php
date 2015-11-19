@@ -32,10 +32,14 @@
     
     <!--Style to Forms-->
     <link type="text/css" href="<?php echo Yii::app()->theme->baseUrl; ?>/css/formsStyle.css" rel="Stylesheet" id="linkestilo">   
+    
+    <!--Style to Tables-->
+    <link type="text/css" href="<?php echo Yii::app()->theme->baseUrl; ?>/css/tablesStyle.css" rel="Stylesheet" id="linkestilo">
+
 
    <!-- Main Tabs -->   
    <link href="<?php echo Yii::app()->theme->baseUrl; ?>/css/bootstrap.min(1).css" rel="stylesheet" id="bootstrap-css">
-<!--<script src="<?php echo Yii::app()->theme->baseUrl; ?>/js/jquery-1.11.1.js"></script>-->
+   <!--<script src="<?php echo Yii::app()->theme->baseUrl; ?>/js/jquery-1.11.1.js"></script>-->
    <script src="<?php echo Yii::app()->theme->baseUrl; ?>/js/bootstrap.min(2).js"></script>
 
 <script type="text/javascript">

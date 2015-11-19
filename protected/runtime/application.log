@@ -25393,3 +25393,422 @@ Stack trace:
 REQUEST_URI=/yii/Eafit-PI1-2015-1-Rider-/themes/classic/css/bootstrap.min(1).css
 HTTP_REFERER=http://localhost/yii/Eafit-PI1-2015-1-Rider-/site/rider
 ---
+2015/11/19 19:18:27 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "themes/classic/css/bootstrap.min(1).css".' in U:\UwAmp\www\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 U:\UwAmp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('themes/classic/...')
+#1 U:\UwAmp\www\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 U:\UwAmp\www\yii\Eafit-PI1-2015-1-Rider-\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/Eafit-PI1-2015-1-Rider-/themes/classic/css/bootstrap.min(1).css
+HTTP_REFERER=http://localhost/yii/Eafit-PI1-2015-1-Rider-/site/
+---
+2015/11/19 19:23:35 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "themes/classic/css/bootstrap.min(1).css".' in U:\UwAmp\www\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 U:\UwAmp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('themes/classic/...')
+#1 U:\UwAmp\www\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 U:\UwAmp\www\yii\Eafit-PI1-2015-1-Rider-\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/Eafit-PI1-2015-1-Rider-/themes/classic/css/bootstrap.min(1).css
+HTTP_REFERER=http://localhost/yii/Eafit-PI1-2015-1-Rider-/site/rider
+---
+2015/11/19 19:23:50 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "themes/classic/images/logo.jpg".' in U:\UwAmp\www\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 U:\UwAmp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('themes/classic/...')
+#1 U:\UwAmp\www\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 U:\UwAmp\www\yii\Eafit-PI1-2015-1-Rider-\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/Eafit-PI1-2015-1-Rider-/themes/classic/images/logo.jpg
+HTTP_REFERER=http://localhost/yii/Eafit-PI1-2015-1-Rider-/site/rider
+---
+2015/11/19 19:25:41 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "themes/classic/css/bootstrap.min(1).css".' in U:\UwAmp\www\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 U:\UwAmp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('themes/classic/...')
+#1 U:\UwAmp\www\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 U:\UwAmp\www\yii\Eafit-PI1-2015-1-Rider-\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/Eafit-PI1-2015-1-Rider-/themes/classic/css/bootstrap.min(1).css
+HTTP_REFERER=http://localhost/yii/Eafit-PI1-2015-1-Rider-/site/rider
+---
+2015/11/19 19:25:41 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "themes/classic/images/logo.jpg".' in U:\UwAmp\www\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 U:\UwAmp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('themes/classic/...')
+#1 U:\UwAmp\www\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 U:\UwAmp\www\yii\Eafit-PI1-2015-1-Rider-\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/Eafit-PI1-2015-1-Rider-/themes/classic/images/logo.jpg
+HTTP_REFERER=http://localhost/yii/Eafit-PI1-2015-1-Rider-/site/rider
+---
+2015/11/19 19:26:46 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "themes/classic/css/bootstrap.min(1).css".' in U:\UwAmp\www\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 U:\UwAmp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('themes/classic/...')
+#1 U:\UwAmp\www\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 U:\UwAmp\www\yii\Eafit-PI1-2015-1-Rider-\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/Eafit-PI1-2015-1-Rider-/themes/classic/css/bootstrap.min(1).css
+HTTP_REFERER=http://localhost/yii/Eafit-PI1-2015-1-Rider-/site/rider
+---
+2015/11/19 19:26:46 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "themes/classic/images/logo.jpg".' in U:\UwAmp\www\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 U:\UwAmp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('themes/classic/...')
+#1 U:\UwAmp\www\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 U:\UwAmp\www\yii\Eafit-PI1-2015-1-Rider-\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/Eafit-PI1-2015-1-Rider-/themes/classic/images/logo.jpg
+HTTP_REFERER=http://localhost/yii/Eafit-PI1-2015-1-Rider-/site/rider
+---
+2015/11/19 19:26:51 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "themes/classic/css/bootstrap.min(1).css".' in U:\UwAmp\www\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 U:\UwAmp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('themes/classic/...')
+#1 U:\UwAmp\www\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 U:\UwAmp\www\yii\Eafit-PI1-2015-1-Rider-\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/Eafit-PI1-2015-1-Rider-/themes/classic/css/bootstrap.min(1).css
+HTTP_REFERER=http://localhost/yii/Eafit-PI1-2015-1-Rider-/site/general?0%5Bid%5D=0
+---
+2015/11/19 19:26:55 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "themes/classic/css/bootstrap.min(1).css".' in U:\UwAmp\www\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 U:\UwAmp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('themes/classic/...')
+#1 U:\UwAmp\www\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 U:\UwAmp\www\yii\Eafit-PI1-2015-1-Rider-\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/Eafit-PI1-2015-1-Rider-/themes/classic/css/bootstrap.min(1).css
+HTTP_REFERER=http://localhost/yii/Eafit-PI1-2015-1-Rider-/site/stage?0%5Bid%5D=0
+---
+2015/11/19 19:27:07 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "themes/classic/css/bootstrap.min(1).css".' in U:\UwAmp\www\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 U:\UwAmp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('themes/classic/...')
+#1 U:\UwAmp\www\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 U:\UwAmp\www\yii\Eafit-PI1-2015-1-Rider-\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/Eafit-PI1-2015-1-Rider-/themes/classic/css/bootstrap.min(1).css
+HTTP_REFERER=http://localhost/yii/Eafit-PI1-2015-1-Rider-/site/label?0%5Bid%5D=0
+---
+2015/11/19 19:27:07 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "themes/classic/css/formStyle.css".' in U:\UwAmp\www\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 U:\UwAmp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('themes/classic/...')
+#1 U:\UwAmp\www\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 U:\UwAmp\www\yii\Eafit-PI1-2015-1-Rider-\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/Eafit-PI1-2015-1-Rider-/themes/classic/css/formStyle.css
+HTTP_REFERER=http://localhost/yii/Eafit-PI1-2015-1-Rider-/site/label?0%5Bid%5D=0
+---
+2015/11/19 19:27:13 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "themes/classic/css/bootstrap.min(1).css".' in U:\UwAmp\www\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 U:\UwAmp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('themes/classic/...')
+#1 U:\UwAmp\www\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 U:\UwAmp\www\yii\Eafit-PI1-2015-1-Rider-\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/Eafit-PI1-2015-1-Rider-/themes/classic/css/bootstrap.min(1).css
+HTTP_REFERER=http://localhost/yii/Eafit-PI1-2015-1-Rider-/site/exportoptions?0%5Bid%5D=0
+---
+2015/11/19 16:35:02 [error] [php] Undefined variable: model (U:\UwAmp\www\yii\Eafit-PI1-2015-1-Rider-\protected\controllers\SiteController.php:183)
+Stack trace:
+#0 U:\UwAmp\www\yii\framework\web\CController.php(286): SiteController->runAction()
+#1 U:\UwAmp\www\yii\framework\web\CController.php(265): SiteController->runActionWithFilters()
+#2 U:\UwAmp\www\yii\framework\web\CWebApplication.php(282): SiteController->run()
+#3 U:\UwAmp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#4 U:\UwAmp\www\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#5 U:\UwAmp\www\yii\Eafit-PI1-2015-1-Rider-\index.php(13): CWebApplication->run()
+REQUEST_URI=/yii/Eafit-PI1-2015-1-Rider-/site/pdf?0%5Bid%5D=0
+in U:\UwAmp\www\yii\Eafit-PI1-2015-1-Rider-\protected\controllers\SiteController.php (183)
+in U:\UwAmp\www\yii\Eafit-PI1-2015-1-Rider-\index.php (13)
+2015/11/19 19:35:02 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "themes/classic/css/bootstrap.min(1).css".' in U:\UwAmp\www\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 U:\UwAmp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('themes/classic/...')
+#1 U:\UwAmp\www\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 U:\UwAmp\www\yii\Eafit-PI1-2015-1-Rider-\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/Eafit-PI1-2015-1-Rider-/themes/classic/css/bootstrap.min(1).css
+HTTP_REFERER=http://localhost/yii/Eafit-PI1-2015-1-Rider-/site/pdf?0%5Bid%5D=0
+---
+2015/11/19 16:36:10 [error] [php] Undefined variable: model (U:\UwAmp\www\yii\Eafit-PI1-2015-1-Rider-\protected\controllers\SiteController.php:183)
+Stack trace:
+#0 U:\UwAmp\www\yii\framework\web\CController.php(286): SiteController->runAction()
+#1 U:\UwAmp\www\yii\framework\web\CController.php(265): SiteController->runActionWithFilters()
+#2 U:\UwAmp\www\yii\framework\web\CWebApplication.php(282): SiteController->run()
+#3 U:\UwAmp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#4 U:\UwAmp\www\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#5 U:\UwAmp\www\yii\Eafit-PI1-2015-1-Rider-\index.php(13): CWebApplication->run()
+REQUEST_URI=/yii/Eafit-PI1-2015-1-Rider-/site/pdf?0%5Bid%5D=0
+in U:\UwAmp\www\yii\Eafit-PI1-2015-1-Rider-\protected\controllers\SiteController.php (183)
+in U:\UwAmp\www\yii\Eafit-PI1-2015-1-Rider-\index.php (13)
+2015/11/19 19:36:10 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "themes/classic/css/bootstrap.min(1).css".' in U:\UwAmp\www\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 U:\UwAmp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('themes/classic/...')
+#1 U:\UwAmp\www\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 U:\UwAmp\www\yii\Eafit-PI1-2015-1-Rider-\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/Eafit-PI1-2015-1-Rider-/themes/classic/css/bootstrap.min(1).css
+HTTP_REFERER=http://localhost/yii/Eafit-PI1-2015-1-Rider-/site/pdf?0%5Bid%5D=0
+---
+2015/11/19 16:37:12 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'idRider' in 'where clause'. The SQL statement executed was: SELECT * FROM tlabel WHERE idRider=0.
+in U:\UwAmp\www\yii\Eafit-PI1-2015-1-Rider-\protected\views\site\pdfReport.php (113)
+in U:\UwAmp\www\yii\Eafit-PI1-2015-1-Rider-\protected\controllers\SiteController.php (183)
+in U:\UwAmp\www\yii\Eafit-PI1-2015-1-Rider-\index.php (13)
+2015/11/19 16:37:12 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'idRider' in 'where clause'. The SQL statement executed was: SELECT * FROM tlabel WHERE idRider=0' in U:\UwAmp\www\yii\framework\db\CDbCommand.php:543
+Stack trace:
+#0 U:\UwAmp\www\yii\framework\db\CDbCommand.php(396): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 U:\UwAmp\www\yii\framework\db\ar\CActiveRecord.php(1586): CDbCommand->queryAll()
+#2 U:\UwAmp\www\yii\Eafit-PI1-2015-1-Rider-\protected\views\site\pdfReport.php(113): CActiveRecord->findAllBySql('SELECT * FROM t...')
+#3 U:\UwAmp\www\yii\framework\web\CBaseController.php(126): require('U:\\UwAmp\\www\\yi...')
+#4 U:\UwAmp\www\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('U:\\UwAmp\\www\\yi...', true, true)
+#5 U:\UwAmp\www\yii\framework\web\CController.php(869): CBaseController->renderFile('U:\\UwAmp\\www\\yi...', true, true)
+#6 U:\UwAmp\www\yii\Eafit-PI1-2015-1-Rider-\protected\controllers\SiteController.php(183): CController->renderPartial('pdfReport', true)
+#7 U:\UwAmp\www\yii\framework\web\actions\CInlineAction.php(49): SiteController->actionPdf()
+#8 U:\UwAmp\www\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#9 U:\UwAmp\www\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#10 U:\UwAmp\www\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 U:\UwAmp\www\yii\framework\web\CWebApplication.php(282): CController->run('pdf')
+#12 U:\UwAmp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('site/pdf')
+#13 U:\UwAmp\www\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#14 U:\UwAmp\www\yii\Eafit-PI1-2015-1-Rider-\index.php(13): CApplication->run()
+#15 {main}
+REQUEST_URI=/yii/Eafit-PI1-2015-1-Rider-/site/pdf?0%5Bid%5D=0
+---
+2015/11/19 16:37:50 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'FROM tstage_information WHERE idRider=0' at line 1. The SQL statement executed was: SELECT all FROM tstage_information WHERE idRider=0.
+in U:\UwAmp\www\yii\Eafit-PI1-2015-1-Rider-\protected\views\site\pdfReport.php (112)
+in U:\UwAmp\www\yii\Eafit-PI1-2015-1-Rider-\protected\controllers\SiteController.php (183)
+in U:\UwAmp\www\yii\Eafit-PI1-2015-1-Rider-\index.php (13)
+2015/11/19 16:37:50 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'FROM tstage_information WHERE idRider=0' at line 1. The SQL statement executed was: SELECT all FROM tstage_information WHERE idRider=0' in U:\UwAmp\www\yii\framework\db\CDbCommand.php:543
+Stack trace:
+#0 U:\UwAmp\www\yii\framework\db\CDbCommand.php(396): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 U:\UwAmp\www\yii\framework\db\ar\CActiveRecord.php(1586): CDbCommand->queryAll()
+#2 U:\UwAmp\www\yii\Eafit-PI1-2015-1-Rider-\protected\views\site\pdfReport.php(112): CActiveRecord->findAllBySql('SELECT all FROM...')
+#3 U:\UwAmp\www\yii\framework\web\CBaseController.php(126): require('U:\\UwAmp\\www\\yi...')
+#4 U:\UwAmp\www\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('U:\\UwAmp\\www\\yi...', true, true)
+#5 U:\UwAmp\www\yii\framework\web\CController.php(869): CBaseController->renderFile('U:\\UwAmp\\www\\yi...', true, true)
+#6 U:\UwAmp\www\yii\Eafit-PI1-2015-1-Rider-\protected\controllers\SiteController.php(183): CController->renderPartial('pdfReport', true)
+#7 U:\UwAmp\www\yii\framework\web\actions\CInlineAction.php(49): SiteController->actionPdf()
+#8 U:\UwAmp\www\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#9 U:\UwAmp\www\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#10 U:\UwAmp\www\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 U:\UwAmp\www\yii\framework\web\CWebApplication.php(282): CController->run('pdf')
+#12 U:\UwAmp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('site/pdf')
+#13 U:\UwAmp\www\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#14 U:\UwAmp\www\yii\Eafit-PI1-2015-1-Rider-\index.php(13): CApplication->run()
+#15 {main}
+REQUEST_URI=/yii/Eafit-PI1-2015-1-Rider-/site/pdf?0%5Bid%5D=0
+---
+2015/11/19 16:38:06 [error] [php] Undefined variable: bandInfo (U:\UwAmp\www\yii\Eafit-PI1-2015-1-Rider-\protected\views\site\pdfReport.php:118)
+Stack trace:
+#0 U:\UwAmp\www\yii\framework\web\CController.php(869): SiteController->renderFile()
+#1 U:\UwAmp\www\yii\Eafit-PI1-2015-1-Rider-\protected\controllers\SiteController.php(183): SiteController->renderPartial()
+#2 U:\UwAmp\www\yii\framework\web\actions\CInlineAction.php(49): SiteController->actionPdf()
+#3 U:\UwAmp\www\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#4 U:\UwAmp\www\yii\framework\web\CController.php(286): SiteController->runAction()
+#5 U:\UwAmp\www\yii\framework\web\CController.php(265): SiteController->runActionWithFilters()
+#6 U:\UwAmp\www\yii\framework\web\CWebApplication.php(282): SiteController->run()
+#7 U:\UwAmp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#8 U:\UwAmp\www\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#9 U:\UwAmp\www\yii\Eafit-PI1-2015-1-Rider-\index.php(13): CWebApplication->run()
+REQUEST_URI=/yii/Eafit-PI1-2015-1-Rider-/site/pdf?0%5Bid%5D=0
+in U:\UwAmp\www\yii\Eafit-PI1-2015-1-Rider-\protected\views\site\pdfReport.php (118)
+in U:\UwAmp\www\yii\Eafit-PI1-2015-1-Rider-\protected\controllers\SiteController.php (183)
+in U:\UwAmp\www\yii\Eafit-PI1-2015-1-Rider-\index.php (13)
+2015/11/19 19:38:06 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "themes/classic/css/bootstrap.min(1).css".' in U:\UwAmp\www\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 U:\UwAmp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('themes/classic/...')
+#1 U:\UwAmp\www\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 U:\UwAmp\www\yii\Eafit-PI1-2015-1-Rider-\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/Eafit-PI1-2015-1-Rider-/themes/classic/css/bootstrap.min(1).css
+HTTP_REFERER=http://localhost/yii/Eafit-PI1-2015-1-Rider-/site/pdf?0%5Bid%5D=0
+---
+2015/11/19 16:38:56 [error] [php] Undefined variable: left (U:\UwAmp\www\yii\Eafit-PI1-2015-1-Rider-\protected\views\site\pdfReport.php:209)
+Stack trace:
+#0 U:\UwAmp\www\yii\framework\web\CController.php(869): SiteController->renderFile()
+#1 U:\UwAmp\www\yii\Eafit-PI1-2015-1-Rider-\protected\controllers\SiteController.php(183): SiteController->renderPartial()
+#2 U:\UwAmp\www\yii\framework\web\actions\CInlineAction.php(49): SiteController->actionPdf()
+#3 U:\UwAmp\www\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#4 U:\UwAmp\www\yii\framework\web\CController.php(286): SiteController->runAction()
+#5 U:\UwAmp\www\yii\framework\web\CController.php(265): SiteController->runActionWithFilters()
+#6 U:\UwAmp\www\yii\framework\web\CWebApplication.php(282): SiteController->run()
+#7 U:\UwAmp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#8 U:\UwAmp\www\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#9 U:\UwAmp\www\yii\Eafit-PI1-2015-1-Rider-\index.php(13): CWebApplication->run()
+REQUEST_URI=/yii/Eafit-PI1-2015-1-Rider-/site/pdf?0%5Bid%5D=0
+in U:\UwAmp\www\yii\Eafit-PI1-2015-1-Rider-\protected\views\site\pdfReport.php (209)
+in U:\UwAmp\www\yii\Eafit-PI1-2015-1-Rider-\protected\controllers\SiteController.php (183)
+in U:\UwAmp\www\yii\Eafit-PI1-2015-1-Rider-\index.php (13)
+2015/11/19 19:38:57 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "themes/classic/css/bootstrap.min(1).css".' in U:\UwAmp\www\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 U:\UwAmp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('themes/classic/...')
+#1 U:\UwAmp\www\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 U:\UwAmp\www\yii\Eafit-PI1-2015-1-Rider-\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/Eafit-PI1-2015-1-Rider-/themes/classic/css/bootstrap.min(1).css
+HTTP_REFERER=http://localhost/yii/Eafit-PI1-2015-1-Rider-/site/pdf?0%5Bid%5D=0
+---
+2015/11/19 19:41:54 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "themes/classic/images/logo.jpg".' in U:\UwAmp\www\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 U:\UwAmp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('themes/classic/...')
+#1 U:\UwAmp\www\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 U:\UwAmp\www\yii\Eafit-PI1-2015-1-Rider-\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/Eafit-PI1-2015-1-Rider-/themes/classic/images/logo.jpg
+HTTP_REFERER=http://localhost/yii/Eafit-PI1-2015-1-Rider-/site/RIDER
+---
+2015/11/19 19:41:54 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "themes/classic/css/bootstrap.min(1).css".' in U:\UwAmp\www\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 U:\UwAmp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('themes/classic/...')
+#1 U:\UwAmp\www\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 U:\UwAmp\www\yii\Eafit-PI1-2015-1-Rider-\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/Eafit-PI1-2015-1-Rider-/themes/classic/css/bootstrap.min(1).css
+HTTP_REFERER=http://localhost/yii/Eafit-PI1-2015-1-Rider-/site/RIDER
+---
+2015/11/19 19:41:54 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "themes/classic/images/logo.jpg".' in U:\UwAmp\www\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 U:\UwAmp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('themes/classic/...')
+#1 U:\UwAmp\www\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 U:\UwAmp\www\yii\Eafit-PI1-2015-1-Rider-\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/Eafit-PI1-2015-1-Rider-/themes/classic/images/logo.jpg
+HTTP_REFERER=http://localhost/yii/Eafit-PI1-2015-1-Rider-/site/RIDER
+---
+2015/11/19 19:41:57 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "themes/classic/css/bootstrap.min(1).css".' in U:\UwAmp\www\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 U:\UwAmp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('themes/classic/...')
+#1 U:\UwAmp\www\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 U:\UwAmp\www\yii\Eafit-PI1-2015-1-Rider-\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/Eafit-PI1-2015-1-Rider-/themes/classic/css/bootstrap.min(1).css
+HTTP_REFERER=http://localhost/yii/Eafit-PI1-2015-1-Rider-/site/general?0%5Bid%5D=0
+---
+2015/11/19 19:41:59 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "themes/classic/css/bootstrap.min(1).css".' in U:\UwAmp\www\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 U:\UwAmp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('themes/classic/...')
+#1 U:\UwAmp\www\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 U:\UwAmp\www\yii\Eafit-PI1-2015-1-Rider-\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/Eafit-PI1-2015-1-Rider-/themes/classic/css/bootstrap.min(1).css
+HTTP_REFERER=http://localhost/yii/Eafit-PI1-2015-1-Rider-/site/stage?0%5Bid%5D=0
+---
+2015/11/19 19:42:45 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "themes/classic/css/formStyle.css".' in U:\UwAmp\www\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 U:\UwAmp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('themes/classic/...')
+#1 U:\UwAmp\www\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 U:\UwAmp\www\yii\Eafit-PI1-2015-1-Rider-\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/Eafit-PI1-2015-1-Rider-/themes/classic/css/formStyle.css
+HTTP_REFERER=http://localhost/yii/Eafit-PI1-2015-1-Rider-/site/label?0%5Bid%5D=0
+---
+2015/11/19 19:42:45 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "themes/classic/css/bootstrap.min(1).css".' in U:\UwAmp\www\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 U:\UwAmp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('themes/classic/...')
+#1 U:\UwAmp\www\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 U:\UwAmp\www\yii\Eafit-PI1-2015-1-Rider-\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/Eafit-PI1-2015-1-Rider-/themes/classic/css/bootstrap.min(1).css
+HTTP_REFERER=http://localhost/yii/Eafit-PI1-2015-1-Rider-/site/label?0%5Bid%5D=0
+---
+2015/11/19 19:42:50 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "themes/classic/css/bootstrap.min(1).css".' in U:\UwAmp\www\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 U:\UwAmp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('themes/classic/...')
+#1 U:\UwAmp\www\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 U:\UwAmp\www\yii\Eafit-PI1-2015-1-Rider-\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/Eafit-PI1-2015-1-Rider-/themes/classic/css/bootstrap.min(1).css
+HTTP_REFERER=http://localhost/yii/Eafit-PI1-2015-1-Rider-/site/exportoptions?0%5Bid%5D=0
+---
+2015/11/19 16:45:40 [error] [php] Undefined variable: strTop (U:\UwAmp\www\yii\Eafit-PI1-2015-1-Rider-\protected\views\site\pdfReport.php:132)
+Stack trace:
+#0 U:\UwAmp\www\yii\framework\web\CController.php(869): SiteController->renderFile()
+#1 U:\UwAmp\www\yii\Eafit-PI1-2015-1-Rider-\protected\controllers\SiteController.php(183): SiteController->renderPartial()
+#2 U:\UwAmp\www\yii\framework\web\actions\CInlineAction.php(49): SiteController->actionPdf()
+#3 U:\UwAmp\www\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#4 U:\UwAmp\www\yii\framework\web\CController.php(286): SiteController->runAction()
+#5 U:\UwAmp\www\yii\framework\web\CController.php(265): SiteController->runActionWithFilters()
+#6 U:\UwAmp\www\yii\framework\web\CWebApplication.php(282): SiteController->run()
+#7 U:\UwAmp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#8 U:\UwAmp\www\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#9 U:\UwAmp\www\yii\Eafit-PI1-2015-1-Rider-\index.php(13): CWebApplication->run()
+REQUEST_URI=/yii/Eafit-PI1-2015-1-Rider-/site/pdf?0%5Bid%5D=0
+in U:\UwAmp\www\yii\Eafit-PI1-2015-1-Rider-\protected\views\site\pdfReport.php (132)
+in U:\UwAmp\www\yii\Eafit-PI1-2015-1-Rider-\protected\controllers\SiteController.php (183)
+in U:\UwAmp\www\yii\Eafit-PI1-2015-1-Rider-\index.php (13)
+2015/11/19 19:45:41 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "themes/classic/css/bootstrap.min(1).css".' in U:\UwAmp\www\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 U:\UwAmp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('themes/classic/...')
+#1 U:\UwAmp\www\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 U:\UwAmp\www\yii\Eafit-PI1-2015-1-Rider-\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/Eafit-PI1-2015-1-Rider-/themes/classic/css/bootstrap.min(1).css
+HTTP_REFERER=http://localhost/yii/Eafit-PI1-2015-1-Rider-/site/pdf?0%5Bid%5D=0
+---
+2015/11/19 16:47:12 [error] [php] Undefined variable: left (U:\UwAmp\www\yii\Eafit-PI1-2015-1-Rider-\protected\views\site\pdfReport.php:210)
+Stack trace:
+#0 U:\UwAmp\www\yii\framework\web\CController.php(869): SiteController->renderFile()
+#1 U:\UwAmp\www\yii\Eafit-PI1-2015-1-Rider-\protected\controllers\SiteController.php(183): SiteController->renderPartial()
+#2 U:\UwAmp\www\yii\framework\web\actions\CInlineAction.php(49): SiteController->actionPdf()
+#3 U:\UwAmp\www\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#4 U:\UwAmp\www\yii\framework\web\CController.php(286): SiteController->runAction()
+#5 U:\UwAmp\www\yii\framework\web\CController.php(265): SiteController->runActionWithFilters()
+#6 U:\UwAmp\www\yii\framework\web\CWebApplication.php(282): SiteController->run()
+#7 U:\UwAmp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#8 U:\UwAmp\www\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#9 U:\UwAmp\www\yii\Eafit-PI1-2015-1-Rider-\index.php(13): CWebApplication->run()
+REQUEST_URI=/yii/Eafit-PI1-2015-1-Rider-/site/pdf?0%5Bid%5D=0
+in U:\UwAmp\www\yii\Eafit-PI1-2015-1-Rider-\protected\views\site\pdfReport.php (210)
+in U:\UwAmp\www\yii\Eafit-PI1-2015-1-Rider-\protected\controllers\SiteController.php (183)
+in U:\UwAmp\www\yii\Eafit-PI1-2015-1-Rider-\index.php (13)
+2015/11/19 19:47:13 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "themes/classic/css/bootstrap.min(1).css".' in U:\UwAmp\www\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 U:\UwAmp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('themes/classic/...')
+#1 U:\UwAmp\www\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 U:\UwAmp\www\yii\Eafit-PI1-2015-1-Rider-\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/Eafit-PI1-2015-1-Rider-/themes/classic/css/bootstrap.min(1).css
+HTTP_REFERER=http://localhost/yii/Eafit-PI1-2015-1-Rider-/site/pdf?0%5Bid%5D=0
+---
+2015/11/19 16:58:16 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'f' in 'where clause'. The SQL statement executed was: SELECT * FROM tstage_information WHERE idRider=f.
+in U:\UwAmp\www\yii\Eafit-PI1-2015-1-Rider-\protected\views\site\pdfReport.php (111)
+in U:\UwAmp\www\yii\Eafit-PI1-2015-1-Rider-\protected\controllers\SiteController.php (183)
+in U:\UwAmp\www\yii\Eafit-PI1-2015-1-Rider-\index.php (13)
+2015/11/19 16:58:16 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'f' in 'where clause'. The SQL statement executed was: SELECT * FROM tstage_information WHERE idRider=f' in U:\UwAmp\www\yii\framework\db\CDbCommand.php:543
+Stack trace:
+#0 U:\UwAmp\www\yii\framework\db\CDbCommand.php(396): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 U:\UwAmp\www\yii\framework\db\ar\CActiveRecord.php(1586): CDbCommand->queryAll()
+#2 U:\UwAmp\www\yii\Eafit-PI1-2015-1-Rider-\protected\views\site\pdfReport.php(111): CActiveRecord->findAllBySql('SELECT * FROM t...')
+#3 U:\UwAmp\www\yii\framework\web\CBaseController.php(126): require('U:\\UwAmp\\www\\yi...')
+#4 U:\UwAmp\www\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('U:\\UwAmp\\www\\yi...', Array, true)
+#5 U:\UwAmp\www\yii\framework\web\CController.php(869): CBaseController->renderFile('U:\\UwAmp\\www\\yi...', Array, true)
+#6 U:\UwAmp\www\yii\Eafit-PI1-2015-1-Rider-\protected\controllers\SiteController.php(183): CController->renderPartial('pdfReport', Array, true)
+#7 U:\UwAmp\www\yii\framework\web\actions\CInlineAction.php(49): SiteController->actionPdf()
+#8 U:\UwAmp\www\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#9 U:\UwAmp\www\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#10 U:\UwAmp\www\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 U:\UwAmp\www\yii\framework\web\CWebApplication.php(282): CController->run('pdf')
+#12 U:\UwAmp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('site/pdf')
+#13 U:\UwAmp\www\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#14 U:\UwAmp\www\yii\Eafit-PI1-2015-1-Rider-\index.php(13): CApplication->run()
+#15 {main}
+REQUEST_URI=/yii/Eafit-PI1-2015-1-Rider-/site/pdf
+---
+2015/11/19 19:58:23 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "themes/classic/css/bootstrap.min(1).css".' in U:\UwAmp\www\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 U:\UwAmp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('themes/classic/...')
+#1 U:\UwAmp\www\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 U:\UwAmp\www\yii\Eafit-PI1-2015-1-Rider-\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/Eafit-PI1-2015-1-Rider-/themes/classic/css/bootstrap.min(1).css
+HTTP_REFERER=http://localhost/yii/Eafit-PI1-2015-1-Rider-/site/rider
+---
+2015/11/19 19:58:23 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "themes/classic/images/logo.jpg".' in U:\UwAmp\www\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 U:\UwAmp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('themes/classic/...')
+#1 U:\UwAmp\www\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 U:\UwAmp\www\yii\Eafit-PI1-2015-1-Rider-\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/Eafit-PI1-2015-1-Rider-/themes/classic/images/logo.jpg
+HTTP_REFERER=http://localhost/yii/Eafit-PI1-2015-1-Rider-/site/rider
+---
+2015/11/19 19:58:23 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "themes/classic/images/logo.jpg".' in U:\UwAmp\www\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 U:\UwAmp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('themes/classic/...')
+#1 U:\UwAmp\www\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 U:\UwAmp\www\yii\Eafit-PI1-2015-1-Rider-\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/Eafit-PI1-2015-1-Rider-/themes/classic/images/logo.jpg
+HTTP_REFERER=http://localhost/yii/Eafit-PI1-2015-1-Rider-/site/rider
+---

@@ -1,4 +1,4 @@
-<?php $contador=count($model); if ($model !== null):?>
+
 <html>
 <head>
 
@@ -104,7 +104,21 @@
     <link type="text/css" href="<?php echo Yii::app()->theme->baseUrl; ?>/css/tabs/tabs.css" rel="Stylesheet" id="linkestilo">
 
 </head>
-<body>  
+<body> 
+<?php
+	 $url=$_SERVER['REQUEST_URI'];
+	 $id = substr($url,-1);
+	 $stage = Tstage_information::model()->findAllBySql('SELECT * FROM tstage_information WHERE idRider='.$id);		 		 
+	 $labels = label::model()->findAllBySql('SELECT * FROM tlabel WHERE id_rider='.$id); 
+
+?> 
+	
+	<page_header>
+        Holllalalallaaaaaaaaaa
+        kaaaaaaaaaaaakajakajkaj
+        jahhjakhkajak
+     </page_header>
+
 	<div class="block0">
 		<div class="about">			
 			<?php foreach ($bandInfo as $data):?>
@@ -122,9 +136,13 @@
 	    			   $y=150;
 	    			   $x=585;
 	    			   $strTop = substr($data->positionTop,0,-2);	    			   
-	    			   $strLeft = substr($data->positionLeft,0,-2);
+	    			   $strLeft = substr($data->positionLeft,0,-2);	    			   	    			   
 	    			   
-	    			    if($data->name=="trumpet"){ 
+	    			   
+	    			   if($data->name=="tube"){ 
+	    			   		$top = (int)$strTop+$y;
+	    			   		$left = (int)$strLeft+$x;
+	    			   	}if($data->name=="trumpet"){ 
 	    			   		$top = (int)$strTop+$y;
 	    			   		$left = (int)$strLeft+$x+60;
 	    			   	}else if($data->name=="trambone"){ 
@@ -246,4 +264,3 @@
 	</div>
  </body>
  </html>
-<?php endif; ?>

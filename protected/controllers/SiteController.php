@@ -166,25 +166,21 @@ class SiteController extends Controller
 	 }
 
 
+	 public function actionGeneratePdf($id) {		
+		 $this->redirect(array("pdf", array('id'=>$id)));
+	 }
 	 
 	public function actionPdf(){
 	 	 $band = new CDbCriteria();
-		 $user = Yii::app()->user->name;
-		
+		 $user = Yii::app()->user->name;		
 		 $resultData = new Band();
 		 $resultData = Band::model()->findAllBySql('SELECT id_band FROM tband WHERE name_band = "'.$user.'"');
 		//echo $resultData;
 		 $band->condition = "id_band = ".$resultData[0]->id_band;		 
-		 $bandInfo = CActiveRecord::model("Band")->findAll($band);
-
-		 $model=new Tstage_information();
-		 $stage = Tstage_information::model()->findAllBySql('SELECT name,microphone,positionLeft,positionTop FROM tstage_information WHERE idRider=1');		 		 
-		 $channelList = CActiveRecord::model("Tstage_information")->findAll();
-		 $model = CActiveRecord::model("Label")->findAll();
-		 $labels = CActiveRecord::model("Label")->findAll(); 
+		 $bandInfo = CActiveRecord::model("Band")->findAll($band);		 
 		 date_default_timezone_set('America/Cordoba');
 		 $html2pdf = Yii::app()->ePdf->HTML2PDF();
-         $html2pdf->WriteHTML($this->renderPartial('pdfReport', array('model'=>$model, 'channels'=>$channelList, 'stage'=>$stage, 'labels'=>$labels, 'bandInfo'=>$bandInfo), true));
+         $html2pdf->WriteHTML($this->renderPartial('pdfReport',array("bandInfo"=>$bandInfo), true));
          $html2pdf->Output();        
 	}
 

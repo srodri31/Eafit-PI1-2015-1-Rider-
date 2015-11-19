@@ -37,19 +37,49 @@
 
 			<section id="rider">
 				<div>
-				<?php 
-				if($model == null){
-					?>
+				<?php if($model == null){ ?>
 					<legend>Al parecer aún no tienes ningun rider :(</legend>
-				<?php
-				}
-				foreach ($model as $data):?>
-					<legend>
-						<?php echo CHtml::link( $data->name_rider ,array('callGeneral', 'id'=>$data->id_rider)); ?> <br>
-						<?php echo CHtml::link("Delete",array('delete','id'=>$data->id_rider),array("confirm"=>"Esta seguro"));?>
-					</legend>
+				<?php }	foreach ($model as $data):?>
+					<div class="span7">   
+						<div class="widget stacked widget-table action-table">
+							<div class="widget-header">
+								<h3>Your Riders</h3>
+								<h3>New Rider</h3>
+								<i class="glyphicon glyphicon-file"></i>
+							</div> <!-- /widget-header -->			    				
+							<div class="widget-content">								
+								<table class="table table-striped table-bordered">
+									<thead>
+										<tr>
+											<th>Last Modification</th>
+											<th>Name</th>
+											<th class="td-actions"> Options</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td>Date of last modification</td>
+											<td><?php echo CHtml::link( $data->name_rider ,array('generatePdf', 'id'=>$data->id_rider)); ?></td>
+											<td class="td-actions">
+												<a class="btn btn-small">													
+													<?php echo CHtml::link( '<i class="glyphicon glyphicon-pencil"></i>' ,array('callGeneral', 'id'=>$data->id_rider)); ?>
+												</a>
+												
+												<a class="btn btn-small">
+													<?php echo CHtml::link('<i class="glyphicon glyphicon-trash"></i>',array('delete','id'=>$data->id_rider),array("confirm"=>"Esta seguro"));?>																							
+												</a>
+											</td>
+										</tr>										
+									</tbody>
+								</table>
+								
+							</div> <!-- /widget-content -->
+						
+						</div> <!-- /widget -->
+			        </div>
+					
 				<?php endforeach ?>
-				<?php echo CHtml::link( 'Nuevo rider',array('NewGeneral')); ?> 
+				<?php echo CHtml::link( 'Nuevo rider',array('NewStage')); ?> 
 				<div>
 			</section>
 		</div>
