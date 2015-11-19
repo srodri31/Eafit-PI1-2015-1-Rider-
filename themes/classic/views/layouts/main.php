@@ -33,8 +33,48 @@
     <!--Style to Forms-->
     <link type="text/css" href="<?php echo Yii::app()->theme->baseUrl; ?>/css/formsStyle.css" rel="Stylesheet" id="linkestilo">   
 
-    <!--Style to Tabs-->
-    <link type="text/css" href="<?php echo Yii::app()->theme->baseUrl; ?>/css/tabs/tabs.css" rel="Stylesheet" id="linkestilo">   
+   <!-- Main Tabs -->   
+   <link href="<?php echo Yii::app()->theme->baseUrl; ?>/css/bootstrap.min(1).css" rel="stylesheet" id="bootstrap-css">
+<!--<script src="<?php echo Yii::app()->theme->baseUrl; ?>/js/jquery-1.11.1.js"></script>-->
+   <script src="<?php echo Yii::app()->theme->baseUrl; ?>/js/bootstrap.min(2).js"></script>
+
+<script type="text/javascript">
+            $(document).ready(function () {
+            //Initialize tooltips
+            $('.nav-tabs > li a[title]').tooltip();
+            
+            //Wizard
+            $('a[data-toggle="tab"]').on('show.bs.tab', function (e) {
+
+                var $target = $(e.target);
+            
+                if ($target.parent().hasClass('disabled')) {
+                    return false;
+                }
+            });
+
+            $(".next-step").click(function (e) {
+
+                var $active = $('.wizard .nav-tabs li.active');
+                $active.next().removeClass('disabled');
+                nextTab($active);
+
+            });
+            $(".prev-step").click(function (e) {
+
+                var $active = $('.wizard .nav-tabs li.active');
+                prevTab($active);
+
+            });
+        });
+
+        function nextTab(elem) {
+            $(elem).next().find('a[data-toggle="tab"]').click();
+        }
+        function prevTab(elem) {
+            $(elem).prev().find('a[data-toggle="tab"]').click();
+        }
+    </script>
 
     <script type="text/javascript">
             $(document).ready(function () {
@@ -102,67 +142,195 @@
             text-shadow: #0f0 1px 1px 5px;
             background-color: #fc9;
             font-weight: bold;
-        }    
+        }   
+
+        .wizard {
+            margin: 20px auto;
+            background: #fff;
+        }
+
+            .wizard .nav-tabs {
+                position: relative;
+                margin: 40px auto;
+                margin-bottom: 0;
+            }
+
+            .wizard > div.wizard-inner {
+                position: relative;
+            }
+
+        .connecting-line {
+            height: 2px;
+            background: #e0e0e0;
+            position: absolute;
+            width: 80%;
+            margin: 0 auto;
+            left: 0;
+            right: 0;
+            top: 50%;
+            z-index: 1;
+        }
+
+        .wizard .nav-tabs > li.active > a, .wizard .nav-tabs > li.active > a:hover, .wizard .nav-tabs > li.active > a:focus {
+            color: #555555;
+            cursor: default;
+            border: 0;
+            border-bottom-color: transparent;
+        }
+
+        span.round-tab {
+            width: 70px;
+            height: 70px;
+            line-height: 70px;
+            display: inline-block;
+            border-radius: 100px;
+            background: #fff;
+            border: 2px solid #e0e0e0;
+            z-index: 2;
+            position: absolute;
+            left: 0;
+            text-align: center;
+            font-size: 25px;
+        }
+        span.round-tab i{
+            color:#555555;
+        }
+        .wizard li.active span.round-tab {
+            background: #fff;
+            border: 2px solid #5bc0de;
+            
+        }
+        .wizard li.active span.round-tab i{
+            color: #5bc0de;
+        }
+
+        span.round-tab:hover {
+            color: #333;
+            border: 2px solid #333;
+        }
+
+        .wizard .nav-tabs > li {
+            width: 25%;
+        }
+
+        .wizard li:after {
+            content: " ";
+            position: absolute;
+            left: 46%;
+            opacity: 0;
+            margin: 0 auto;
+            bottom: 0px;            
+            transition: 0.1s ease-in-out;
+        }
+
+        .wizard li.active:after {
+            content: " ";
+            position: absolute;
+            left: 46%;
+            opacity: 1;
+            margin: 0 auto;
+            bottom: 0px;
+        }
+
+        .wizard .nav-tabs > li a {
+            width: 70px;
+            height: 70px;
+            margin: 20px auto;
+            border-radius: 100%;
+            padding: 0;
+        }
+
+            .wizard .nav-tabs > li a:hover {
+                background: transparent;
+            }
+
+        .wizard .tab-pane {
+            position: relative;
+            padding-top: 50px;
+        }
+
+        .wizard h3 {
+            margin-top: 0;
+        }
+
+        @media( max-width : 585px ) {
+
+            .wizard {
+                width: 90%;
+                height: auto !important;
+            }
+
+            span.round-tab {
+                font-size: 16px;
+                width: 50px;
+                height: 50px;
+                line-height: 50px;
+            }
+
+            .wizard .nav-tabs > li a {
+                width: 50px;
+                height: 50px;
+                line-height: 50px;
+            }
+
+            .wizard li.active:after {
+                content: " ";
+                position: absolute;
+                left: 35%;
+            }
+        }
+        .bottomMenu{
+            height: 100px;
+         }
+
     </style>  
 
 </head>
-    <body style="cursor: auto;">
-        <h1></h1>
-        <?php
-            $visible= Yii::app()->user->isGuest;
-            if($visible){
-                $visibility = "visibility: hidden";
-            }else{
-                $visibility = "visibility: visible";
-            }
-        ?>
-        <div class="wizard" >
-            <div id="tabs-container">
-             <div  class="wizard-inner">            
-                <div class="connecting-line"></div>
-                <ul class="tabs-menu" role="tablist">
-                    <li role="presentation" class="current" id="ini" value="Page1" style="<?php echo $visibility; ?>">
-                        <a href="#step1" data-toggle="tab" aria-controls="step1" role="tab" title="Step 1">
-                            <span class="round-tab">
-                                <i class="glyphicon glyphicon-user"></i>
-                            </span>
-                            <?php echo CHtml::link( Yii::app()->user->name ,array('/site/rider')); ?>
-                        </a>
-                    </li>
+<body  style="cursor: auto; " >
+    <?php
+        $visible= Yii::app()->user->isGuest;
+        if($visible){
+            $visibility = "visibility: hidden";
+        }else{
+            $visibility = "visibility: visible";
+        }
+    ?>
 
-                    <li role="presentation" class="" id="stage" value="Page2" style="<?php echo $visibility; ?>"> 
-                        <a href="#step2" data-toggle="tab" aria-controls="step2" role="tab" title="Step 1">
-                            <span class="round-tab">
-                                <i class="glyphicon glyphicon-picture"></i>
-                            </span>                           
-                        </a>
-                        <?php echo CHtml::link('1: Stage Plot',array('/stage/index')); ?>
-                    </li>
-
-
-                    <li role="presentation" class=""  id="label" value="Page3" style="<?php echo $visibility; ?>">
-                        <a href="#step3" data-toggle="tab" aria-controls="step3" role="tab" title="Step 1" class="Page1">
-                            <span class="round-tab">
-                                <i class="glyphicon glyphicon-text-background"></i>
-                            </span>
-                        </a>
-                        <?php echo CHtml::link('2: Rider Content',array('label')); ?>
-                    </li>
-
-                    <li role="presentation" class="" id="export" value="Page4" style="<?php echo $visibility; ?>">
-                        <a href="#complete" data-toggle="tab" aria-controls="step4" role="tab" title="Step 1">
-                            <span class="round-tab">
-                                <i class="glyphicon glyphicon-ok"></i>
-                            </span>                            
-                        </a>
-                        <?php echo CHtml::link('3: Export Rider',array('/label/index')); ?>
-                    </li>
-                </ul>
-             
-       </div>
-    </body>
-
+<!-- Fixed navbar -->
+    <div class="navbar navbar-default  navbar-fixed-bottom" role="navigation" style="<?php echo $visibility; ?>">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">
+               <?php echo Yii::app()->user->name; ?>               
+          </a>
+        </div>
+        <div class="collapse navbar-collapse">          
+        <?php $this->widget('zii.widgets.CMenu',array(
+            'htmlOptions' =>array("class" => "nav navbar-nav navbar-right"),
+            'items'=>array(
+                array('label'=>'Home', 'url'=>array('/site/rider')),    
+                array('label'=>'Logout ('.Yii::app()->user->name.')', 'url'=>array('/site/logout'), 'visible'=>!Yii::app()->user->isGuest)
+            ),
+        )); ?>            
+        </div><!--/.nav-collapse -->
+      </div>
     </div>
+
+<div class="container">        
+    <?php if(isset($this->breadcrumbs)):?>
+        <?php $this->widget('zii.widgets.CBreadcrumbs', array(
+            'links'=>$this->breadcrumbs,
+        )); ?><!-- breadcrumbs -->
+    <?php endif?>
+    <div class="row" style="margin-bottom:80px; margin-top:40px;">
         <?php echo $content;?>
     </div>
+</div>
+</body>
 </html>

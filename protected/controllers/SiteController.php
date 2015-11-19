@@ -65,19 +65,26 @@ class SiteController extends Controller
 
 	public function actionRider()
 	{
-
 		$band = new CDbCriteria();
-		$user = Yii::app()->user->name;
+		$user = Yii::app()->user->name;		
 		$resultData = new Band();
 		$resultData = Band::model()->findAllBySql('SELECT id_band FROM tband WHERE name_band = "'.$user.'"');
 		//echo $resultData;
-		$band->condition = "id_band = ".$resultData[0]->id_band;
-		
+		$band->condition = "id_band = ".$resultData[0]->id_band;		 
+		$bandInfo = CActiveRecord::model("Band")->findAll($band);
 		$model = CActiveRecord::model("Rider")->findAll($band);
+		$this->render('rider', array('model'=>$model, 'user'=>$user, "bandInfo"=>$bandInfo));
+	}
 
-		
+	public function actionGeneral()
+	{
+		$model = CActiveRecord::model("Rider")->findAll();
+		$this->render('general', array('model'=>$model));
+	}
 
-		$this->render('rider', array('model'=>$model, 'user'=>$user));
+	public function actionExportOptions()
+	{
+		$this->render('exportOption');
 	}
 
 	public function actionLabel(){
@@ -155,65 +162,30 @@ class SiteController extends Controller
 	 }
 
 
-	 public function actionGenerarYa(){
-	 		//Channel List : select * from labels where id_rider && name_label = channel
-		//pa : select * from labels where id_rider && name_label = pa
-		//nameLabel : select * from labels where id_rider && name_label = nameLabel
-		//The next block is fROM stageController and its just to a test
-		//Wind
-		$wind = new CDbCriteria();
-		$wind->condition = "class_instrument = 1";
-		$modelwind = CActiveRecord::model("Instrument")->findAll($wind);
+	 
+	public function actionPdf(){
+	 	 $band = new CDbCriteria();
+		 $user = Yii::app()->user->name;
+		
+		 $resultData = new Band();
+		 $resultData = Band::model()->findAllBySql('SELECT id_band FROM tband WHERE name_band = "'.$user.'"');
+		//echo $resultData;
+		 $band->condition = "id_band = ".$resultData[0]->id_band;		 
+		 $bandInfo = CActiveRecord::model("Band")->findAll($band);
 
-		//String
-		$string = new CDbCriteria();
-		$string->condition = "class_instrument = 2";
-		$modelstring = CActiveRecord::model("Instrument")->findAll($string);
-
-		//Percussion
-		$percussion = new CDbCriteria();
-		$percussion->condition = "class_instrument = 4";
-		$modelpercussion = CActiveRecord::model("Instrument")->findAll($percussion);
-
-		//Key
-		$key = new CDbCriteria();
-		$key->condition = "class_instrument = 3";
-		$modelkey = CActiveRecord::model("Instrument")->findAll($key);
-
-		//end of block
-
-
-		 $Criteria = new CDbCriteria();
-		 $Criteria->condition = "id_rider = 1";
-
-		 //Stage Info And Ubication
 		 $model=new Tstage_information();
-		 $stage = Tstage_information::model()->findAllBySql('SELECT name,microphone,positionLeft,positionTop FROM tstage_information WHERE idRider=1');		 
-		 //$stageInfo = implode("", $stage);
-		 $stageInfo = "tube~Default~-286px~86px¬tube~Default~-314px~129px¬trumpet~Default~-409px~77px¬tube~Default~-14px~129px¬tube~Default~-286px~86px¬trumpet~Default~-409px~77px¬";
-		 
+		 $stage = Tstage_information::model()->findAllBySql('SELECT name,microphone,positionLeft,positionTop FROM tstage_information WHERE idRider=1');		 		 
 		 $channelList = CActiveRecord::model("Tstage_information")->findAll();
-		 $model = CActiveRecord::model("Label")->findAll(); 
-
-
-
-
-	 	 $mPDF1 = Yii::app()->ePdf->mpdf('utf-8','A4','','',15,15,35,25,9,9,'P'); 
-		 $mPDF1->useOnlyCoreFonts = true;
-		 $mPDF1->SetTitle("Technical Rider");
-		 $mPDF1->SetAuthor("Name of Band");
-		 $mPDF1->showWatermarkText = true;
-		 $mPDF1->watermark_font = 'DejaVuSansCondensed';
-		 $mPDF1->watermarkTextAlpha = 0.1;
-		 $mPDF1->SetDisplayMode('fullpage');
-		 $mPDF1->WriteHTML($this->renderPartial('pdfReport', array('model'=>$model, 'channels'=>$channelList, 'stage'=>$stage, "modelwind"=>$modelwind, "modelstring"=>$modelstring,"modelpercussion"=>$modelpercussion,"modelkey"=>$modelkey), true)); 
-		 $mPDF1->Output('Label'.date('YmdHis'),'I'); 
-	 }
+		 $model = CActiveRecord::model("Label")->findAll();
+		 $labels = CActiveRecord::model("Label")->findAll(); 
+		 date_default_timezone_set('America/Cordoba');
+		 $html2pdf = Yii::app()->ePdf->HTML2PDF();
+         $html2pdf->WriteHTML($this->renderPartial('pdfReport', array('model'=>$model, 'channels'=>$channelList, 'stage'=>$stage, 'labels'=>$labels, 'bandInfo'=>$bandInfo), true));
+         $html2pdf->Output();        
+	}
 
 	public function actionStage()
 	{
-
-
 		//Wind
 		$wind = new CDbCriteria();
 		$wind->condition = "class_instrument = 1";
@@ -295,9 +267,10 @@ class SiteController extends Controller
 		$this->redirect(array("stage", array('id'=>$rider->id_rider)));
 	}
 	
-	public function actionCallStage($id){
+	public function actionCallGeneral($id){
 		$this->redirect(array("stage", array('id'=>$id)));
 	}
+
 
 	public function actionGetInfoBd(){	
 		

@@ -13,149 +13,74 @@
 			function(XMLHttpRequest, textStatus, errorThrown){
 			console.log(XMLHttpRequest+" "+" "+errorThrown);
         });		
-	}
-
-	(function (exports) {
-    function urlsToAbsolute(nodeList) {
-        if (!nodeList.length) {
-            return [];
-        }
-        var attrName = 'href';
-        if (nodeList[0].__proto__ === HTMLImageElement.prototype 
-        || nodeList[0].__proto__ === HTMLScriptElement.prototype) {
-            attrName = 'src';
-        }
-        nodeList = [].map.call(nodeList, function (el, i) {
-            var attr = el.getAttribute(attrName);
-            if (!attr) {
-                return;
-            }
-            var absURL = /^(https?|data):/i.test(attr);
-            if (absURL) {
-                return el;
-            } else {
-                return el;
-            }
-        });
-        return nodeList;
-    }
-
-    function screenshotPage() {
-        urlsToAbsolute(document.images);
-        urlsToAbsolute(document.querySelectorAll("link[rel='stylesheet']"));
-        var screenshot = document.documentElement.cloneNode(true);
-        var b = document.createElement('base');
-        b.href = document.location.protocol + '//' + location.host;
-        var head = screenshot.querySelector('head');
-        head.insertBefore(b, head.firstChild);
-        screenshot.style.pointerEvents = 'none';
-        screenshot.style.overflow = 'hidden';
-        screenshot.style.webkitUserSelect = 'none';
-        screenshot.style.mozUserSelect = 'none';
-        screenshot.style.msUserSelect = 'none';
-        screenshot.style.oUserSelect = 'none';
-        screenshot.style.userSelect = 'none';
-        screenshot.dataset.scrollX = window.scrollX;
-        screenshot.dataset.scrollY = window.scrollY;
-        var script = document.createElement('script');
-        script.textContent = '(' + addOnPageLoad_.toString() + ')();';
-        screenshot.querySelector('body').appendChild(script);
-        var blob = new Blob([screenshot.outerHTML], {
-            type: 'text/html'
-        });
-        return blob;
-    }
-
-    function addOnPageLoad_() {
-        window.addEventListener('DOMContentLoaded', function (e) {
-            var scrollX = document.documentElement.dataset.scrollX || 0;
-            var scrollY = document.documentElement.dataset.scrollY || 0;
-            window.scrollTo(scrollX, scrollY);
-        });
-    }
-
-    function generate() {
-        window.URL = window.URL || window.webkitURL;
-        window.open(window.URL.createObjectURL(screenshotPage()));
-    }
-    exports.screenshotPage = screenshotPage;
-    exports.generate = generate;
-})(window);
-	
+	}	
 </script>
 <style>
-	 body {font-family: sans-serif;
-	 	font-size: 10pt;
-	 }
-	 p { margin: 0pt;
-	 }
-	 td { vertical-align: top; }
-	 .items td {
-		 border-left: 0.1mm solid #000000;
-		 border-right: 0.1mm solid #000000;
-	 }
-	 table thead td { background-color: #EEEEEE;
-		 text-align: center;
-		 border: 0.1mm solid #000000;
-	 }
-	 .items td.blanktotal {
-		 background-color: #FFFFFF;
-		 border: 0mm none #000000;
-		 border-top: 0.1mm solid #000000;
-	 }
-	 .items td.totals {
-		 text-align: right;
-		 border: 0.1mm solid #000000;
-	 }
-	 .col-lg-4{
-	 	width: 40%;
-	 	text-align: justify;
-	 	margin-bottom: 15px;
-	 	position: relative;
-	 	left: 660px;
-	 }
-
-	 .stagePlot{
-	 	background: whitesmoke;
-	 	height: 350px;
-	 	width: 100%;
-	 }
-
-	 .col{
-	 	text-align: justify;
-	 }
-
 	 #soltable{
-            padding: 10px;
-            background-color: whitesmoke;
-            border: 1px solid #ccc;
-            width: 500px;
-            height: 400px;
-            text-align: center;
-        }
-        .sueltaaqui{
-            text-shadow: #0f0 1px 1px 5px;
-            background-color: #fc9;
-            font-weight: bold;
-        }  
+        background-color: whitesmoke;
+        border: 1px solid #ccc;        
+        height: 400px;
+        text-align: center;	
+        padding-bottom:-60px;	
+	    margin-left: 120px;
+	    margin-bottom: 40px;
+        width: 500px;        
+     }
 
-        .fix{
+     h1{
+     	color: #1fa67b;
+	    font-size: 22px;
+	    font-weight: bold;
+	    padding-bottom: 40px;
+	    margin-left: 50px;
+     }
+     h2{
+     	font-size: 15px;
+     	margin-left: 50px;
+     }  
+     .channelList{ 
+     	margin-left: 110px;
+     	margin-bottom: 40px;    	
+     	width: 80%;
+     }
 
-        	position: fixed;
-			 overflow: auto;
-			 right: 0;
-			 bottom: 0mm;
-			 width: 65mm;
-			 border: 1px solid #880000;
-			 background-color: #FFEEDD;
-			 background-gradient: linear #dec7cd #fff0f2 0 1 0 0.5;
-			 padding: 0.5em;
-			 font-family:sans;
-			 margin: 0;
-			 rotate: 90;
+     .info{ 
+     	margin-left: 70px;
+     	width: 80%;
+      }
 
+      .about{
+      	margin-bottom:700px;
+      	text-align: justify;
+      	width: 40%; 
+      	height: 30%;     	
+      }
 
-        }
+      .table{
+      	text-align: center;
+      	width: 90%;
+      }
+
+      td{       	
+     	background-color: whitesmoke;
+      	text-transform: capitalize;
+      	margin: 15px;
+      	width: 30%;
+      }
+
+      .title{
+      	font-size: 18px;
+      	font-weight: bold;
+      	margin-bottom: 7px;
+      	text-align: left;
+      }
+
+      .contentLabel{
+      	margin-left: 20px;
+      	margin-bottom: 13px;
+      	text-align: justify;
+      	width: 60%;        	
+      }
 </style>
  <!-- Bootstrap Core CSS -->
     <link href="<?php echo Yii::app()->theme->baseUrl; ?>/css/bootstrap.min.css" rel="stylesheet">
@@ -179,173 +104,146 @@
     <link type="text/css" href="<?php echo Yii::app()->theme->baseUrl; ?>/css/tabs/tabs.css" rel="Stylesheet" id="linkestilo">
 
 </head>
-<body>
- 
-<!--mpdf
- <htmlpageheader name="myheader">
- <table width="100%"><tr>
- <td width="50%" style=""><span style="font-weight: bold; font-size: 14pt;">Exos Band</span><br />
- www.technicalRider.com<br /></td>
- <td width="50%" style="text-align: right;"><b>Exos band Logotype</b></td>
- </tr></table>
- </htmlpageheader>
- 
-<htmlpagefooter name="myfooter">
- <div style="border-top: 1px solid #000000; font-size: 9pt; text-align: center; padding-top: 3mm; ">
- Página {PAGENO} de {nb}
- </div>
- </htmlpagefooter>
- 
-<sethtmlpageheader name="myheader" value="on" show-this-page="1" />
- <sethtmlpagefooter name="myfooter" value="on" />
- mpdf-->
-<br><br><br><br>
-	<div class="content" style="width:90%;">
-        <div class="row">
-			 <div class="co-lg-3"></div>
-			 <div class="col-lg-3"></div>
-             <div class="col-md-6" id="stagePlot" style="">
-                <div id="soltable" class="ui-droppable">              
-                	<?php foreach ($stage as $data): ?>
-						<img src="<?php echo Yii::app()->theme->baseUrl; ?>/images/<?php echo $data->name; ?>.png" class="ubicated">
-					<?php endforeach ?>
-                </div>                                       
-             </div>            
-        </div>
-    </div>
-<br>
-
-
-
-<button type="button" class="btn btn-custom" onclick="getBD()">Get Input</button> 
-<a class="btn btn-success" href="javascript:void(0);" onclick="generate();">Generate Screenshot »</a>
- <?php echo CHtml::link(CHtml::image(Yii::app()->baseUrl."/images/pdf.jpg","PDF",array("title"=>"Exportar a PDF")),array("generarya")); ?>
-
-<h2 style="font-weight:30px;">Input List</h2>
-<div>
-	<table  class="table table-striped table-bordered table-condensed" style="width:100%; text-align:center;" id="tableChannel">
-		  <tr>
-		    <th>Number</th>
-		    <th>Input</th>
-			<th>Microphone</th>
-		  </tr>  
-	</table>
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div class="col-lg-4">
-  <h3>Group Information</h3>
-  	If possible we would appreciate to have all amplifiers and dimmers
-	integrated in this place.
-	You can replace some of them with empty cases. Tables are not
-	possible. The whole place should look like a real operating place.
-	We do not bring any amplifiers or cases! 
-</div>
-
-<div class="col-lg-4">
-	<b>Staff</b>
-	<ul>
-		<li>Linda G</li>
-		<li>Santiago R</li>
-		<li>Andres A</li>
-	</ul>
-</div>
-<br><br>
-<!--STAGE PLOT-->
-<div class="col-lg-4"><h3>Stage Plot</h3></div>
-<div class="stagePlot">	
-	
-</div>
- 
-
-<br><br><br><br><br><br>
-
-
-<!--CHANNEL LIST-->
-<div class="col-lg-4"><h3>Channel List</h3></div>
-
- <table  class="items table" width="100%" style="font-size: 9pt; border-collapse: collapse; width:100%; " cellpadding="5">
- <thead>
- <tr>
- <td width="25%">Chnnel</td>
- <td width="25%">Instrument</td>
- <td width="25%">MIC/DI</td>
- <td width="25%">Notes</td>
- </tr>
- </thead>
- <tbody>
- <!-- ITEMS -->
- <?php foreach($channels as $row): ?>
-	 <tr>
-		 <td align="center">
-		 	:D
-		 </td>
-		 <td align="center">
-		 	<?php echo $row->name?>
-		 </td>
-		 <td align="center">
-		 	<?php echo $row->microphone; ?>
-		 </td>
-		 <td align="center">
-			 :D
-		 </td>
-	 </tr>
- <?php endforeach; ?>
- <!-- FIN ITEMS -->
- <tr>
- <td class="blanktotal" colspan="8" rowspan="8"></td>
- </tr>
- </tbody>
- </table>
- <b>Total Resultados:</b> <?php echo $contador; ?>
-
-<?php foreach($model as $row): ?>
-	<div class="col">
-		<h3><?php echo $row->name_label?></h3>
-		<?php echo $row->desc_label; ?>
+<body>  
+	<div class="block0">
+		<div class="about">			
+			<?php foreach ($bandInfo as $data):?>
+				<h2><?php echo $data->name_band; ?></h2>
+				<?php echo $data->desc_band; ?>
+			<?php endforeach ?>
+		</div>
 	</div>
- <?php endforeach; ?>
 
-
-<?php foreach($stage as $data){
-			echo $data->name;
-			echo "~";
-			echo $data->microphone;
-			echo "~";
-			echo $data->positionLeft;
-			echo "~";
-			echo $data->positionTop;
-			echo "¬";
-		}
-?>
+	<div class="block1">	
+		<h2>Stage Plot</h2>            
+	    <div  id="soltable" class="ui-droppable">
+	    	<?php foreach ($stage as $data): ?>
+	    		<?php  
+	    			   $y=150;
+	    			   $x=585;
+	    			   $strTop = substr($data->positionTop,0,-2);	    			   
+	    			   $strLeft = substr($data->positionLeft,0,-2);
+	    			   
+	    			    if($data->name=="trumpet"){ 
+	    			   		$top = (int)$strTop+$y;
+	    			   		$left = (int)$strLeft+$x+60;
+	    			   	}else if($data->name=="trambone"){ 
+	    			   		$top = (int)$strTop+$y;
+	    			   		$left = (int)$strLeft+$x+120;
+	    			   	}else if($data->name=="saxophone"){ 
+	    			   		$top = (int)$strTop+$y;
+	    			   		$left = (int)$strLeft+$x+180;
+	    			   	}
+	    			    else if($data->name=="clarnet"){ 
+	    			   		$top = (int)$strTop+$y+30;
+	    			   		$left = (int)$strLeft+$x;
+	    			   	}
+	    			   	else if($data->name=="banjo"){ 
+	    			   		$top = (int)$strTop+$y+130;
+	    			   		$left = (int)$strLeft+$x;
+	    			    }else if($data->name=="guitar"){ 
+	    			    	$top = (int)$strTop+$y+130;
+	    			   		$left = (int)$strLeft+$x+60;
+	    			   	}
+	    			    else if($data->name=="lyre"){ 
+	    			    	$top = (int)$strTop+$y+130;
+	    			   		$left = (int)$strLeft+$x+120;
+	    			   	}	    			   
+	    			    else if($data->name=="violin"){ 
+	    			    	$top = (int)$strTop+$y+130;
+	    			   		$left = (int)$strLeft+$x+180;
+	    			   	}
+	    			    else if($data->name=="bass_drum"){ 
+	    			    	$top = (int)$strTop+$y+260;
+	    			   		$left = (int)$strLeft+$x; 
+	    			   	}
+	    			    else if($data->name=="cymbals"){ 
+	    			    	$top = (int)$strTop+$y+260;
+	    			   		$left = (int)$strLeft+$x+60; 
+	    			   	}
+	    			    else if($data->name=="rattle"){ 
+	    			    	$top = (int)$strTop+$y+260;
+	    			   		$left = (int)$strLeft+$x+120; 
+	    			   	}
+	    			    else if($data->name=="triangle"){ 
+	    			    	$top = (int)$strTop+$y+260;
+	    			   		$left = (int)$strLeft+$x+180;
+	    			   	}
+	    			    else if($data->name=="xylophone"){ 
+	    			    	$top = (int)$strTop+$y+290;
+	    			   		$left = (int)$strLeft+$x;
+	    			    }
+	    			    else if($data->name=="castanets"){ 
+	    			   		$top = (int)$strTop+$y+290;
+	    			   		$left = (int)$strLeft+$x+60;
+	    			   	}
+	    			    else if($data->name=="drums"){ 
+	    			   		$top = (int)$strTop+$y+290;
+	    			   		$left = (int)$strLeft+$x+120;
+	    			    }
+	    			    else if($data->name=="kettledrums"){ 
+	    			   		$top = (int)$strTop+$y+290;
+	    			   		$left = (int)$strLeft+$x+180; 
+	    			   	}
+	    			    else if($data->name=="percussion"){
+	    			    	$top = (int)$strTop+$y+320;
+	    			   		$left = (int)$strLeft+$x; 
+	    			   	}
+	    			   	else if($data->name=="side_drum"){
+	    			    	$top = (int)$strTop+$y+320;
+	    			   		$left = (int)$strLeft+$x+60; 
+	    			   	}
+	    			    else if($data->name=="piano"){ 
+	    			    	$top = (int)$strTop+$y+420;
+	    			   		$left = (int)$strLeft+$x;
+	    			    }
+	    		?>               
+				<img src="<?php echo Yii::app()->theme->baseUrl; ?>/images/<?php echo $data->name; ?>.png" style="position:absolute; left: <?php echo $left;?>; top:<?php echo $top;?>;" >
+			<?php endforeach ?>
+	    </div> 
+	</div>	
+   
+	<div class="block2">
+	    <h2>Channel List</h2>
+	    <div class="channelList">    
+	    	 <?php  $i = 0; ?>
+	    	 <table class="table">   	
+	    	 <tr style="font-weight:bold;">
+	    	 	<td>Channel</td>
+	    	 	<td>Instrument</td>
+	    	 	<td>Microphone</td>
+	    	 </tr> 
+				 <?php foreach ($stage as $data): ?> 						
+					<tr>
+						<td>
+							<?php echo $i = $i+1;?> 	
+						</td>
+						<td>
+							<?php echo $data->name;?> 	
+						</td>
+						<td>
+							<?php echo $data->microphone;
+							?> 	
+						</td>
+					</tr>		
+				 <?php endforeach ?>
+			 </table> 
+	    </div>
+	</div>
+	 
+	<div class="block3">
+	    <h2>Specifications About Requierements</h2>
+	    <div class="info">
+			 <?php foreach ($labels as $data): ?>				 	
+				 <div class="title">
+				 	<?php echo $data->name_label;?>
+				 </div>
+				 <div class="contentLabel">
+				 	<?php echo $data->desc_label;?>
+				 </div>		
+			 <?php endforeach ?> 
+	    </div>
+	</div>
  </body>
  </html>
 <?php endif; ?>

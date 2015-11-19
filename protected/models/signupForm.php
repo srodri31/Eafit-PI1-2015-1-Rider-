@@ -45,12 +45,15 @@ class signupForm extends CFormModel
 		}else if($this->password == null){
 			$this->addError('password','Password cannot be blank');
 			return false;
+		}else if($this->genre == null){
+			$this->addError('genre','Genre cannot be blank');
+			return false;
 		}
 		$_band = new Band;
 		$_band->page_band = $this->page;
 		$_band->name_band = $this->name;
 		$_band->password_band = $this->password; 
-		$_band->gender_band = $this->genre;
+		$_band->genre_band = $this->genre;
 		$_band->email_band = $this->email;
 		$_band->desc_band = $this->desc;
 		$_band->save();

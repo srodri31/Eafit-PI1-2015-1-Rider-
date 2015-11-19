@@ -33,15 +33,20 @@
                         </div>
 
                         <div class="form-group">
-                            <?php echo $form->textField($model,'page',array("class"=>"form-control","placeholder"=>"web page")); ?>
+                            <?php echo $form->textField($model,'page',array("class"=>"form-control", "type"=>"url" ,"placeholder"=>"web page")); ?>
                         </div>
 
                         <div class="form-group">
-                            <?php echo $form->textField($model,'email',array("class"=>"form-control","placeholder"=>"email")); ?>
+                            <?php echo $form->textField($model,'email',array("class"=>"form-control", "type"=>"email" ,"placeholder"=>"email")); ?>
                         </div>            
 
                         <div class="form-group">
                             <?php echo $form->textField($model,'genre',array("class"=>"form-control","placeholder"=>"genre")); ?>
+                            <div -webkit-validation-bubble>
+                              <div -webkit-validation-bubble-arrow></div>
+                              <div -webkit-validation-bubble-arrow-clipper></div>
+                              <div -webkit-validation-bubble-message><?php echo $form->error($model,'genre'); ?></div>
+                            </div>
                         </div>   
 
                         <div class="form-group">

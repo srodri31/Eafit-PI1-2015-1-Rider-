@@ -107,14 +107,63 @@ function getBD(){
 ?>
 
 <link href="<?php echo Yii::app()->theme->baseUrl; ?>/css/modal.css" rel="stylesheet">
-		<br><br>
-		<div class="row">
-			<div class="col-lg-6">				
-		            <h3><div  class="btn btn-custom">Step 1:</div> Make your Stage Plot</h3>                                       
-		    </div>
-		    <div class="col-lg-6"></div>
-		</div>
-		<br><br>
+		
+<div class="row" style="">
+<section>
+<div class="wizard" style="" >
+    <div class="wizard-inner" style="">
+        <div class="connecting-line"></div>
+        <ul class="nav nav-tabs" role="tablist">
+        
+            <li role="presentation" class="disabled" id="ini" value="Page1">                            
+                <a data-toggle="tab" aria-controls="step1" role="tab" data-original-title="Step 1" aria-expanded="false">
+                    <span class="round-tab">
+                       <i class="glyphicon glyphicon-folder-open"></i>
+                    </span>
+                </a>
+            </li>
+
+
+            <li role="presentation" class="active current" id="stage" value="Page2">                            
+                <a  data-toggle="tab" aria-controls="step1" role="tab" data-original-title="Step 1" aria-expanded="false">
+                    <span class="round-tab" class="disabled">
+                        <i class="glyphicon glyphicon-pencil" ></i>
+                    </span>
+                </a>
+            </li>
+
+            <li role="presentation" class="disabled" id="label" value="Page3">                        
+                <a  data-toggle="tab" aria-controls="step1" role="tab" data-original-title="Step 1" aria-expanded="false">
+                    <span class="round-tab">
+                        <i class="glyphicon glyphicon-picture"></i>
+                    </span>  
+                </a>                          
+            </li>
+
+            <li role="presentation" class="disabled" id="export" value="Page4"> 
+                <a  data-toggle="tab" aria-controls="step1" role="tab" data-original-title="Step 1" aria-expanded="false">                           
+                    <span class="round-tab">
+                        <i class="glyphicon glyphicon-ok"></i>
+                    </span>
+                </a>                            
+            </li>                         
+        </ul>
+    </div>      
+ </div>
+</section>
+</div>
+
+	<div class="row">
+	  <div class="col-lg-8">  
+	    <h3><div class="btn btn-custom">Step 2:</div> Stage Plot</h3>                                 
+	  </div>		   
+	   <div class="col-lg-4">
+	   		<?php echo CHtml::link( '<div class="btn btn-custom">Previous Step</div>',array('general')); ?>
+	   		<?php echo CHtml::link( '<div class="btn btn-custom">Save and Continue</div>',array('label')); ?>
+	   </div>	   
+	</div>
+		
+		
         <!-- Row -->
         <div class="row">
         	 <div id="description" class="col-lg-3">        	 		                         

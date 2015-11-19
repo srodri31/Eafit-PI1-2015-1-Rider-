@@ -5601,8 +5601,9 @@ if (!defined('__CLASS_HTML2PDF__')) {
          */
         protected function _tag_open_IMG($param)
         {
-            $src    = str_replace('&amp;', '&', $param['src']);
-
+            $src           = str_replace('&amp;', '&', $param['src']);
+            $documentRoot  = $_SERVER['DOCUMENT_ROOT']; // get server document root             
+            $src           = $documentRoot. '/' . $src; //aapend server document root to the image soure
             $this->parsingCss->save();
             $this->parsingCss->value['width']    = 0;
             $this->parsingCss->value['height']    = 0;
@@ -5611,16 +5612,13 @@ if (!defined('__CLASS_HTML2PDF__')) {
             $this->parsingCss->analyse('img', $param);
             $this->parsingCss->setPosition();
             $this->parsingCss->fontSet();
-
             $res = $this->_drawImage($src, isset($param['sub_li']));
             if (!$res) return $res;
-
             $this->parsingCss->load();
             $this->parsingCss->fontSet();
             $this->_maxE++;
-
             return true;
-        }
+         }
 
         /**
          * tag : SELECT
