@@ -160,11 +160,8 @@ function getBD(){
         <!-- Row -->
         <div class="row">
         	 <div id="description" class="col-lg-3">        	 		                         
-			    <form method="post" action="">                                
-			       
-					<br>				
-					<h5>Select Instrument</h5>
-					<select class="form-control" id="instrumentStage" >
+			    <form name ="form1" method="post" action="">           
+			        <select class="form-control" id="instrumentStage" >
 						<option value="">Select</option>
 					</select>
 					<br>
@@ -173,10 +170,13 @@ function getBD(){
 			        </div>
 					<br>
 					<div>                                    
-			           <button type="button" class="btn btn-custom" onclick="save()">Save Instrument Info</button> 
+			           <button type="reset" class="btn btn-custom" onclick="save()">Save Instrument Info</button> 
 			        </div>  
+			        <br>
+			        <div id="res"></div>	
 				</form>  
 			 </div>
+
 
             <div class="col-md-6">
                 <div id="soltable" class="ui-droppable"></div>                                       

@@ -63,13 +63,29 @@ class SiteController extends Controller
 		$this->render('signup',array('model'=>$model));
 	}
 
+	public function actionCorrectInfo($id)
+	{
+		$model = Band::model()->findByPK($id);
+		if (isset($_POST['Band'])) {
+			$model->attributes=$_POST['Band'];
+			$model->save();
+			$this->redirect(array('rider'));
+		}
+		$band = new CDbCriteria();
+		$user = Yii::app()->user->name;		
+		$resultData = new Band();
+		$resultData = Band::model()->findAllBySql('SELECT id_band FROM tband WHERE name_band = "'.$user.'"');
+		$band->condition = "id_band = ".$resultData[0]->id_band;		 
+		$bandInfo = CActiveRecord::model("Band")->findAll($band);
+		$this->render('correctInfo', array('model'=>$model,  "bandInfo"=>$bandInfo));
+	}
+
 	public function actionRider()
 	{
 		$band = new CDbCriteria();
 		$user = Yii::app()->user->name;		
 		$resultData = new Band();
 		$resultData = Band::model()->findAllBySql('SELECT id_band FROM tband WHERE name_band = "'.$user.'"');
-		//echo $resultData;
 		$band->condition = "id_band = ".$resultData[0]->id_band;		 
 		$bandInfo = CActiveRecord::model("Band")->findAll($band);
 		$model = CActiveRecord::model("Rider")->findAll($band);
@@ -79,7 +95,7 @@ class SiteController extends Controller
 	public function actionGeneral()
 	{
 		$model = CActiveRecord::model("Rider")->findAll();
-		$this->render('general', array('model'=>$model));
+		$this->render('general', array('model'=>$model ));
 	}
 
 	public function actionExportOptions()
@@ -261,7 +277,7 @@ class SiteController extends Controller
 		$resultData = new Band();
 		$resultData = Band::model()->findAllBySql('SELECT id_band FROM tband WHERE name_band = "'.$user.'"');
 		$rider = new Rider;
-		$rider->name_rider="Nuevo rider";
+		$rider->name_rider="";
 		$rider->id_band=$resultData[0]->id_band;
 		$rider->save();
 		$this->redirect(array("general", array('id'=>$rider->id_rider)));

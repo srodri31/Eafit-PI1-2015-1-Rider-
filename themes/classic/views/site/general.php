@@ -22,10 +22,7 @@
     $cond->condition = "id_rider = ".$id;
     $rider = CActiveRecord::model("Rider")->findAll($cond);
     foreach ($rider as $data):
-        $Rname = $data->name_rider;
-        if($Rname == "Nuevo rider"){
-            $Rname = "";
-        }
+        $Rname = $data->name_rider;        
     endforeach 
     
 ?>

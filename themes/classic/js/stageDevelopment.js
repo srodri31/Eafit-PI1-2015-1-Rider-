@@ -424,16 +424,22 @@ $(document).ready(function(){
 //-------------functions, save information select------------------		
 	
 	function save(){
+		var divRes = document.getElementById("res");
+				   
 		var instrumentStageSelect= document.getElementById('instrumentStage');
-		if(instrumentStageSelect.selectedIndex<1)
-			window.alert('No hay opción seleccionada');
-		else{
+		if(instrumentStageSelect.selectedIndex<1){
+			divRes.innerHTML="Select an available option";
+			setTimeout('recargarDiv()',2000);
+		}else{
 			var selectOp=instrumentStageSelect.options[instrumentStageSelect.selectedIndex].id;		
 			var textMicro = document.getElementById("txtMicrophone").value;
 			var table = document.getElementById('tableChannel');
 			for (i=0; trT=table.getElementsByTagName('tr')[i]; i++) {
 			   if (trT.getAttribute('id')==selectOp){
 				   editarTd(trT,i,textMicro);
+				   document.form1.txtMicrophone.defaultValue = "" 
+				   divRes.innerHTML="Changes saved correct";
+				   setTimeout('recargarDiv()',2000);
 			   }
 			}
 		}

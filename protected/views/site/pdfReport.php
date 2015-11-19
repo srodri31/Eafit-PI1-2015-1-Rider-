@@ -81,6 +81,13 @@
       	text-align: justify;
       	width: 60%;        	
       }
+
+      page_header{
+      	color: whitesmoke;      	
+      	text-align: left;
+      	text-transform: capitalize;
+      	margin-bottom: 20px;
+      }
 </style>
  <!-- Bootstrap Core CSS -->
     <link href="<?php echo Yii::app()->theme->baseUrl; ?>/css/bootstrap.min.css" rel="stylesheet">
@@ -107,17 +114,15 @@
 <body> 
 <?php
 	 $url=$_SERVER['REQUEST_URI'];
-	 $id = substr($url,-1);
+	 $id = substr($url, 48);
 	 $stage = Tstage_information::model()->findAllBySql('SELECT * FROM tstage_information WHERE idRider='.$id);		 		 
 	 $labels = label::model()->findAllBySql('SELECT * FROM tlabel WHERE id_rider='.$id); 
 
 ?> 
-	
+<page>	
 	<page_header>
-        Holllalalallaaaaaaaaaa
-        kaaaaaaaaaaaakajakajkaj
-        jahhjakhkajak
-     </page_header>
+        
+    </page_header>
 
 	<div class="block0">
 		<div class="about">			
@@ -222,12 +227,12 @@
 	</div>	
    
 	<div class="block2">
-	    <h2>Channel List</h2>
+	    <h2>Input List</h2>
 	    <div class="channelList">    
 	    	 <?php  $i = 0; ?>
 	    	 <table class="table">   	
 	    	 <tr style="font-weight:bold;">
-	    	 	<td>Channel</td>
+	    	 	<td>Input</td>
 	    	 	<td>Instrument</td>
 	    	 	<td>Microphone</td>
 	    	 </tr> 
@@ -262,5 +267,6 @@
 			 <?php endforeach ?> 
 	    </div>
 	</div>
+ </page>
  </body>
  </html>
