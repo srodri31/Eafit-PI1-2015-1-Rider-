@@ -27,13 +27,6 @@ function saveBD(){
 	var url = window.location.search;
 	var id = url.substring(11);
 	var idJSON = JSON.stringify(id);
-	var nameRider = document.getElementById("txt_name").value;
-	var nRJSON = JSON.stringify(nameRider);
-	$.ajax({ 
-		    data: {"id": idJSON, "nameR": nRJSON}, 
-		    type: "POST",
-		    url: <?php echo "'".CController::createUrl('RiderName')."'";?>,
-     });
 
 	while(auxCont<=cont){
 		var trT=table.getElementsByTagName('tr')[auxCont];
@@ -158,8 +151,8 @@ function getBD(){
 	    <h3><div class="btn btn-custom">Step 2:</div> Stage Plot</h3>                                 
 	  </div>		   
 	   <div class="col-lg-4">
-	   		<?php echo CHtml::link( '<div class="btn btn-custom">Previous Step</div>',array('general')); ?>
-	   		<?php echo CHtml::link( '<div class="btn btn-custom">Save and Continue</div>',array('label')); ?>
+	   		<?php echo CHtml::link( '<div class="btn btn-custom">Previous Step</div>',array('CallGeneral', 'id'=>$id)); ?>
+	   		<?php echo CHtml::link( '<button type="button" class="btn btn-custom" onmouseenter="deleteBaseData()" onclick="saveBD()">Save and continue</button> ',array('CallLabel', 'id'=>$id)); ?>
 	   </div>	   
 	</div>
 		
@@ -168,9 +161,7 @@ function getBD(){
         <div class="row">
         	 <div id="description" class="col-lg-3">        	 		                         
 			    <form method="post" action="">                                
-			        <div class="form-group">                                    
-			            <input value="<?php echo $Rname;?>" type="text" class="form-control" name="txt_name" id="txt_name" placeholder="Rider's Name">
-			        </div>  
+			       
 					<br>				
 					<h5>Select Instrument</h5>
 					<select class="form-control" id="instrumentStage" >
@@ -308,12 +299,6 @@ function getBD(){
             </div>
         </div>
 <br>
-<div> 
-	<button type="button" class="btn btn-custom" onmouseenter="deleteBaseData()" onclick="saveBD()">Save Input</button> 
-	<div class="hidden" id="link">
-	 	<h3><?php echo CHtml::link( 'Next step',array('CallLabel', 'id'=>$id)); ?></h3> 
-	</div>
-</div> 
 
 <h2 style="font-weight:30px;">Input List</h2>
 <div>

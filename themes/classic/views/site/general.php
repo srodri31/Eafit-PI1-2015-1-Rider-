@@ -1,4 +1,34 @@
+<script type="text/javascript">
+    function saveBD(){
+        var url = window.location.search;
+        var id = url.substring(11);
+        var idJSON = JSON.stringify(id);
+        var nameRider = document.getElementById("txtName").value;
+        var nRJSON = JSON.stringify(nameRider);
+        $.ajax({ 
+                data: {"id": idJSON, "nameR": nRJSON}, 
+                type: "POST",
+                url: <?php echo "'".CController::createUrl('RiderName')."'";?>,
+         });
+    }
+</script>
+
 <div class="row" style="">
+
+<?php 
+    $url=$_SERVER['REQUEST_URI'];
+    $id = substr($url,52);
+    $cond = new CDbCriteria();
+    $cond->condition = "id_rider = ".$id;
+    $rider = CActiveRecord::model("Rider")->findAll($cond);
+    foreach ($rider as $data):
+        $Rname = $data->name_rider;
+        if($Rname == "Nuevo rider"){
+            $Rname = "";
+        }
+    endforeach 
+    
+?>
         <section>
         <div class="wizard" style="" >
             <div class="wizard-inner" style="">
@@ -47,7 +77,7 @@
   <div class="col-lg-8">  
     <h3><div class="btn btn-custom">Step 1:</div> General Information</h3>                                 
   </div>
-   <div class="col-lg-4"><?php echo CHtml::link( '<div class="btn btn-custom">Save and Continue</div>',array('stage')); ?></div>
+   <div class="col-lg-4"><?php echo CHtml::link( '<div class="btn btn-custom" onclick="saveBD()">Save and Continue</div>', array('CallStage', 'id'=>$id) ); ?></div>
 </div>
 
 <section id="login">
@@ -57,7 +87,7 @@
                 <div class="form-wrap">
                    <form method="post" action="">                  
                         <div class="form-group">                                    
-                            <input value="" type="text" class="form-control" name="txtName" id="txtName" placeholder="Rider's Name">
+                            <input value="<?php echo $Rname;?>" type="text" class="form-control" name="txtName" id="txtName" placeholder="Rider's Name">
                         </div>
                         <div class="form-group">                                    
                             <input value="" type="text" class="form-control" name="txtProposal" id="txtProposal" placeholder="Rider's Proposal">

@@ -49,7 +49,7 @@
 						<?php echo CHtml::link("Delete",array('delete','id'=>$data->id_rider),array("confirm"=>"Esta seguro"));?>
 					</legend>
 				<?php endforeach ?>
-				<?php echo CHtml::link( 'Nuevo rider',array('NewStage')); ?> 
+				<?php echo CHtml::link( 'Nuevo rider',array('NewGeneral')); ?> 
 				<div>
 			</section>
 		</div>

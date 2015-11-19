@@ -43,12 +43,16 @@
     </section>
     </div>
 
+    <?php
+        $url=$_SERVER['REQUEST_URI'];
+        $id = substr($url,58);
+    ?>
 <div class="row">
   <div class="col-lg-8">  
     <h3><div class="btn btn-custom">Final Step:</div> Export Options</h3>                                 
   </div>
   <div class="col-lg-4">
-    <?php echo CHtml::link( '<div class="btn btn-custom">Previous Step</div>',array('label')); ?>
+    <?php echo CHtml::link( '<div class="btn btn-custom">Previous Step</div>',array('CallLabel', 'id'=>$id)); ?>
  </div>
 </div>
 

@@ -119,9 +119,17 @@ endforeach
   <div class="col-lg-8">  
     <h3><div class="btn btn-custom">Step 2:</div> Select addional Info to Your Rider</h3>                                 
   </div>
+  <?php $form=$this->beginWidget('CActiveForm', array(
+              'method'=>'POST',
+              'id'=>'label-form',
+              'enableClientValidation'=>true,
+              'clientOptions'=>array(
+              'validateOnSubmit'=>true,
+              ),
+            )); ?>
   <div class="col-lg-4">
-    <?php echo CHtml::link( '<div class="btn btn-custom">Previous Step</div>',array('stage')); ?>
-    <?php echo CHtml::link( '<div class="btn btn-custom">Save and Continue</div>',array('exportoptions')); ?>
+    <?php echo CHtml::link( '<div class="btn btn-custom">Previous Step</div>',array('CallStage', 'id'=>$id)); ?>
+    <?php echo CHtml::submitButton('Save and continue', array("class"=>"btn btn-custom", 'onmouseenter'=>'deleteLabelData()')); ?>
  </div>
 </div>
 <br><br>
@@ -192,14 +200,7 @@ endforeach
   </div>
 
 <div class="col-lg-6">
-           <?php $form=$this->beginWidget('CActiveForm', array(
-              'method'=>'POST',
-              'id'=>'label-form',
-              'enableClientValidation'=>true,
-              'clientOptions'=>array(
-              'validateOnSubmit'=>true,
-              ),
-            )); ?>
+           
           <div class="form-group">
             <div id="divStaff" class="<?php echo $vStaff;?>">
               <div class="form-group">
@@ -313,10 +314,6 @@ endforeach
           </div>
           <?php $model->idRider = $id; ?>
           <?php echo $form->textField($model,"idRider",array("class"=>"form-control", 'class'=>'hidden'));?>           
-
-          <div id="divSubmit" class="<?php echo $vPA;?>">
-            <?php echo CHtml::submitButton('Save', array("class"=>"btn btn-custom", 'onmouseenter'=>'deleteLabelData()')); ?>
-          </div>
 
           <?php $this->endWidget(); ?>
       </div>

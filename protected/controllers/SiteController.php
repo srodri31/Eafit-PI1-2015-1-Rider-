@@ -93,11 +93,15 @@ class SiteController extends Controller
 		if(isset($_POST['LabelForm']))
 		{
 			$model->attributes=$_POST['LabelForm'];			
-			if($model->register()){	}
-			//$this->redirect(array("generarpdf"));				
+			if($model->register())
+				$this->redirect(array("callExport", 'id'=>$model->idRider));				
 		}
 
 		$this->render('label',array('model'=>$model));
+	}
+
+	public function actionCallExport($id){
+		$this->redirect(array("exportoptions", array('id'=>$id)));
 	}
 
 	public function actionCallLabel($id){
@@ -256,7 +260,7 @@ class SiteController extends Controller
 		//aqui va el codigo
 	}
 
-	public function actionNewStage(){
+	public function actionNewGeneral(){
 		$user = Yii::app()->user->name;
 		$resultData = new Band();
 		$resultData = Band::model()->findAllBySql('SELECT id_band FROM tband WHERE name_band = "'.$user.'"');
@@ -264,11 +268,15 @@ class SiteController extends Controller
 		$rider->name_rider="Nuevo rider";
 		$rider->id_band=$resultData[0]->id_band;
 		$rider->save();
-		$this->redirect(array("stage", array('id'=>$rider->id_rider)));
+		$this->redirect(array("general", array('id'=>$rider->id_rider)));
 	}
 	
-	public function actionCallGeneral($id){
+	public function actionCallStage($id){
 		$this->redirect(array("stage", array('id'=>$id)));
+	}
+
+	public function actionCallGeneral($id){
+		$this->redirect(array("general", array('id'=>$id)));
 	}
 
 
