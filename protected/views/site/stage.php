@@ -179,7 +179,26 @@ function getBD(){
 
 
             <div class="col-md-6">
-                <div id="soltable" class="ui-droppable"></div>                                       
+                <div id="soltable" class="ui-droppable"></div>  
+
+                <div class="span7" style="margin-top:20px; width: 500px;">   
+					<div class="widget stacked widget-table action-table">
+						<div class="widget-header">
+							<h3>Input List</h3>
+						</div> <!-- /widget-header -->			    				
+						<div class="widget-content" >								
+							<table class="table table-striped table-bordered" id="tableChannel" style="text-align:center;">
+								<thead>
+									<tr>
+										<th>Input</th>
+									    <th>Instrument</th>
+										<th>Microphone</th>
+									</tr>
+								</thead>				
+							</table>			
+						</div> <!-- /widget-content -->
+					</div> <!-- /widget -->
+				</div>                                     
             </div>
 
             <div class="col-md-3"> 
@@ -298,17 +317,15 @@ function getBD(){
                 <?php endforeach ?>
             </div>
         </div>
-<br>
 
-<h2 style="font-weight:30px;">Input List</h2>
 <div>
-	<table  class="table table-striped table-bordered table-condensed" style="width:100%; text-align:center;" id="tableChannel">
-		  <tr>
-		    <th>Number</th>
-		    <th>Input</th>
-			<th>Microphone</th>
-		  </tr>  
-	</table>
+<div class="row">
+	<div class="col-lg-6">
+		
+	</div>
+	<div class="col-md-6"></div>
+</div>
+	
 
 <body onload="getBD()"></body>
 </div>

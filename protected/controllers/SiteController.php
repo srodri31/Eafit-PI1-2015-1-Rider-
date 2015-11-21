@@ -259,6 +259,7 @@ class SiteController extends Controller
 		if(isset($_POST['id'])){
 			$idR = json_decode($_POST['id']);
 			$name = json_decode($_POST['nameR']);
+			$purpose = json_decode($_POST['purpose']);
 		}
 		$user = Yii::app()->user->name;
 		$resultData = new Band();
@@ -267,6 +268,7 @@ class SiteController extends Controller
 		$rider = new Rider;
 		$rider->id_rider = $idR;
 		$rider->name_rider=$name;
+		$rider->purpouse_rider=$purpose;
 		$rider->id_band=$resultData[0]->id_band;
 		$rider->save();
 		//aqui va el codigo

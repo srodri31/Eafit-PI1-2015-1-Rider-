@@ -318,7 +318,8 @@
         <?php $this->widget('zii.widgets.CMenu',array(
             'htmlOptions' =>array("class" => "nav navbar-nav navbar-right"),
             'items'=>array(
-                array('label'=>'Home', 'url'=>array('/site/rider')),    
+                array('label'=>'Home', 'url'=>array('/site/rider')),
+                array('label'=>'Modify my Info', 'url'=>array('/site/correctInfo')),    
                 array('label'=>'Logout ('.Yii::app()->user->name.')', 'url'=>array('/site/logout'), 'visible'=>!Yii::app()->user->isGuest)
             ),
         )); ?>            

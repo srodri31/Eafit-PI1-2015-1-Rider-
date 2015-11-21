@@ -60,7 +60,7 @@
     <div class="col-lg-3"></div>
     <div class="col-lg-6">
         <legend>Your Rider Have Been Created Succesfully</legend>
-         <?php echo CHtml::link( '<div class="btn btn-custom">Export</div>',array('generatePdf', 'id'=>$id)); ?>
+         <?php echo CHtml::link( '<div class="btn btn-custom">Export</div>',array('generatePdf', 'id'=>$id), array('target'=>'_blank')); ?>
         
     </div>
 

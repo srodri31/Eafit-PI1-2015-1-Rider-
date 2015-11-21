@@ -47,7 +47,6 @@ $(document).ready(function(){
 		tolerance: "fit",
 		accept: '*',
 		drop: function( event, ui ) {
-			$(this).html("Lo soltaste!!!");
 
 
 	    var idElementoMarco = ui.draggable.attr("id");	

@@ -50,7 +50,8 @@
       }
 
       .about{
-      	margin-bottom:700px;
+      	margin-top:700px;
+      	margin-left: 400px;
       	text-align: justify;
       	width: 40%; 
       	height: 30%;     	
@@ -82,12 +83,7 @@
       	width: 60%;        	
       }
 
-      page_header{
-      	color: whitesmoke;      	
-      	text-align: left;
-      	text-transform: capitalize;
-      	margin-bottom: 20px;
-      }
+      
 </style>
  <!-- Bootstrap Core CSS -->
     <link href="<?php echo Yii::app()->theme->baseUrl; ?>/css/bootstrap.min.css" rel="stylesheet">
@@ -119,16 +115,19 @@
 	 $labels = label::model()->findAllBySql('SELECT * FROM tlabel WHERE id_rider='.$id); 
 
 ?> 
-<page>	
-	<page_header>
-        
-    </page_header>
 
 	<div class="block0">
 		<div class="about">			
 			<?php foreach ($bandInfo as $data):?>
 				<h2><?php echo $data->name_band; ?></h2>
-				<?php echo $data->desc_band; ?>
+				<?php echo $data->desc_band; ?><br><br>
+				<div style="text-align:left;">
+					<h2>Genre</h2>
+					<?php echo $data->genre_band; ?><br><br>
+					<h2>Contact</h2>
+					<?php echo $data->page_band; ?><br>
+					<?php echo $data->email_band; ?>
+				</div>
 			<?php endforeach ?>
 		</div>
 	</div>
@@ -267,6 +266,5 @@
 			 <?php endforeach ?> 
 	    </div>
 	</div>
- </page>
  </body>
  </html>

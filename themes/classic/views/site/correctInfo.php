@@ -1,13 +1,12 @@
 <div class="row" >
-  <div class="col-lg-8"> 
-    <?php foreach ($bandInfo as $data):?>    
-        <h3><div class="btn btn-custom">Modify your Info</div> <?php echo $data->name_band;?></h3>    
-    <?php endforeach ?>                           
+  <div class="col-lg-8">        
+        <h3>
+            <div class="btn btn-custom">Modify your Info</div> <?php echo $model->name_band;?>
+        </h3>                              
   </div>
   <div class="col-lg-4"></div>
 </div>
 
-<?php foreach ($bandInfo as $data):?> 
 <section id="login">
     <div class="container">
         <div class="row">
@@ -23,7 +22,7 @@
                     )); ?>
 
                         <div class="form-group">
-                            <?php echo $form->textField($model,'name_band',array("class"=>"form-control","placeholder"=>"band's name", "value"=>$data->name_band)); ?>
+                            <?php echo $form->textField($model,'name_band',array("class"=>"form-control","placeholder"=>"band's name")); ?>
                             <?php echo $form->error($model,'name_band'); ?>
                         </div>
 
@@ -50,7 +49,7 @@
                             <?php echo $form->textArea($model,"desc_band",array("class"=>"form-control", "placeholder"=>"band's description", "rows"=>5));?>         
                         </div>
 
-                        <input type="submit" id="btn-login" class="btn btn-custom btn-lg btn-block" value="Sign up">
+                        <input type="submit" id="btn-login" class="btn btn-custom btn-lg btn-block" value="Modify Information">
                     <?php $this->endWidget(); ?>
                     </div><!-- form -->
                     
@@ -60,5 +59,4 @@
             </div> <!-- /.col-xs-12 -->
         </div> <!-- /.row -->
     </div> <!-- /.container -->
-</section>
-<?php endforeach ?>  
+</section> 

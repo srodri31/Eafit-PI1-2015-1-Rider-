@@ -1,5 +1,4 @@
-<html>
-<br><br>
+
 <div class="row">
     <div class="col-lg-6">  
         <h3><div class="btn btn-custom">Technical</div> Rider </h3>
@@ -64,4 +63,3 @@
         </div> <!-- /.row -->
     </div> <!-- /.container -->
 </section>
-</html>

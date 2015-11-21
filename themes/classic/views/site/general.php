@@ -5,8 +5,10 @@
         var idJSON = JSON.stringify(id);
         var nameRider = document.getElementById("txtName").value;
         var nRJSON = JSON.stringify(nameRider);
+        var purpose = document.getElementById("txtProposal").value;
+        var purJSON = JSON.stringify(purpose);
         $.ajax({ 
-                data: {"id": idJSON, "nameR": nRJSON}, 
+                data: {"id": idJSON, "nameR": nRJSON, "purpose": purJSON}, 
                 type: "POST",
                 url: <?php echo "'".CController::createUrl('RiderName')."'";?>,
          });
@@ -22,7 +24,8 @@
     $cond->condition = "id_rider = ".$id;
     $rider = CActiveRecord::model("Rider")->findAll($cond);
     foreach ($rider as $data):
-        $Rname = $data->name_rider;        
+        $Rname = $data->name_rider;
+        $purpose = $data->purpouse_rider;        
     endforeach 
     
 ?>
@@ -87,7 +90,7 @@
                             <input value="<?php echo $Rname;?>" type="text" class="form-control" name="txtName" id="txtName" placeholder="Rider's Name">
                         </div>
                         <div class="form-group">                                    
-                            <input value="" type="text" class="form-control" name="txtProposal" id="txtProposal" placeholder="Rider's Proposal">
+                            <textArea rows=7 class="form-control" name="txtProposal" id="txtProposal" placeholder="Rider's Proposal"><?php echo $purpose;?></textArea>
                         </div>
                     </form>
                     <hr>

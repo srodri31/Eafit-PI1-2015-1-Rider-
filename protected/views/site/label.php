@@ -139,8 +139,7 @@ endforeach
 <div id="generate" class="row">
   <div class="col-lg-6">
       <div class="form-group">
-      <legend>Select the labels you think are necessary for your rider.</legend><br>
-        <b>Some of them are already selected because they are required in any technical rider.</b>
+        <legend>Select the labels you think are necessary for your rider.</legend>       
       </div>
 
       <div class="row">
@@ -215,9 +214,7 @@ endforeach
             <div id="divStaff" class="<?php echo $vStaff;?>">
               <div class="form-group">
                   <a href="#openModalStaff">
-                      <span class="round-tab">
                           <i class="glyphicon glyphicon-comment"></i>
-                      </span>
                   </a>
                 </div>
                 <?php $model->name1="Staff";?>
@@ -234,9 +231,7 @@ endforeach
             <div id="divPA" class="<?php echo $vPA;?>">
                 <div class="form-group">
                   <a href="#openModalPA">
-                      <span class="round-tab">
                           <i class="glyphicon glyphicon-comment"></i>
-                      </span>
                   </a>
                 </div>
                 <?php $model->name2="PA";
@@ -255,9 +250,7 @@ endforeach
             <div id="divScenary" class="<?php echo $vScenary;?>">
               <div class="form-group">
                   <a href="#openModalScenary">
-                       <span class="round-tab">
                           <i class="glyphicon glyphicon-comment"></i>
-                      </span>
                   </a>
                 </div>
                 <?php $model->name3="Scenary";?>
@@ -273,9 +266,7 @@ endforeach
             <div id="divBackline" class="<?php echo $vBackline;?>">
               <div class="form-group">
                   <a href="#openModalBackline">
-                      <span class="round-tab">
                           <i class="glyphicon glyphicon-comment"></i>
-                      </span>
                   </a>
                 </div>
                 <?php $model->name4="Backline";?>
@@ -291,9 +282,7 @@ endforeach
             <div id="divCamarin" class="<?php echo $vCamarin;?>">
               <div class="form-group">
                   <a href="#openModalCamarin">
-                       <span class="round-tab">
                           <i class="glyphicon glyphicon-comment"></i>
-                      </span>
                   </a>
                 </div>
                 <?php $model->name5="Camarin";?>
@@ -309,9 +298,7 @@ endforeach
             <div id="divCatering" class="<?php echo $vCatering;?>">
               <div class="form-group">
                   <a href="#openModalCatering">
-                       <span class="round-tab">
                           <i class="glyphicon glyphicon-comment"></i>
-                      </span>
                   </a>
                 </div>
                 <?php $model->name6="Catering";?>

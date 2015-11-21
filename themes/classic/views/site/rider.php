@@ -30,9 +30,14 @@
 				</div><br>
 				<div class="row">
 					<div class="col-lg-10" style="text-align:justify;"><?php echo $data->desc_band; ?></div>
-					<div class="col-lg-2"></div>
+					<div class="col-lg-2"></div>	
 				</div>
-			<?php echo CHtml::link( 'Modify Bands Info',array('correctInfo', 'id'=>$data->id_band)); ?>			
+
+				<div class="row">
+					<div class="col-lg-3"></div>						
+					<div class="col-lg-6"><?php echo CHtml::link( 'Modify Bands Info',array('correctInfo', 'id'=>$data->id_band)); ?></div>
+					<div class="col-lg-3"></div>
+				</div>
 			<?php endforeach ?>
 		</div>	
 		<div class="col-lg-6">	
@@ -65,7 +70,7 @@
 										<?php foreach ($model as $data): ?>
 											<tr>
 												<td>Date of last modification</td>
-												<td><?php echo CHtml::link( $data->name_rider ,array('generatePdf', 'id'=>$data->id_rider)); ?></td>
+												<td><?php echo CHtml::link( $data->name_rider ,array('generatePdf', 'id'=>$data->id_rider), array('target'=>'_blank')); ?></td>
 												<td class="td-actions">
 													<a class="btn btn-small">													
 														<?php echo CHtml::link( '<i class="glyphicon glyphicon-pencil"></i>' ,array('callgeneral', 'id'=>$data->id_rider)); ?>
